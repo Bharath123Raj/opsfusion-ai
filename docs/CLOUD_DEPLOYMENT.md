@@ -4,6 +4,21 @@ The cloud portal handles uploaded recordings. The existing local Streamlit/API
 application remains available separately. This deployment does not move its
 SQLite accounts, old runs, camera watches or live sensor streams into the cloud.
 
+## Current installation
+
+- Frontend: https://opsfusion-ai-bharath.netlify.app/
+- Hosting: a claimed site on the owner's Netlify **Free** account, linked to
+  `Bharath123Raj/opsfusion-ai`, branch `main`.
+- HTTPS, the single-page fallback and response security headers passed live
+  HTTP checks after a regular account deployment. Anonymous previews did not
+  apply these rules; they are not the production deployment.
+- Supabase schema/access checks passed; the selected existing Google identity
+  has admin membership. Add the frontend origin to the project's Auth redirect
+  allowlist before testing the Google login round trip.
+- **No paid resources:** independent Python processing is not provisioned.
+  The worker can run on the owner's existing machine for free; that option
+  stops when the machine is off. A suitable independent free host is pending.
+
 ## Components and authorization
 
 - `web/`: a Vite/React portal for password sign-in, uploads, queued job progress,

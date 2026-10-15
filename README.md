@@ -7,8 +7,10 @@ processing adapters. The cloud interface uses React on Netlify with Supabase
 Auth, Postgres and private file storage, plus a separate Python worker.
 
 **Status:** local version **0.16.0** plus the implemented cloud portal and worker.
-The Supabase schema is installed and access-tested. Netlify publication, an
-independent processing host and actual-host acceptance are still required.
+The Supabase schema is installed and access-tested. The web interface is
+[published on Netlify](https://opsfusion-ai-bharath.netlify.app/) using a Free
+account. Google redirect configuration, an independent processing host and
+end-to-end acceptance are still required.
 See [cloud deployment](docs/CLOUD_DEPLOYMENT.md) for setup and limits.
 
 ## What works today
@@ -38,7 +40,7 @@ application does not issue machine-control commands.
 
 | Component | Responsibility | Status |
 | --- | --- | --- |
-| Netlify | React login, uploads, progress, private downloads and incident review | Frontend and `netlify.toml` implemented; hosting authorization/publication pending |
+| Netlify | React login, uploads, progress, private downloads and incident review | Published on a Free Netlify account; GitHub `main` linked |
 | Supabase | Hosted Auth, jobs, reports, reviews, worker leases and private media | Schema installed; role, storage and stale-worker checks passed |
 | Python worker | Validate recordings, run adapters/fusion, save results | Implemented and tested locally; independent host pending |
 
@@ -48,8 +50,9 @@ Local SQLite accounts/history are separate from Supabase accounts and data.
 This is one shared site with admin/operator/viewer roles, not tenant isolation.
 
 The selected architecture replaces the earlier Oracle route. Existing VM/Caddy
-files remain an alternative. A permanently free, continuously running Python
-host has not been established. Netlify and Supabase keep the portal/data online;
+files remain an alternative. This deployment is restricted to **free resources only**. No paid processing
+service has been created. A suitable free, continuously running Python host
+has not been established. Netlify and Supabase keep the portal/data online;
 processing continues with the PC off only when its worker has an independent
 host. Fresh device input also requires an online acquisition device.
 

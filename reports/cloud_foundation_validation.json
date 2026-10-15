@@ -1,6 +1,6 @@
 {
   "checked_at_utc": "2026-10-15T10:44:47.506112+00:00",
-  "scope": "Cloud foundation and local integration checks; actual hosting acceptance pending",
+  "scope": "Cloud foundation, local integration and frontend publication; full processing acceptance pending",
   "python": {
     "command": "python -m unittest discover -s tests -v",
     "tests": 423,
@@ -52,12 +52,30 @@
     ]
   },
   "not_verified": [
-    "Netlify publication",
     "independent worker host",
     "real user Google OAuth round trip",
     "actual private Storage HTTP upload/download with user tokens",
     "worker restart recovery on actual host",
     "controlled own-recording detection accuracy",
     "physical sensor/controller accuracy"
-  ]
+  ],
+  "netlify": {
+    "checked_at_utc": "2026-10-15T11:45:27.647641+00:00",
+    "url": "https://opsfusion-ai-bharath.netlify.app/",
+    "site_id": "9d412c97-c651-4c00-9c0b-c29c0c8fb3a8",
+    "claimed": true,
+    "account_plan": "Free",
+    "premium": false,
+    "frontend_commit": "ae68b09e726fed80c94afbe41e9de58c906cfbc5",
+    "root_and_spa_http_200": true,
+    "security_headers_verified": [
+      "Content-Security-Policy",
+      "X-Frame-Options: DENY",
+      "X-Content-Type-Options: nosniff",
+      "Cache-Control: no-store"
+    ],
+    "github_repository": "Bharath123Raj/opsfusion-ai",
+    "github_branch": "main",
+    "git_triggered_build": "pending verification"
+  }
 }
