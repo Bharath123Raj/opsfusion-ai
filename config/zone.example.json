@@ -1,0 +1,8 @@
+{
+  "asset_id": "warehouse-zone-01",
+  "camera_id": "camera-01",
+  "polygon": [[0.45, 0.35], [0.9, 0.35], [0.9, 0.95], [0.45, 0.95]],
+  "confirm_samples": 2,
+  "max_age_seconds": 1.0,
+  "min_iou": 0.15
+}

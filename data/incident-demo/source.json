@@ -1,0 +1,58 @@
+{
+  "synthetic": true,
+  "cases": [
+    {
+      "case": "degradation_three_sources",
+      "asset_id": "asset-00",
+      "description": "degradation three sources"
+    },
+    {
+      "case": "zone_crossing",
+      "asset_id": "asset-01",
+      "description": "zone crossing"
+    },
+    {
+      "case": "shutdown_after_sensor_warning",
+      "asset_id": "asset-02",
+      "description": "shutdown after sensor warning"
+    },
+    {
+      "case": "degradation_then_shutdown",
+      "asset_id": "asset-03",
+      "description": "degradation then shutdown"
+    },
+    {
+      "case": "audio_log_pair",
+      "asset_id": "asset-04",
+      "description": "audio log pair"
+    },
+    {
+      "case": "repeated_single_modality",
+      "asset_id": "asset-05",
+      "description": "repeated single modality"
+    },
+    {
+      "case": "too_far_apart",
+      "asset_id": "asset-06",
+      "description": "too far apart"
+    },
+    {
+      "case": "low_quality_audio",
+      "asset_id": "asset-07",
+      "description": "low quality audio"
+    },
+    {
+      "case": "separate_assets",
+      "asset_id": "asset-08",
+      "description": "separate assets"
+    },
+    {
+      "case": "two_distinct_faults_inside_90s",
+      "asset_id": "asset-09",
+      "description": "Two distinct faults 40 seconds apart intentionally test the fixed fusion window limit."
+    }
+  ],
+  "events": 24,
+  "labelled_incidents": 8,
+  "note": "No video/audio/sensor model inference occurs in this benchmark. Labels do not prove physical causes."
+}

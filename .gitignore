@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+runs/
+*.pt
+videos/*.mp4
+videos/*.avi
+models/
+
+backups/
+.env.*
+*.sqlite*

@@ -1,0 +1,16 @@
+{
+  "application_version": "0.11.0",
+  "passed": true,
+  "browser_config_and_test_queue": true,
+  "ui_did_not_send": true,
+  "actual_worker_cli": true,
+  "local_tls_smtp_messages": 2,
+  "test_email_and_incident_email": true,
+  "smtp_status": 250,
+  "download_excludes_credentials_and_recipient": true,
+  "reload_retains_deliveries": true,
+  "viewer_cannot_configure_or_test": true,
+  "javascript_errors": 0,
+  "external_messages_sent": 0,
+  "scope": "Actual browser and subprocess worker with local TLS SMTP fixture only. No remote inbox/provider or real accuracy measurement."
+}

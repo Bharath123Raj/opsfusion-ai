@@ -1,0 +1,18 @@
+{
+  "live_http_api": true,
+  "live_http_chunked_limit": true,
+  "browser_initial_render": true,
+  "browser_benchmark": true,
+  "browser_download_bundle": true,
+  "browser_composed_upload": {
+    "observations": 26,
+    "first_alerts": 11
+  },
+  "browser_audio_evidence": true,
+  "browser_final_explanation": true,
+  "unlabelled_upload_has_no_metrics": true,
+  "bad_upload_preserves_previous_run": true,
+  "browser_javascript_errors": 0,
+  "tested_version": "0.8.0",
+  "note": "Historical event-review browser check; raw-input browser check is separate in step8_raw_browser_validation.json."
+}

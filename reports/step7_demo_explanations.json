@@ -1,0 +1,2758 @@
+{
+  "schema": "opsfusion_explanations_v1",
+  "source_run_id": "replay-a118741e96da7a546418",
+  "reports": [
+    {
+      "incident_id": "episode-v1:asset-00:mechanical:case00-000:sensor_anomaly",
+      "asset_id": "asset-00",
+      "type": "sensor_anomaly",
+      "scope": "first",
+      "emitted_at": "2026-01-01T12:00:00+00:00",
+      "risk": "MEDIUM",
+      "risk_semantics": "Configured review priority, not calibrated safety rating",
+      "synthetic": true,
+      "method": "deterministic_catalogue",
+      "fallback_reason": null,
+      "observed_source_reports": [
+        {
+          "event_id": "case00-000",
+          "timestamp": "2026-01-01T12:00:00+00:00",
+          "modality": "sensor",
+          "kind": "sensor_anomaly",
+          "source_report": "Authored synthetic sensor_anomaly observation",
+          "source_id": "asset-00-sensor",
+          "evidence_ref": "synthetic://incident-demo/case00-000",
+          "synthetic": true
+        }
+      ],
+      "possible_explanations": [
+        {
+          "id": "operating_state_change",
+          "statement": "Changed operating load or state",
+          "status": "possible",
+          "evidence_ids": [
+            "case00-000"
+          ]
+        },
+        {
+          "id": "measurement_issue",
+          "statement": "Sensor, microphone or recording issue",
+          "status": "possible",
+          "evidence_ids": [
+            "case00-000"
+          ]
+        },
+        {
+          "id": "mechanical_condition",
+          "statement": "Mechanical condition requiring inspection",
+          "status": "possible",
+          "evidence_ids": [
+            "case00-000"
+          ]
+        }
+      ],
+      "recommended_checks": [
+        {
+          "id": "review_source_records",
+          "instruction": "Review the cited original source records and adapter settings.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case00-000"
+          ]
+        },
+        {
+          "id": "review_operating_state",
+          "instruction": "Compare the observation with machine load, operating state and recent maintenance.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case00-000"
+          ]
+        },
+        {
+          "id": "review_sensor",
+          "instruction": "Check raw sensor values, calibration and the normal baseline.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case00-000"
+          ]
+        },
+        {
+          "id": "qualified_inspection",
+          "instruction": "Request an inspection by a qualified technician before diagnosing a mechanical cause.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case00-000"
+          ]
+        }
+      ],
+      "cause_status": "unconfirmed",
+      "automatic_action_executed": false,
+      "uncertainty": [
+        "Adapter reports are not independently verified physical facts.",
+        "Compatible citation checks do not prove a hypothesis or validate source/model accuracy.",
+        "No cause probability or calibrated hypothesis ranking is estimated.",
+        "First scope freezes event records; original batch episode files may include later context."
+      ],
+      "validation": {
+        "valid_citations": true,
+        "compatible_catalogue_ids": true,
+        "unconfirmed_causes_only": true,
+        "recommendations_only": true
+      }
+    },
+    {
+      "incident_id": "episode-v1:asset-00:mechanical:case00-000:machine_degradation",
+      "asset_id": "asset-00",
+      "type": "machine_degradation",
+      "scope": "first",
+      "emitted_at": "2026-01-01T12:00:04+00:00",
+      "risk": "MEDIUM",
+      "risk_semantics": "Configured review priority, not calibrated safety rating",
+      "synthetic": true,
+      "method": "deterministic_catalogue",
+      "fallback_reason": null,
+      "observed_source_reports": [
+        {
+          "event_id": "case00-000",
+          "timestamp": "2026-01-01T12:00:00+00:00",
+          "modality": "sensor",
+          "kind": "sensor_anomaly",
+          "source_report": "Authored synthetic sensor_anomaly observation",
+          "source_id": "asset-00-sensor",
+          "evidence_ref": "synthetic://incident-demo/case00-000",
+          "synthetic": true
+        },
+        {
+          "event_id": "case00-001",
+          "timestamp": "2026-01-01T12:00:04+00:00",
+          "modality": "audio",
+          "kind": "abnormal_noise",
+          "source_report": "Authored synthetic abnormal_noise observation",
+          "source_id": "asset-00-audio",
+          "evidence_ref": "synthetic://incident-demo/case00-001",
+          "synthetic": true
+        }
+      ],
+      "possible_explanations": [
+        {
+          "id": "mechanical_condition",
+          "statement": "Mechanical condition requiring inspection",
+          "status": "possible",
+          "evidence_ids": [
+            "case00-000",
+            "case00-001"
+          ]
+        },
+        {
+          "id": "operating_state_change",
+          "statement": "Changed operating load or state",
+          "status": "possible",
+          "evidence_ids": [
+            "case00-000",
+            "case00-001"
+          ]
+        },
+        {
+          "id": "measurement_issue",
+          "statement": "Sensor, microphone or recording issue",
+          "status": "possible",
+          "evidence_ids": [
+            "case00-000",
+            "case00-001"
+          ]
+        }
+      ],
+      "recommended_checks": [
+        {
+          "id": "review_source_records",
+          "instruction": "Review the cited original source records and adapter settings.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case00-000",
+            "case00-001"
+          ]
+        },
+        {
+          "id": "review_operating_state",
+          "instruction": "Compare the observation with machine load, operating state and recent maintenance.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case00-000",
+            "case00-001"
+          ]
+        },
+        {
+          "id": "review_sensor",
+          "instruction": "Check raw sensor values, calibration and the normal baseline.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case00-000"
+          ]
+        },
+        {
+          "id": "review_audio",
+          "instruction": "Listen to the cited segment and check gain, background sound and microphone placement.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case00-001"
+          ]
+        }
+      ],
+      "cause_status": "unconfirmed",
+      "automatic_action_executed": false,
+      "uncertainty": [
+        "Adapter reports are not independently verified physical facts.",
+        "Compatible citation checks do not prove a hypothesis or validate source/model accuracy.",
+        "No cause probability or calibrated hypothesis ranking is estimated.",
+        "First scope freezes event records; original batch episode files may include later context."
+      ],
+      "validation": {
+        "valid_citations": true,
+        "compatible_catalogue_ids": true,
+        "unconfirmed_causes_only": true,
+        "recommendations_only": true
+      }
+    },
+    {
+      "incident_id": "episode-v1:asset-00:mechanical:case00-000:acoustic_anomaly",
+      "asset_id": "asset-00",
+      "type": "acoustic_anomaly",
+      "scope": "first",
+      "emitted_at": "2026-01-01T12:00:04+00:00",
+      "risk": "MEDIUM",
+      "risk_semantics": "Configured review priority, not calibrated safety rating",
+      "synthetic": true,
+      "method": "deterministic_catalogue",
+      "fallback_reason": null,
+      "observed_source_reports": [
+        {
+          "event_id": "case00-000",
+          "timestamp": "2026-01-01T12:00:00+00:00",
+          "modality": "sensor",
+          "kind": "sensor_anomaly",
+          "source_report": "Authored synthetic sensor_anomaly observation",
+          "source_id": "asset-00-sensor",
+          "evidence_ref": "synthetic://incident-demo/case00-000",
+          "synthetic": true
+        },
+        {
+          "event_id": "case00-001",
+          "timestamp": "2026-01-01T12:00:04+00:00",
+          "modality": "audio",
+          "kind": "abnormal_noise",
+          "source_report": "Authored synthetic abnormal_noise observation",
+          "source_id": "asset-00-audio",
+          "evidence_ref": "synthetic://incident-demo/case00-001",
+          "synthetic": true
+        }
+      ],
+      "possible_explanations": [
+        {
+          "id": "background_noise",
+          "statement": "Background sound unrelated to machine health",
+          "status": "possible",
+          "evidence_ids": [
+            "case00-001"
+          ]
+        },
+        {
+          "id": "measurement_issue",
+          "statement": "Sensor, microphone or recording issue",
+          "status": "possible",
+          "evidence_ids": [
+            "case00-000",
+            "case00-001"
+          ]
+        },
+        {
+          "id": "mechanical_condition",
+          "statement": "Mechanical condition requiring inspection",
+          "status": "possible",
+          "evidence_ids": [
+            "case00-000",
+            "case00-001"
+          ]
+        }
+      ],
+      "recommended_checks": [
+        {
+          "id": "review_source_records",
+          "instruction": "Review the cited original source records and adapter settings.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case00-000",
+            "case00-001"
+          ]
+        },
+        {
+          "id": "review_operating_state",
+          "instruction": "Compare the observation with machine load, operating state and recent maintenance.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case00-000",
+            "case00-001"
+          ]
+        },
+        {
+          "id": "review_sensor",
+          "instruction": "Check raw sensor values, calibration and the normal baseline.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case00-000"
+          ]
+        },
+        {
+          "id": "review_audio",
+          "instruction": "Listen to the cited segment and check gain, background sound and microphone placement.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case00-001"
+          ]
+        }
+      ],
+      "cause_status": "unconfirmed",
+      "automatic_action_executed": false,
+      "uncertainty": [
+        "Adapter reports are not independently verified physical facts.",
+        "Compatible citation checks do not prove a hypothesis or validate source/model accuracy.",
+        "No cause probability or calibrated hypothesis ranking is estimated.",
+        "First scope freezes event records; original batch episode files may include later context."
+      ],
+      "validation": {
+        "valid_citations": true,
+        "compatible_catalogue_ids": true,
+        "unconfirmed_causes_only": true,
+        "recommendations_only": true
+      }
+    },
+    {
+      "incident_id": "episode-v1:asset-00:mechanical:case00-000:operational_warning",
+      "asset_id": "asset-00",
+      "type": "operational_warning",
+      "scope": "first",
+      "emitted_at": "2026-01-01T12:00:07+00:00",
+      "risk": "MEDIUM",
+      "risk_semantics": "Configured review priority, not calibrated safety rating",
+      "synthetic": true,
+      "method": "deterministic_catalogue",
+      "fallback_reason": null,
+      "observed_source_reports": [
+        {
+          "event_id": "case00-000",
+          "timestamp": "2026-01-01T12:00:00+00:00",
+          "modality": "sensor",
+          "kind": "sensor_anomaly",
+          "source_report": "Authored synthetic sensor_anomaly observation",
+          "source_id": "asset-00-sensor",
+          "evidence_ref": "synthetic://incident-demo/case00-000",
+          "synthetic": true
+        },
+        {
+          "event_id": "case00-001",
+          "timestamp": "2026-01-01T12:00:04+00:00",
+          "modality": "audio",
+          "kind": "abnormal_noise",
+          "source_report": "Authored synthetic abnormal_noise observation",
+          "source_id": "asset-00-audio",
+          "evidence_ref": "synthetic://incident-demo/case00-001",
+          "synthetic": true
+        },
+        {
+          "event_id": "case00-002",
+          "timestamp": "2026-01-01T12:00:07+00:00",
+          "modality": "log",
+          "kind": "motor_warning",
+          "source_report": "Authored synthetic motor_warning observation",
+          "source_id": "asset-00-log",
+          "evidence_ref": "synthetic://incident-demo/case00-002",
+          "synthetic": true
+        }
+      ],
+      "possible_explanations": [
+        {
+          "id": "operating_state_change",
+          "statement": "Changed operating load or state",
+          "status": "possible",
+          "evidence_ids": [
+            "case00-000",
+            "case00-001",
+            "case00-002"
+          ]
+        },
+        {
+          "id": "controller_issue",
+          "statement": "Controller or instrument reporting issue",
+          "status": "possible",
+          "evidence_ids": [
+            "case00-002"
+          ]
+        },
+        {
+          "id": "mechanical_condition",
+          "statement": "Mechanical condition requiring inspection",
+          "status": "possible",
+          "evidence_ids": [
+            "case00-000",
+            "case00-001",
+            "case00-002"
+          ]
+        }
+      ],
+      "recommended_checks": [
+        {
+          "id": "review_source_records",
+          "instruction": "Review the cited original source records and adapter settings.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case00-000",
+            "case00-001",
+            "case00-002"
+          ]
+        },
+        {
+          "id": "review_operating_state",
+          "instruction": "Compare the observation with machine load, operating state and recent maintenance.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case00-000",
+            "case00-001",
+            "case00-002"
+          ]
+        },
+        {
+          "id": "review_sensor",
+          "instruction": "Check raw sensor values, calibration and the normal baseline.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case00-000"
+          ]
+        },
+        {
+          "id": "review_audio",
+          "instruction": "Listen to the cited segment and check gain, background sound and microphone placement.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case00-001"
+          ]
+        }
+      ],
+      "cause_status": "unconfirmed",
+      "automatic_action_executed": false,
+      "uncertainty": [
+        "Adapter reports are not independently verified physical facts.",
+        "Compatible citation checks do not prove a hypothesis or validate source/model accuracy.",
+        "No cause probability or calibrated hypothesis ranking is estimated.",
+        "First scope freezes event records; original batch episode files may include later context."
+      ],
+      "validation": {
+        "valid_citations": true,
+        "compatible_catalogue_ids": true,
+        "unconfirmed_causes_only": true,
+        "recommendations_only": true
+      }
+    },
+    {
+      "incident_id": "episode-v1:asset-01:safety:case01-003:restricted_zone",
+      "asset_id": "asset-01",
+      "type": "restricted_zone",
+      "scope": "first",
+      "emitted_at": "2026-01-01T12:03:00+00:00",
+      "risk": "HIGH",
+      "risk_semantics": "Configured review priority, not calibrated safety rating",
+      "synthetic": true,
+      "method": "deterministic_catalogue",
+      "fallback_reason": null,
+      "observed_source_reports": [
+        {
+          "event_id": "case01-003",
+          "timestamp": "2026-01-01T12:03:00+00:00",
+          "modality": "video",
+          "kind": "zone_entry",
+          "source_report": "Authored synthetic zone_entry observation",
+          "source_id": "asset-01-video",
+          "evidence_ref": "synthetic://incident-demo/case01-003",
+          "synthetic": true
+        }
+      ],
+      "possible_explanations": [
+        {
+          "id": "access_authorization_unknown",
+          "statement": "Entry authorization remains unknown",
+          "status": "possible",
+          "evidence_ids": [
+            "case01-003"
+          ]
+        },
+        {
+          "id": "authorized_access",
+          "statement": "Authorized access or maintenance visit",
+          "status": "possible",
+          "evidence_ids": [
+            "case01-003"
+          ]
+        },
+        {
+          "id": "vision_or_zone_error",
+          "statement": "Person detection or zone calibration error",
+          "status": "possible",
+          "evidence_ids": [
+            "case01-003"
+          ]
+        }
+      ],
+      "recommended_checks": [
+        {
+          "id": "review_source_records",
+          "instruction": "Review the cited original source records and adapter settings.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case01-003"
+          ]
+        },
+        {
+          "id": "verify_access",
+          "instruction": "Ask the responsible operator to check access authorization.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case01-003"
+          ]
+        },
+        {
+          "id": "verify_video",
+          "instruction": "Review the camera frame, track and ground-zone calibration.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case01-003"
+          ]
+        }
+      ],
+      "cause_status": "unconfirmed",
+      "automatic_action_executed": false,
+      "uncertainty": [
+        "Adapter reports are not independently verified physical facts.",
+        "Compatible citation checks do not prove a hypothesis or validate source/model accuracy.",
+        "No cause probability or calibrated hypothesis ranking is estimated.",
+        "First scope freezes event records; original batch episode files may include later context."
+      ],
+      "validation": {
+        "valid_citations": true,
+        "compatible_catalogue_ids": true,
+        "unconfirmed_causes_only": true,
+        "recommendations_only": true
+      }
+    },
+    {
+      "incident_id": "episode-v1:asset-02:mechanical:case02-004:sensor_anomaly",
+      "asset_id": "asset-02",
+      "type": "sensor_anomaly",
+      "scope": "first",
+      "emitted_at": "2026-01-01T12:06:00+00:00",
+      "risk": "MEDIUM",
+      "risk_semantics": "Configured review priority, not calibrated safety rating",
+      "synthetic": true,
+      "method": "deterministic_catalogue",
+      "fallback_reason": null,
+      "observed_source_reports": [
+        {
+          "event_id": "case02-004",
+          "timestamp": "2026-01-01T12:06:00+00:00",
+          "modality": "sensor",
+          "kind": "sensor_anomaly",
+          "source_report": "Authored synthetic sensor_anomaly observation",
+          "source_id": "asset-02-sensor",
+          "evidence_ref": "synthetic://incident-demo/case02-004",
+          "synthetic": true
+        }
+      ],
+      "possible_explanations": [
+        {
+          "id": "operating_state_change",
+          "statement": "Changed operating load or state",
+          "status": "possible",
+          "evidence_ids": [
+            "case02-004"
+          ]
+        },
+        {
+          "id": "measurement_issue",
+          "statement": "Sensor, microphone or recording issue",
+          "status": "possible",
+          "evidence_ids": [
+            "case02-004"
+          ]
+        },
+        {
+          "id": "mechanical_condition",
+          "statement": "Mechanical condition requiring inspection",
+          "status": "possible",
+          "evidence_ids": [
+            "case02-004"
+          ]
+        }
+      ],
+      "recommended_checks": [
+        {
+          "id": "review_source_records",
+          "instruction": "Review the cited original source records and adapter settings.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case02-004"
+          ]
+        },
+        {
+          "id": "review_operating_state",
+          "instruction": "Compare the observation with machine load, operating state and recent maintenance.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case02-004"
+          ]
+        },
+        {
+          "id": "review_sensor",
+          "instruction": "Check raw sensor values, calibration and the normal baseline.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case02-004"
+          ]
+        },
+        {
+          "id": "qualified_inspection",
+          "instruction": "Request an inspection by a qualified technician before diagnosing a mechanical cause.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case02-004"
+          ]
+        }
+      ],
+      "cause_status": "unconfirmed",
+      "automatic_action_executed": false,
+      "uncertainty": [
+        "Adapter reports are not independently verified physical facts.",
+        "Compatible citation checks do not prove a hypothesis or validate source/model accuracy.",
+        "No cause probability or calibrated hypothesis ranking is estimated.",
+        "First scope freezes event records; original batch episode files may include later context."
+      ],
+      "validation": {
+        "valid_citations": true,
+        "compatible_catalogue_ids": true,
+        "unconfirmed_causes_only": true,
+        "recommendations_only": true
+      }
+    },
+    {
+      "incident_id": "episode-v1:asset-02:mechanical:case02-004:abnormal_shutdown",
+      "asset_id": "asset-02",
+      "type": "abnormal_shutdown",
+      "scope": "first",
+      "emitted_at": "2026-01-01T12:06:12+00:00",
+      "risk": "HIGH",
+      "risk_semantics": "Configured review priority, not calibrated safety rating",
+      "synthetic": true,
+      "method": "deterministic_catalogue",
+      "fallback_reason": null,
+      "observed_source_reports": [
+        {
+          "event_id": "case02-004",
+          "timestamp": "2026-01-01T12:06:00+00:00",
+          "modality": "sensor",
+          "kind": "sensor_anomaly",
+          "source_report": "Authored synthetic sensor_anomaly observation",
+          "source_id": "asset-02-sensor",
+          "evidence_ref": "synthetic://incident-demo/case02-004",
+          "synthetic": true
+        },
+        {
+          "event_id": "case02-005",
+          "timestamp": "2026-01-01T12:06:12+00:00",
+          "modality": "log",
+          "kind": "shutdown",
+          "source_report": "Authored synthetic shutdown observation",
+          "source_id": "asset-02-log",
+          "evidence_ref": "synthetic://incident-demo/case02-005",
+          "synthetic": true
+        }
+      ],
+      "possible_explanations": [
+        {
+          "id": "protective_or_manual_stop",
+          "statement": "Protective or manual stopping condition",
+          "status": "possible",
+          "evidence_ids": [
+            "case02-005"
+          ]
+        },
+        {
+          "id": "controller_issue",
+          "statement": "Controller or instrument reporting issue",
+          "status": "possible",
+          "evidence_ids": [
+            "case02-005"
+          ]
+        },
+        {
+          "id": "operating_state_change",
+          "statement": "Changed operating load or state",
+          "status": "possible",
+          "evidence_ids": [
+            "case02-004",
+            "case02-005"
+          ]
+        }
+      ],
+      "recommended_checks": [
+        {
+          "id": "review_source_records",
+          "instruction": "Review the cited original source records and adapter settings.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case02-004",
+            "case02-005"
+          ]
+        },
+        {
+          "id": "review_operating_state",
+          "instruction": "Compare the observation with machine load, operating state and recent maintenance.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case02-004",
+            "case02-005"
+          ]
+        },
+        {
+          "id": "review_sensor",
+          "instruction": "Check raw sensor values, calibration and the normal baseline.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case02-004"
+          ]
+        },
+        {
+          "id": "review_controller",
+          "instruction": "Verify the original controller code, severity and machine state.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case02-005"
+          ]
+        }
+      ],
+      "cause_status": "unconfirmed",
+      "automatic_action_executed": false,
+      "uncertainty": [
+        "Adapter reports are not independently verified physical facts.",
+        "Compatible citation checks do not prove a hypothesis or validate source/model accuracy.",
+        "No cause probability or calibrated hypothesis ranking is estimated.",
+        "First scope freezes event records; original batch episode files may include later context."
+      ],
+      "validation": {
+        "valid_citations": true,
+        "compatible_catalogue_ids": true,
+        "unconfirmed_causes_only": true,
+        "recommendations_only": true
+      }
+    },
+    {
+      "incident_id": "episode-v1:asset-03:mechanical:case03-006:sensor_anomaly",
+      "asset_id": "asset-03",
+      "type": "sensor_anomaly",
+      "scope": "first",
+      "emitted_at": "2026-01-01T12:09:00+00:00",
+      "risk": "MEDIUM",
+      "risk_semantics": "Configured review priority, not calibrated safety rating",
+      "synthetic": true,
+      "method": "deterministic_catalogue",
+      "fallback_reason": null,
+      "observed_source_reports": [
+        {
+          "event_id": "case03-006",
+          "timestamp": "2026-01-01T12:09:00+00:00",
+          "modality": "sensor",
+          "kind": "sensor_anomaly",
+          "source_report": "Authored synthetic sensor_anomaly observation",
+          "source_id": "asset-03-sensor",
+          "evidence_ref": "synthetic://incident-demo/case03-006",
+          "synthetic": true
+        }
+      ],
+      "possible_explanations": [
+        {
+          "id": "operating_state_change",
+          "statement": "Changed operating load or state",
+          "status": "possible",
+          "evidence_ids": [
+            "case03-006"
+          ]
+        },
+        {
+          "id": "measurement_issue",
+          "statement": "Sensor, microphone or recording issue",
+          "status": "possible",
+          "evidence_ids": [
+            "case03-006"
+          ]
+        },
+        {
+          "id": "mechanical_condition",
+          "statement": "Mechanical condition requiring inspection",
+          "status": "possible",
+          "evidence_ids": [
+            "case03-006"
+          ]
+        }
+      ],
+      "recommended_checks": [
+        {
+          "id": "review_source_records",
+          "instruction": "Review the cited original source records and adapter settings.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case03-006"
+          ]
+        },
+        {
+          "id": "review_operating_state",
+          "instruction": "Compare the observation with machine load, operating state and recent maintenance.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case03-006"
+          ]
+        },
+        {
+          "id": "review_sensor",
+          "instruction": "Check raw sensor values, calibration and the normal baseline.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case03-006"
+          ]
+        },
+        {
+          "id": "qualified_inspection",
+          "instruction": "Request an inspection by a qualified technician before diagnosing a mechanical cause.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case03-006"
+          ]
+        }
+      ],
+      "cause_status": "unconfirmed",
+      "automatic_action_executed": false,
+      "uncertainty": [
+        "Adapter reports are not independently verified physical facts.",
+        "Compatible citation checks do not prove a hypothesis or validate source/model accuracy.",
+        "No cause probability or calibrated hypothesis ranking is estimated.",
+        "First scope freezes event records; original batch episode files may include later context."
+      ],
+      "validation": {
+        "valid_citations": true,
+        "compatible_catalogue_ids": true,
+        "unconfirmed_causes_only": true,
+        "recommendations_only": true
+      }
+    },
+    {
+      "incident_id": "episode-v1:asset-03:mechanical:case03-006:machine_degradation",
+      "asset_id": "asset-03",
+      "type": "machine_degradation",
+      "scope": "first",
+      "emitted_at": "2026-01-01T12:09:05+00:00",
+      "risk": "MEDIUM",
+      "risk_semantics": "Configured review priority, not calibrated safety rating",
+      "synthetic": true,
+      "method": "deterministic_catalogue",
+      "fallback_reason": null,
+      "observed_source_reports": [
+        {
+          "event_id": "case03-006",
+          "timestamp": "2026-01-01T12:09:00+00:00",
+          "modality": "sensor",
+          "kind": "sensor_anomaly",
+          "source_report": "Authored synthetic sensor_anomaly observation",
+          "source_id": "asset-03-sensor",
+          "evidence_ref": "synthetic://incident-demo/case03-006",
+          "synthetic": true
+        },
+        {
+          "event_id": "case03-007",
+          "timestamp": "2026-01-01T12:09:05+00:00",
+          "modality": "log",
+          "kind": "motor_warning",
+          "source_report": "Authored synthetic motor_warning observation",
+          "source_id": "asset-03-log",
+          "evidence_ref": "synthetic://incident-demo/case03-007",
+          "synthetic": true
+        }
+      ],
+      "possible_explanations": [
+        {
+          "id": "mechanical_condition",
+          "statement": "Mechanical condition requiring inspection",
+          "status": "possible",
+          "evidence_ids": [
+            "case03-006",
+            "case03-007"
+          ]
+        },
+        {
+          "id": "operating_state_change",
+          "statement": "Changed operating load or state",
+          "status": "possible",
+          "evidence_ids": [
+            "case03-006",
+            "case03-007"
+          ]
+        },
+        {
+          "id": "measurement_issue",
+          "statement": "Sensor, microphone or recording issue",
+          "status": "possible",
+          "evidence_ids": [
+            "case03-006"
+          ]
+        }
+      ],
+      "recommended_checks": [
+        {
+          "id": "review_source_records",
+          "instruction": "Review the cited original source records and adapter settings.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case03-006",
+            "case03-007"
+          ]
+        },
+        {
+          "id": "review_operating_state",
+          "instruction": "Compare the observation with machine load, operating state and recent maintenance.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case03-006",
+            "case03-007"
+          ]
+        },
+        {
+          "id": "review_sensor",
+          "instruction": "Check raw sensor values, calibration and the normal baseline.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case03-006"
+          ]
+        },
+        {
+          "id": "review_controller",
+          "instruction": "Verify the original controller code, severity and machine state.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case03-007"
+          ]
+        }
+      ],
+      "cause_status": "unconfirmed",
+      "automatic_action_executed": false,
+      "uncertainty": [
+        "Adapter reports are not independently verified physical facts.",
+        "Compatible citation checks do not prove a hypothesis or validate source/model accuracy.",
+        "No cause probability or calibrated hypothesis ranking is estimated.",
+        "First scope freezes event records; original batch episode files may include later context."
+      ],
+      "validation": {
+        "valid_citations": true,
+        "compatible_catalogue_ids": true,
+        "unconfirmed_causes_only": true,
+        "recommendations_only": true
+      }
+    },
+    {
+      "incident_id": "episode-v1:asset-03:mechanical:case03-006:operational_warning",
+      "asset_id": "asset-03",
+      "type": "operational_warning",
+      "scope": "first",
+      "emitted_at": "2026-01-01T12:09:05+00:00",
+      "risk": "MEDIUM",
+      "risk_semantics": "Configured review priority, not calibrated safety rating",
+      "synthetic": true,
+      "method": "deterministic_catalogue",
+      "fallback_reason": null,
+      "observed_source_reports": [
+        {
+          "event_id": "case03-006",
+          "timestamp": "2026-01-01T12:09:00+00:00",
+          "modality": "sensor",
+          "kind": "sensor_anomaly",
+          "source_report": "Authored synthetic sensor_anomaly observation",
+          "source_id": "asset-03-sensor",
+          "evidence_ref": "synthetic://incident-demo/case03-006",
+          "synthetic": true
+        },
+        {
+          "event_id": "case03-007",
+          "timestamp": "2026-01-01T12:09:05+00:00",
+          "modality": "log",
+          "kind": "motor_warning",
+          "source_report": "Authored synthetic motor_warning observation",
+          "source_id": "asset-03-log",
+          "evidence_ref": "synthetic://incident-demo/case03-007",
+          "synthetic": true
+        }
+      ],
+      "possible_explanations": [
+        {
+          "id": "operating_state_change",
+          "statement": "Changed operating load or state",
+          "status": "possible",
+          "evidence_ids": [
+            "case03-006",
+            "case03-007"
+          ]
+        },
+        {
+          "id": "controller_issue",
+          "statement": "Controller or instrument reporting issue",
+          "status": "possible",
+          "evidence_ids": [
+            "case03-007"
+          ]
+        },
+        {
+          "id": "mechanical_condition",
+          "statement": "Mechanical condition requiring inspection",
+          "status": "possible",
+          "evidence_ids": [
+            "case03-006",
+            "case03-007"
+          ]
+        }
+      ],
+      "recommended_checks": [
+        {
+          "id": "review_source_records",
+          "instruction": "Review the cited original source records and adapter settings.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case03-006",
+            "case03-007"
+          ]
+        },
+        {
+          "id": "review_operating_state",
+          "instruction": "Compare the observation with machine load, operating state and recent maintenance.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case03-006",
+            "case03-007"
+          ]
+        },
+        {
+          "id": "review_sensor",
+          "instruction": "Check raw sensor values, calibration and the normal baseline.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case03-006"
+          ]
+        },
+        {
+          "id": "review_controller",
+          "instruction": "Verify the original controller code, severity and machine state.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case03-007"
+          ]
+        }
+      ],
+      "cause_status": "unconfirmed",
+      "automatic_action_executed": false,
+      "uncertainty": [
+        "Adapter reports are not independently verified physical facts.",
+        "Compatible citation checks do not prove a hypothesis or validate source/model accuracy.",
+        "No cause probability or calibrated hypothesis ranking is estimated.",
+        "First scope freezes event records; original batch episode files may include later context."
+      ],
+      "validation": {
+        "valid_citations": true,
+        "compatible_catalogue_ids": true,
+        "unconfirmed_causes_only": true,
+        "recommendations_only": true
+      }
+    },
+    {
+      "incident_id": "episode-v1:asset-03:mechanical:case03-006:abnormal_shutdown",
+      "asset_id": "asset-03",
+      "type": "abnormal_shutdown",
+      "scope": "first",
+      "emitted_at": "2026-01-01T12:09:15+00:00",
+      "risk": "HIGH",
+      "risk_semantics": "Configured review priority, not calibrated safety rating",
+      "synthetic": true,
+      "method": "deterministic_catalogue",
+      "fallback_reason": null,
+      "observed_source_reports": [
+        {
+          "event_id": "case03-006",
+          "timestamp": "2026-01-01T12:09:00+00:00",
+          "modality": "sensor",
+          "kind": "sensor_anomaly",
+          "source_report": "Authored synthetic sensor_anomaly observation",
+          "source_id": "asset-03-sensor",
+          "evidence_ref": "synthetic://incident-demo/case03-006",
+          "synthetic": true
+        },
+        {
+          "event_id": "case03-007",
+          "timestamp": "2026-01-01T12:09:05+00:00",
+          "modality": "log",
+          "kind": "motor_warning",
+          "source_report": "Authored synthetic motor_warning observation",
+          "source_id": "asset-03-log",
+          "evidence_ref": "synthetic://incident-demo/case03-007",
+          "synthetic": true
+        },
+        {
+          "event_id": "case03-008",
+          "timestamp": "2026-01-01T12:09:15+00:00",
+          "modality": "log",
+          "kind": "shutdown",
+          "source_report": "Authored synthetic shutdown observation",
+          "source_id": "asset-03-log",
+          "evidence_ref": "synthetic://incident-demo/case03-008",
+          "synthetic": true
+        }
+      ],
+      "possible_explanations": [
+        {
+          "id": "protective_or_manual_stop",
+          "statement": "Protective or manual stopping condition",
+          "status": "possible",
+          "evidence_ids": [
+            "case03-008"
+          ]
+        },
+        {
+          "id": "controller_issue",
+          "statement": "Controller or instrument reporting issue",
+          "status": "possible",
+          "evidence_ids": [
+            "case03-007",
+            "case03-008"
+          ]
+        },
+        {
+          "id": "operating_state_change",
+          "statement": "Changed operating load or state",
+          "status": "possible",
+          "evidence_ids": [
+            "case03-006",
+            "case03-007",
+            "case03-008"
+          ]
+        }
+      ],
+      "recommended_checks": [
+        {
+          "id": "review_source_records",
+          "instruction": "Review the cited original source records and adapter settings.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case03-006",
+            "case03-007",
+            "case03-008"
+          ]
+        },
+        {
+          "id": "review_operating_state",
+          "instruction": "Compare the observation with machine load, operating state and recent maintenance.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case03-006",
+            "case03-007",
+            "case03-008"
+          ]
+        },
+        {
+          "id": "review_sensor",
+          "instruction": "Check raw sensor values, calibration and the normal baseline.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case03-006"
+          ]
+        },
+        {
+          "id": "review_controller",
+          "instruction": "Verify the original controller code, severity and machine state.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case03-007",
+            "case03-008"
+          ]
+        }
+      ],
+      "cause_status": "unconfirmed",
+      "automatic_action_executed": false,
+      "uncertainty": [
+        "Adapter reports are not independently verified physical facts.",
+        "Compatible citation checks do not prove a hypothesis or validate source/model accuracy.",
+        "No cause probability or calibrated hypothesis ranking is estimated.",
+        "First scope freezes event records; original batch episode files may include later context."
+      ],
+      "validation": {
+        "valid_citations": true,
+        "compatible_catalogue_ids": true,
+        "unconfirmed_causes_only": true,
+        "recommendations_only": true
+      }
+    },
+    {
+      "incident_id": "episode-v1:asset-04:mechanical:case04-009:acoustic_anomaly",
+      "asset_id": "asset-04",
+      "type": "acoustic_anomaly",
+      "scope": "first",
+      "emitted_at": "2026-01-01T12:12:00+00:00",
+      "risk": "MEDIUM",
+      "risk_semantics": "Configured review priority, not calibrated safety rating",
+      "synthetic": true,
+      "method": "deterministic_catalogue",
+      "fallback_reason": null,
+      "observed_source_reports": [
+        {
+          "event_id": "case04-009",
+          "timestamp": "2026-01-01T12:12:00+00:00",
+          "modality": "audio",
+          "kind": "abnormal_noise",
+          "source_report": "Authored synthetic abnormal_noise observation",
+          "source_id": "asset-04-audio",
+          "evidence_ref": "synthetic://incident-demo/case04-009",
+          "synthetic": true
+        }
+      ],
+      "possible_explanations": [
+        {
+          "id": "background_noise",
+          "statement": "Background sound unrelated to machine health",
+          "status": "possible",
+          "evidence_ids": [
+            "case04-009"
+          ]
+        },
+        {
+          "id": "measurement_issue",
+          "statement": "Sensor, microphone or recording issue",
+          "status": "possible",
+          "evidence_ids": [
+            "case04-009"
+          ]
+        },
+        {
+          "id": "mechanical_condition",
+          "statement": "Mechanical condition requiring inspection",
+          "status": "possible",
+          "evidence_ids": [
+            "case04-009"
+          ]
+        }
+      ],
+      "recommended_checks": [
+        {
+          "id": "review_source_records",
+          "instruction": "Review the cited original source records and adapter settings.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case04-009"
+          ]
+        },
+        {
+          "id": "review_operating_state",
+          "instruction": "Compare the observation with machine load, operating state and recent maintenance.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case04-009"
+          ]
+        },
+        {
+          "id": "review_audio",
+          "instruction": "Listen to the cited segment and check gain, background sound and microphone placement.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case04-009"
+          ]
+        },
+        {
+          "id": "qualified_inspection",
+          "instruction": "Request an inspection by a qualified technician before diagnosing a mechanical cause.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case04-009"
+          ]
+        }
+      ],
+      "cause_status": "unconfirmed",
+      "automatic_action_executed": false,
+      "uncertainty": [
+        "Adapter reports are not independently verified physical facts.",
+        "Compatible citation checks do not prove a hypothesis or validate source/model accuracy.",
+        "No cause probability or calibrated hypothesis ranking is estimated.",
+        "First scope freezes event records; original batch episode files may include later context."
+      ],
+      "validation": {
+        "valid_citations": true,
+        "compatible_catalogue_ids": true,
+        "unconfirmed_causes_only": true,
+        "recommendations_only": true
+      }
+    },
+    {
+      "incident_id": "episode-v1:asset-04:mechanical:case04-009:machine_degradation",
+      "asset_id": "asset-04",
+      "type": "machine_degradation",
+      "scope": "first",
+      "emitted_at": "2026-01-01T12:12:06+00:00",
+      "risk": "MEDIUM",
+      "risk_semantics": "Configured review priority, not calibrated safety rating",
+      "synthetic": true,
+      "method": "deterministic_catalogue",
+      "fallback_reason": null,
+      "observed_source_reports": [
+        {
+          "event_id": "case04-009",
+          "timestamp": "2026-01-01T12:12:00+00:00",
+          "modality": "audio",
+          "kind": "abnormal_noise",
+          "source_report": "Authored synthetic abnormal_noise observation",
+          "source_id": "asset-04-audio",
+          "evidence_ref": "synthetic://incident-demo/case04-009",
+          "synthetic": true
+        },
+        {
+          "event_id": "case04-010",
+          "timestamp": "2026-01-01T12:12:06+00:00",
+          "modality": "log",
+          "kind": "motor_warning",
+          "source_report": "Authored synthetic motor_warning observation",
+          "source_id": "asset-04-log",
+          "evidence_ref": "synthetic://incident-demo/case04-010",
+          "synthetic": true
+        }
+      ],
+      "possible_explanations": [
+        {
+          "id": "mechanical_condition",
+          "statement": "Mechanical condition requiring inspection",
+          "status": "possible",
+          "evidence_ids": [
+            "case04-009",
+            "case04-010"
+          ]
+        },
+        {
+          "id": "operating_state_change",
+          "statement": "Changed operating load or state",
+          "status": "possible",
+          "evidence_ids": [
+            "case04-009",
+            "case04-010"
+          ]
+        },
+        {
+          "id": "measurement_issue",
+          "statement": "Sensor, microphone or recording issue",
+          "status": "possible",
+          "evidence_ids": [
+            "case04-009"
+          ]
+        }
+      ],
+      "recommended_checks": [
+        {
+          "id": "review_source_records",
+          "instruction": "Review the cited original source records and adapter settings.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case04-009",
+            "case04-010"
+          ]
+        },
+        {
+          "id": "review_operating_state",
+          "instruction": "Compare the observation with machine load, operating state and recent maintenance.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case04-009",
+            "case04-010"
+          ]
+        },
+        {
+          "id": "review_audio",
+          "instruction": "Listen to the cited segment and check gain, background sound and microphone placement.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case04-009"
+          ]
+        },
+        {
+          "id": "review_controller",
+          "instruction": "Verify the original controller code, severity and machine state.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case04-010"
+          ]
+        }
+      ],
+      "cause_status": "unconfirmed",
+      "automatic_action_executed": false,
+      "uncertainty": [
+        "Adapter reports are not independently verified physical facts.",
+        "Compatible citation checks do not prove a hypothesis or validate source/model accuracy.",
+        "No cause probability or calibrated hypothesis ranking is estimated.",
+        "First scope freezes event records; original batch episode files may include later context."
+      ],
+      "validation": {
+        "valid_citations": true,
+        "compatible_catalogue_ids": true,
+        "unconfirmed_causes_only": true,
+        "recommendations_only": true
+      }
+    },
+    {
+      "incident_id": "episode-v1:asset-04:mechanical:case04-009:operational_warning",
+      "asset_id": "asset-04",
+      "type": "operational_warning",
+      "scope": "first",
+      "emitted_at": "2026-01-01T12:12:06+00:00",
+      "risk": "MEDIUM",
+      "risk_semantics": "Configured review priority, not calibrated safety rating",
+      "synthetic": true,
+      "method": "deterministic_catalogue",
+      "fallback_reason": null,
+      "observed_source_reports": [
+        {
+          "event_id": "case04-009",
+          "timestamp": "2026-01-01T12:12:00+00:00",
+          "modality": "audio",
+          "kind": "abnormal_noise",
+          "source_report": "Authored synthetic abnormal_noise observation",
+          "source_id": "asset-04-audio",
+          "evidence_ref": "synthetic://incident-demo/case04-009",
+          "synthetic": true
+        },
+        {
+          "event_id": "case04-010",
+          "timestamp": "2026-01-01T12:12:06+00:00",
+          "modality": "log",
+          "kind": "motor_warning",
+          "source_report": "Authored synthetic motor_warning observation",
+          "source_id": "asset-04-log",
+          "evidence_ref": "synthetic://incident-demo/case04-010",
+          "synthetic": true
+        }
+      ],
+      "possible_explanations": [
+        {
+          "id": "operating_state_change",
+          "statement": "Changed operating load or state",
+          "status": "possible",
+          "evidence_ids": [
+            "case04-009",
+            "case04-010"
+          ]
+        },
+        {
+          "id": "controller_issue",
+          "statement": "Controller or instrument reporting issue",
+          "status": "possible",
+          "evidence_ids": [
+            "case04-010"
+          ]
+        },
+        {
+          "id": "mechanical_condition",
+          "statement": "Mechanical condition requiring inspection",
+          "status": "possible",
+          "evidence_ids": [
+            "case04-009",
+            "case04-010"
+          ]
+        }
+      ],
+      "recommended_checks": [
+        {
+          "id": "review_source_records",
+          "instruction": "Review the cited original source records and adapter settings.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case04-009",
+            "case04-010"
+          ]
+        },
+        {
+          "id": "review_operating_state",
+          "instruction": "Compare the observation with machine load, operating state and recent maintenance.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case04-009",
+            "case04-010"
+          ]
+        },
+        {
+          "id": "review_audio",
+          "instruction": "Listen to the cited segment and check gain, background sound and microphone placement.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case04-009"
+          ]
+        },
+        {
+          "id": "review_controller",
+          "instruction": "Verify the original controller code, severity and machine state.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case04-010"
+          ]
+        }
+      ],
+      "cause_status": "unconfirmed",
+      "automatic_action_executed": false,
+      "uncertainty": [
+        "Adapter reports are not independently verified physical facts.",
+        "Compatible citation checks do not prove a hypothesis or validate source/model accuracy.",
+        "No cause probability or calibrated hypothesis ranking is estimated.",
+        "First scope freezes event records; original batch episode files may include later context."
+      ],
+      "validation": {
+        "valid_citations": true,
+        "compatible_catalogue_ids": true,
+        "unconfirmed_causes_only": true,
+        "recommendations_only": true
+      }
+    },
+    {
+      "incident_id": "episode-v1:asset-05:mechanical:case05-011:sensor_anomaly",
+      "asset_id": "asset-05",
+      "type": "sensor_anomaly",
+      "scope": "first",
+      "emitted_at": "2026-01-01T12:15:00+00:00",
+      "risk": "MEDIUM",
+      "risk_semantics": "Configured review priority, not calibrated safety rating",
+      "synthetic": true,
+      "method": "deterministic_catalogue",
+      "fallback_reason": null,
+      "observed_source_reports": [
+        {
+          "event_id": "case05-011",
+          "timestamp": "2026-01-01T12:15:00+00:00",
+          "modality": "sensor",
+          "kind": "sensor_anomaly",
+          "source_report": "Authored synthetic sensor_anomaly observation",
+          "source_id": "asset-05-sensor",
+          "evidence_ref": "synthetic://incident-demo/case05-011",
+          "synthetic": true
+        }
+      ],
+      "possible_explanations": [
+        {
+          "id": "operating_state_change",
+          "statement": "Changed operating load or state",
+          "status": "possible",
+          "evidence_ids": [
+            "case05-011"
+          ]
+        },
+        {
+          "id": "measurement_issue",
+          "statement": "Sensor, microphone or recording issue",
+          "status": "possible",
+          "evidence_ids": [
+            "case05-011"
+          ]
+        },
+        {
+          "id": "mechanical_condition",
+          "statement": "Mechanical condition requiring inspection",
+          "status": "possible",
+          "evidence_ids": [
+            "case05-011"
+          ]
+        }
+      ],
+      "recommended_checks": [
+        {
+          "id": "review_source_records",
+          "instruction": "Review the cited original source records and adapter settings.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case05-011"
+          ]
+        },
+        {
+          "id": "review_operating_state",
+          "instruction": "Compare the observation with machine load, operating state and recent maintenance.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case05-011"
+          ]
+        },
+        {
+          "id": "review_sensor",
+          "instruction": "Check raw sensor values, calibration and the normal baseline.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case05-011"
+          ]
+        },
+        {
+          "id": "qualified_inspection",
+          "instruction": "Request an inspection by a qualified technician before diagnosing a mechanical cause.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case05-011"
+          ]
+        }
+      ],
+      "cause_status": "unconfirmed",
+      "automatic_action_executed": false,
+      "uncertainty": [
+        "Adapter reports are not independently verified physical facts.",
+        "Compatible citation checks do not prove a hypothesis or validate source/model accuracy.",
+        "No cause probability or calibrated hypothesis ranking is estimated.",
+        "First scope freezes event records; original batch episode files may include later context."
+      ],
+      "validation": {
+        "valid_citations": true,
+        "compatible_catalogue_ids": true,
+        "unconfirmed_causes_only": true,
+        "recommendations_only": true
+      }
+    },
+    {
+      "incident_id": "episode-v1:asset-06:mechanical:case06-014:sensor_anomaly",
+      "asset_id": "asset-06",
+      "type": "sensor_anomaly",
+      "scope": "first",
+      "emitted_at": "2026-01-01T12:18:00+00:00",
+      "risk": "MEDIUM",
+      "risk_semantics": "Configured review priority, not calibrated safety rating",
+      "synthetic": true,
+      "method": "deterministic_catalogue",
+      "fallback_reason": null,
+      "observed_source_reports": [
+        {
+          "event_id": "case06-014",
+          "timestamp": "2026-01-01T12:18:00+00:00",
+          "modality": "sensor",
+          "kind": "sensor_anomaly",
+          "source_report": "Authored synthetic sensor_anomaly observation",
+          "source_id": "asset-06-sensor",
+          "evidence_ref": "synthetic://incident-demo/case06-014",
+          "synthetic": true
+        }
+      ],
+      "possible_explanations": [
+        {
+          "id": "operating_state_change",
+          "statement": "Changed operating load or state",
+          "status": "possible",
+          "evidence_ids": [
+            "case06-014"
+          ]
+        },
+        {
+          "id": "measurement_issue",
+          "statement": "Sensor, microphone or recording issue",
+          "status": "possible",
+          "evidence_ids": [
+            "case06-014"
+          ]
+        },
+        {
+          "id": "mechanical_condition",
+          "statement": "Mechanical condition requiring inspection",
+          "status": "possible",
+          "evidence_ids": [
+            "case06-014"
+          ]
+        }
+      ],
+      "recommended_checks": [
+        {
+          "id": "review_source_records",
+          "instruction": "Review the cited original source records and adapter settings.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case06-014"
+          ]
+        },
+        {
+          "id": "review_operating_state",
+          "instruction": "Compare the observation with machine load, operating state and recent maintenance.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case06-014"
+          ]
+        },
+        {
+          "id": "review_sensor",
+          "instruction": "Check raw sensor values, calibration and the normal baseline.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case06-014"
+          ]
+        },
+        {
+          "id": "qualified_inspection",
+          "instruction": "Request an inspection by a qualified technician before diagnosing a mechanical cause.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case06-014"
+          ]
+        }
+      ],
+      "cause_status": "unconfirmed",
+      "automatic_action_executed": false,
+      "uncertainty": [
+        "Adapter reports are not independently verified physical facts.",
+        "Compatible citation checks do not prove a hypothesis or validate source/model accuracy.",
+        "No cause probability or calibrated hypothesis ranking is estimated.",
+        "First scope freezes event records; original batch episode files may include later context."
+      ],
+      "validation": {
+        "valid_citations": true,
+        "compatible_catalogue_ids": true,
+        "unconfirmed_causes_only": true,
+        "recommendations_only": true
+      }
+    },
+    {
+      "incident_id": "episode-v1:asset-06:mechanical:case06-015:acoustic_anomaly",
+      "asset_id": "asset-06",
+      "type": "acoustic_anomaly",
+      "scope": "first",
+      "emitted_at": "2026-01-01T12:20:00+00:00",
+      "risk": "MEDIUM",
+      "risk_semantics": "Configured review priority, not calibrated safety rating",
+      "synthetic": true,
+      "method": "deterministic_catalogue",
+      "fallback_reason": null,
+      "observed_source_reports": [
+        {
+          "event_id": "case06-015",
+          "timestamp": "2026-01-01T12:20:00+00:00",
+          "modality": "audio",
+          "kind": "abnormal_noise",
+          "source_report": "Authored synthetic abnormal_noise observation",
+          "source_id": "asset-06-audio",
+          "evidence_ref": "synthetic://incident-demo/case06-015",
+          "synthetic": true
+        }
+      ],
+      "possible_explanations": [
+        {
+          "id": "background_noise",
+          "statement": "Background sound unrelated to machine health",
+          "status": "possible",
+          "evidence_ids": [
+            "case06-015"
+          ]
+        },
+        {
+          "id": "measurement_issue",
+          "statement": "Sensor, microphone or recording issue",
+          "status": "possible",
+          "evidence_ids": [
+            "case06-015"
+          ]
+        },
+        {
+          "id": "mechanical_condition",
+          "statement": "Mechanical condition requiring inspection",
+          "status": "possible",
+          "evidence_ids": [
+            "case06-015"
+          ]
+        }
+      ],
+      "recommended_checks": [
+        {
+          "id": "review_source_records",
+          "instruction": "Review the cited original source records and adapter settings.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case06-015"
+          ]
+        },
+        {
+          "id": "review_operating_state",
+          "instruction": "Compare the observation with machine load, operating state and recent maintenance.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case06-015"
+          ]
+        },
+        {
+          "id": "review_audio",
+          "instruction": "Listen to the cited segment and check gain, background sound and microphone placement.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case06-015"
+          ]
+        },
+        {
+          "id": "qualified_inspection",
+          "instruction": "Request an inspection by a qualified technician before diagnosing a mechanical cause.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case06-015"
+          ]
+        }
+      ],
+      "cause_status": "unconfirmed",
+      "automatic_action_executed": false,
+      "uncertainty": [
+        "Adapter reports are not independently verified physical facts.",
+        "Compatible citation checks do not prove a hypothesis or validate source/model accuracy.",
+        "No cause probability or calibrated hypothesis ranking is estimated.",
+        "First scope freezes event records; original batch episode files may include later context."
+      ],
+      "validation": {
+        "valid_citations": true,
+        "compatible_catalogue_ids": true,
+        "unconfirmed_causes_only": true,
+        "recommendations_only": true
+      }
+    },
+    {
+      "incident_id": "episode-v1:asset-07:mechanical:case07-016:sensor_anomaly",
+      "asset_id": "asset-07",
+      "type": "sensor_anomaly",
+      "scope": "first",
+      "emitted_at": "2026-01-01T12:21:00+00:00",
+      "risk": "MEDIUM",
+      "risk_semantics": "Configured review priority, not calibrated safety rating",
+      "synthetic": true,
+      "method": "deterministic_catalogue",
+      "fallback_reason": null,
+      "observed_source_reports": [
+        {
+          "event_id": "case07-016",
+          "timestamp": "2026-01-01T12:21:00+00:00",
+          "modality": "sensor",
+          "kind": "sensor_anomaly",
+          "source_report": "Authored synthetic sensor_anomaly observation",
+          "source_id": "asset-07-sensor",
+          "evidence_ref": "synthetic://incident-demo/case07-016",
+          "synthetic": true
+        }
+      ],
+      "possible_explanations": [
+        {
+          "id": "operating_state_change",
+          "statement": "Changed operating load or state",
+          "status": "possible",
+          "evidence_ids": [
+            "case07-016"
+          ]
+        },
+        {
+          "id": "measurement_issue",
+          "statement": "Sensor, microphone or recording issue",
+          "status": "possible",
+          "evidence_ids": [
+            "case07-016"
+          ]
+        },
+        {
+          "id": "mechanical_condition",
+          "statement": "Mechanical condition requiring inspection",
+          "status": "possible",
+          "evidence_ids": [
+            "case07-016"
+          ]
+        }
+      ],
+      "recommended_checks": [
+        {
+          "id": "review_source_records",
+          "instruction": "Review the cited original source records and adapter settings.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case07-016"
+          ]
+        },
+        {
+          "id": "review_operating_state",
+          "instruction": "Compare the observation with machine load, operating state and recent maintenance.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case07-016"
+          ]
+        },
+        {
+          "id": "review_sensor",
+          "instruction": "Check raw sensor values, calibration and the normal baseline.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case07-016"
+          ]
+        },
+        {
+          "id": "qualified_inspection",
+          "instruction": "Request an inspection by a qualified technician before diagnosing a mechanical cause.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case07-016"
+          ]
+        }
+      ],
+      "cause_status": "unconfirmed",
+      "automatic_action_executed": false,
+      "uncertainty": [
+        "Adapter reports are not independently verified physical facts.",
+        "Compatible citation checks do not prove a hypothesis or validate source/model accuracy.",
+        "No cause probability or calibrated hypothesis ranking is estimated.",
+        "First scope freezes event records; original batch episode files may include later context."
+      ],
+      "validation": {
+        "valid_citations": true,
+        "compatible_catalogue_ids": true,
+        "unconfirmed_causes_only": true,
+        "recommendations_only": true
+      }
+    },
+    {
+      "incident_id": "episode-v1:asset-08:mechanical:case08-018:sensor_anomaly",
+      "asset_id": "asset-08",
+      "type": "sensor_anomaly",
+      "scope": "first",
+      "emitted_at": "2026-01-01T12:24:00+00:00",
+      "risk": "MEDIUM",
+      "risk_semantics": "Configured review priority, not calibrated safety rating",
+      "synthetic": true,
+      "method": "deterministic_catalogue",
+      "fallback_reason": null,
+      "observed_source_reports": [
+        {
+          "event_id": "case08-018",
+          "timestamp": "2026-01-01T12:24:00+00:00",
+          "modality": "sensor",
+          "kind": "sensor_anomaly",
+          "source_report": "Authored synthetic sensor_anomaly observation",
+          "source_id": "asset-08-sensor",
+          "evidence_ref": "synthetic://incident-demo/case08-018",
+          "synthetic": true
+        }
+      ],
+      "possible_explanations": [
+        {
+          "id": "operating_state_change",
+          "statement": "Changed operating load or state",
+          "status": "possible",
+          "evidence_ids": [
+            "case08-018"
+          ]
+        },
+        {
+          "id": "measurement_issue",
+          "statement": "Sensor, microphone or recording issue",
+          "status": "possible",
+          "evidence_ids": [
+            "case08-018"
+          ]
+        },
+        {
+          "id": "mechanical_condition",
+          "statement": "Mechanical condition requiring inspection",
+          "status": "possible",
+          "evidence_ids": [
+            "case08-018"
+          ]
+        }
+      ],
+      "recommended_checks": [
+        {
+          "id": "review_source_records",
+          "instruction": "Review the cited original source records and adapter settings.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case08-018"
+          ]
+        },
+        {
+          "id": "review_operating_state",
+          "instruction": "Compare the observation with machine load, operating state and recent maintenance.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case08-018"
+          ]
+        },
+        {
+          "id": "review_sensor",
+          "instruction": "Check raw sensor values, calibration and the normal baseline.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case08-018"
+          ]
+        },
+        {
+          "id": "qualified_inspection",
+          "instruction": "Request an inspection by a qualified technician before diagnosing a mechanical cause.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case08-018"
+          ]
+        }
+      ],
+      "cause_status": "unconfirmed",
+      "automatic_action_executed": false,
+      "uncertainty": [
+        "Adapter reports are not independently verified physical facts.",
+        "Compatible citation checks do not prove a hypothesis or validate source/model accuracy.",
+        "No cause probability or calibrated hypothesis ranking is estimated.",
+        "First scope freezes event records; original batch episode files may include later context."
+      ],
+      "validation": {
+        "valid_citations": true,
+        "compatible_catalogue_ids": true,
+        "unconfirmed_causes_only": true,
+        "recommendations_only": true
+      }
+    },
+    {
+      "incident_id": "episode-v1:asset-08-peer:mechanical:case08-019:acoustic_anomaly",
+      "asset_id": "asset-08-peer",
+      "type": "acoustic_anomaly",
+      "scope": "first",
+      "emitted_at": "2026-01-01T12:24:04+00:00",
+      "risk": "MEDIUM",
+      "risk_semantics": "Configured review priority, not calibrated safety rating",
+      "synthetic": true,
+      "method": "deterministic_catalogue",
+      "fallback_reason": null,
+      "observed_source_reports": [
+        {
+          "event_id": "case08-019",
+          "timestamp": "2026-01-01T12:24:04+00:00",
+          "modality": "audio",
+          "kind": "abnormal_noise",
+          "source_report": "Authored synthetic abnormal_noise observation",
+          "source_id": "asset-08-peer-audio",
+          "evidence_ref": "synthetic://incident-demo/case08-019",
+          "synthetic": true
+        }
+      ],
+      "possible_explanations": [
+        {
+          "id": "background_noise",
+          "statement": "Background sound unrelated to machine health",
+          "status": "possible",
+          "evidence_ids": [
+            "case08-019"
+          ]
+        },
+        {
+          "id": "measurement_issue",
+          "statement": "Sensor, microphone or recording issue",
+          "status": "possible",
+          "evidence_ids": [
+            "case08-019"
+          ]
+        },
+        {
+          "id": "mechanical_condition",
+          "statement": "Mechanical condition requiring inspection",
+          "status": "possible",
+          "evidence_ids": [
+            "case08-019"
+          ]
+        }
+      ],
+      "recommended_checks": [
+        {
+          "id": "review_source_records",
+          "instruction": "Review the cited original source records and adapter settings.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case08-019"
+          ]
+        },
+        {
+          "id": "review_operating_state",
+          "instruction": "Compare the observation with machine load, operating state and recent maintenance.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case08-019"
+          ]
+        },
+        {
+          "id": "review_audio",
+          "instruction": "Listen to the cited segment and check gain, background sound and microphone placement.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case08-019"
+          ]
+        },
+        {
+          "id": "qualified_inspection",
+          "instruction": "Request an inspection by a qualified technician before diagnosing a mechanical cause.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case08-019"
+          ]
+        }
+      ],
+      "cause_status": "unconfirmed",
+      "automatic_action_executed": false,
+      "uncertainty": [
+        "Adapter reports are not independently verified physical facts.",
+        "Compatible citation checks do not prove a hypothesis or validate source/model accuracy.",
+        "No cause probability or calibrated hypothesis ranking is estimated.",
+        "First scope freezes event records; original batch episode files may include later context."
+      ],
+      "validation": {
+        "valid_citations": true,
+        "compatible_catalogue_ids": true,
+        "unconfirmed_causes_only": true,
+        "recommendations_only": true
+      }
+    },
+    {
+      "incident_id": "episode-v1:asset-09:mechanical:case09-020:sensor_anomaly",
+      "asset_id": "asset-09",
+      "type": "sensor_anomaly",
+      "scope": "first",
+      "emitted_at": "2026-01-01T12:27:00+00:00",
+      "risk": "MEDIUM",
+      "risk_semantics": "Configured review priority, not calibrated safety rating",
+      "synthetic": true,
+      "method": "deterministic_catalogue",
+      "fallback_reason": null,
+      "observed_source_reports": [
+        {
+          "event_id": "case09-020",
+          "timestamp": "2026-01-01T12:27:00+00:00",
+          "modality": "sensor",
+          "kind": "sensor_anomaly",
+          "source_report": "Authored synthetic sensor_anomaly observation",
+          "source_id": "asset-09-sensor",
+          "evidence_ref": "synthetic://incident-demo/case09-020",
+          "synthetic": true
+        }
+      ],
+      "possible_explanations": [
+        {
+          "id": "operating_state_change",
+          "statement": "Changed operating load or state",
+          "status": "possible",
+          "evidence_ids": [
+            "case09-020"
+          ]
+        },
+        {
+          "id": "measurement_issue",
+          "statement": "Sensor, microphone or recording issue",
+          "status": "possible",
+          "evidence_ids": [
+            "case09-020"
+          ]
+        },
+        {
+          "id": "mechanical_condition",
+          "statement": "Mechanical condition requiring inspection",
+          "status": "possible",
+          "evidence_ids": [
+            "case09-020"
+          ]
+        }
+      ],
+      "recommended_checks": [
+        {
+          "id": "review_source_records",
+          "instruction": "Review the cited original source records and adapter settings.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case09-020"
+          ]
+        },
+        {
+          "id": "review_operating_state",
+          "instruction": "Compare the observation with machine load, operating state and recent maintenance.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case09-020"
+          ]
+        },
+        {
+          "id": "review_sensor",
+          "instruction": "Check raw sensor values, calibration and the normal baseline.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case09-020"
+          ]
+        },
+        {
+          "id": "qualified_inspection",
+          "instruction": "Request an inspection by a qualified technician before diagnosing a mechanical cause.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case09-020"
+          ]
+        }
+      ],
+      "cause_status": "unconfirmed",
+      "automatic_action_executed": false,
+      "uncertainty": [
+        "Adapter reports are not independently verified physical facts.",
+        "Compatible citation checks do not prove a hypothesis or validate source/model accuracy.",
+        "No cause probability or calibrated hypothesis ranking is estimated.",
+        "First scope freezes event records; original batch episode files may include later context."
+      ],
+      "validation": {
+        "valid_citations": true,
+        "compatible_catalogue_ids": true,
+        "unconfirmed_causes_only": true,
+        "recommendations_only": true
+      }
+    },
+    {
+      "incident_id": "episode-v1:asset-09:mechanical:case09-020:machine_degradation",
+      "asset_id": "asset-09",
+      "type": "machine_degradation",
+      "scope": "first",
+      "emitted_at": "2026-01-01T12:27:04+00:00",
+      "risk": "MEDIUM",
+      "risk_semantics": "Configured review priority, not calibrated safety rating",
+      "synthetic": true,
+      "method": "deterministic_catalogue",
+      "fallback_reason": null,
+      "observed_source_reports": [
+        {
+          "event_id": "case09-020",
+          "timestamp": "2026-01-01T12:27:00+00:00",
+          "modality": "sensor",
+          "kind": "sensor_anomaly",
+          "source_report": "Authored synthetic sensor_anomaly observation",
+          "source_id": "asset-09-sensor",
+          "evidence_ref": "synthetic://incident-demo/case09-020",
+          "synthetic": true
+        },
+        {
+          "event_id": "case09-021",
+          "timestamp": "2026-01-01T12:27:04+00:00",
+          "modality": "audio",
+          "kind": "abnormal_noise",
+          "source_report": "Authored synthetic abnormal_noise observation",
+          "source_id": "asset-09-audio",
+          "evidence_ref": "synthetic://incident-demo/case09-021",
+          "synthetic": true
+        }
+      ],
+      "possible_explanations": [
+        {
+          "id": "mechanical_condition",
+          "statement": "Mechanical condition requiring inspection",
+          "status": "possible",
+          "evidence_ids": [
+            "case09-020",
+            "case09-021"
+          ]
+        },
+        {
+          "id": "operating_state_change",
+          "statement": "Changed operating load or state",
+          "status": "possible",
+          "evidence_ids": [
+            "case09-020",
+            "case09-021"
+          ]
+        },
+        {
+          "id": "measurement_issue",
+          "statement": "Sensor, microphone or recording issue",
+          "status": "possible",
+          "evidence_ids": [
+            "case09-020",
+            "case09-021"
+          ]
+        }
+      ],
+      "recommended_checks": [
+        {
+          "id": "review_source_records",
+          "instruction": "Review the cited original source records and adapter settings.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case09-020",
+            "case09-021"
+          ]
+        },
+        {
+          "id": "review_operating_state",
+          "instruction": "Compare the observation with machine load, operating state and recent maintenance.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case09-020",
+            "case09-021"
+          ]
+        },
+        {
+          "id": "review_sensor",
+          "instruction": "Check raw sensor values, calibration and the normal baseline.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case09-020"
+          ]
+        },
+        {
+          "id": "review_audio",
+          "instruction": "Listen to the cited segment and check gain, background sound and microphone placement.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case09-021"
+          ]
+        }
+      ],
+      "cause_status": "unconfirmed",
+      "automatic_action_executed": false,
+      "uncertainty": [
+        "Adapter reports are not independently verified physical facts.",
+        "Compatible citation checks do not prove a hypothesis or validate source/model accuracy.",
+        "No cause probability or calibrated hypothesis ranking is estimated.",
+        "First scope freezes event records; original batch episode files may include later context."
+      ],
+      "validation": {
+        "valid_citations": true,
+        "compatible_catalogue_ids": true,
+        "unconfirmed_causes_only": true,
+        "recommendations_only": true
+      }
+    },
+    {
+      "incident_id": "episode-v1:asset-09:mechanical:case09-020:acoustic_anomaly",
+      "asset_id": "asset-09",
+      "type": "acoustic_anomaly",
+      "scope": "first",
+      "emitted_at": "2026-01-01T12:27:04+00:00",
+      "risk": "MEDIUM",
+      "risk_semantics": "Configured review priority, not calibrated safety rating",
+      "synthetic": true,
+      "method": "deterministic_catalogue",
+      "fallback_reason": null,
+      "observed_source_reports": [
+        {
+          "event_id": "case09-020",
+          "timestamp": "2026-01-01T12:27:00+00:00",
+          "modality": "sensor",
+          "kind": "sensor_anomaly",
+          "source_report": "Authored synthetic sensor_anomaly observation",
+          "source_id": "asset-09-sensor",
+          "evidence_ref": "synthetic://incident-demo/case09-020",
+          "synthetic": true
+        },
+        {
+          "event_id": "case09-021",
+          "timestamp": "2026-01-01T12:27:04+00:00",
+          "modality": "audio",
+          "kind": "abnormal_noise",
+          "source_report": "Authored synthetic abnormal_noise observation",
+          "source_id": "asset-09-audio",
+          "evidence_ref": "synthetic://incident-demo/case09-021",
+          "synthetic": true
+        }
+      ],
+      "possible_explanations": [
+        {
+          "id": "background_noise",
+          "statement": "Background sound unrelated to machine health",
+          "status": "possible",
+          "evidence_ids": [
+            "case09-021"
+          ]
+        },
+        {
+          "id": "measurement_issue",
+          "statement": "Sensor, microphone or recording issue",
+          "status": "possible",
+          "evidence_ids": [
+            "case09-020",
+            "case09-021"
+          ]
+        },
+        {
+          "id": "mechanical_condition",
+          "statement": "Mechanical condition requiring inspection",
+          "status": "possible",
+          "evidence_ids": [
+            "case09-020",
+            "case09-021"
+          ]
+        }
+      ],
+      "recommended_checks": [
+        {
+          "id": "review_source_records",
+          "instruction": "Review the cited original source records and adapter settings.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case09-020",
+            "case09-021"
+          ]
+        },
+        {
+          "id": "review_operating_state",
+          "instruction": "Compare the observation with machine load, operating state and recent maintenance.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case09-020",
+            "case09-021"
+          ]
+        },
+        {
+          "id": "review_sensor",
+          "instruction": "Check raw sensor values, calibration and the normal baseline.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case09-020"
+          ]
+        },
+        {
+          "id": "review_audio",
+          "instruction": "Listen to the cited segment and check gain, background sound and microphone placement.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case09-021"
+          ]
+        }
+      ],
+      "cause_status": "unconfirmed",
+      "automatic_action_executed": false,
+      "uncertainty": [
+        "Adapter reports are not independently verified physical facts.",
+        "Compatible citation checks do not prove a hypothesis or validate source/model accuracy.",
+        "No cause probability or calibrated hypothesis ranking is estimated.",
+        "First scope freezes event records; original batch episode files may include later context."
+      ],
+      "validation": {
+        "valid_citations": true,
+        "compatible_catalogue_ids": true,
+        "unconfirmed_causes_only": true,
+        "recommendations_only": true
+      }
+    },
+    {
+      "incident_id": "episode-v1:asset-09:mechanical:case09-022:sensor_anomaly",
+      "asset_id": "asset-09",
+      "type": "sensor_anomaly",
+      "scope": "first",
+      "emitted_at": "2026-01-01T12:27:40+00:00",
+      "risk": "MEDIUM",
+      "risk_semantics": "Configured review priority, not calibrated safety rating",
+      "synthetic": true,
+      "method": "deterministic_catalogue",
+      "fallback_reason": null,
+      "observed_source_reports": [
+        {
+          "event_id": "case09-022",
+          "timestamp": "2026-01-01T12:27:40+00:00",
+          "modality": "sensor",
+          "kind": "sensor_anomaly",
+          "source_report": "Authored synthetic sensor_anomaly observation",
+          "source_id": "asset-09-sensor",
+          "evidence_ref": "synthetic://incident-demo/case09-022",
+          "synthetic": true
+        }
+      ],
+      "possible_explanations": [
+        {
+          "id": "operating_state_change",
+          "statement": "Changed operating load or state",
+          "status": "possible",
+          "evidence_ids": [
+            "case09-022"
+          ]
+        },
+        {
+          "id": "measurement_issue",
+          "statement": "Sensor, microphone or recording issue",
+          "status": "possible",
+          "evidence_ids": [
+            "case09-022"
+          ]
+        },
+        {
+          "id": "mechanical_condition",
+          "statement": "Mechanical condition requiring inspection",
+          "status": "possible",
+          "evidence_ids": [
+            "case09-022"
+          ]
+        }
+      ],
+      "recommended_checks": [
+        {
+          "id": "review_source_records",
+          "instruction": "Review the cited original source records and adapter settings.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case09-022"
+          ]
+        },
+        {
+          "id": "review_operating_state",
+          "instruction": "Compare the observation with machine load, operating state and recent maintenance.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case09-022"
+          ]
+        },
+        {
+          "id": "review_sensor",
+          "instruction": "Check raw sensor values, calibration and the normal baseline.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case09-022"
+          ]
+        },
+        {
+          "id": "qualified_inspection",
+          "instruction": "Request an inspection by a qualified technician before diagnosing a mechanical cause.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case09-022"
+          ]
+        }
+      ],
+      "cause_status": "unconfirmed",
+      "automatic_action_executed": false,
+      "uncertainty": [
+        "Adapter reports are not independently verified physical facts.",
+        "Compatible citation checks do not prove a hypothesis or validate source/model accuracy.",
+        "No cause probability or calibrated hypothesis ranking is estimated.",
+        "First scope freezes event records; original batch episode files may include later context."
+      ],
+      "validation": {
+        "valid_citations": true,
+        "compatible_catalogue_ids": true,
+        "unconfirmed_causes_only": true,
+        "recommendations_only": true
+      }
+    },
+    {
+      "incident_id": "episode-v1:asset-09:mechanical:case09-022:machine_degradation",
+      "asset_id": "asset-09",
+      "type": "machine_degradation",
+      "scope": "first",
+      "emitted_at": "2026-01-01T12:27:44+00:00",
+      "risk": "MEDIUM",
+      "risk_semantics": "Configured review priority, not calibrated safety rating",
+      "synthetic": true,
+      "method": "deterministic_catalogue",
+      "fallback_reason": null,
+      "observed_source_reports": [
+        {
+          "event_id": "case09-022",
+          "timestamp": "2026-01-01T12:27:40+00:00",
+          "modality": "sensor",
+          "kind": "sensor_anomaly",
+          "source_report": "Authored synthetic sensor_anomaly observation",
+          "source_id": "asset-09-sensor",
+          "evidence_ref": "synthetic://incident-demo/case09-022",
+          "synthetic": true
+        },
+        {
+          "event_id": "case09-023",
+          "timestamp": "2026-01-01T12:27:44+00:00",
+          "modality": "audio",
+          "kind": "abnormal_noise",
+          "source_report": "Authored synthetic abnormal_noise observation",
+          "source_id": "asset-09-audio",
+          "evidence_ref": "synthetic://incident-demo/case09-023",
+          "synthetic": true
+        }
+      ],
+      "possible_explanations": [
+        {
+          "id": "mechanical_condition",
+          "statement": "Mechanical condition requiring inspection",
+          "status": "possible",
+          "evidence_ids": [
+            "case09-022",
+            "case09-023"
+          ]
+        },
+        {
+          "id": "operating_state_change",
+          "statement": "Changed operating load or state",
+          "status": "possible",
+          "evidence_ids": [
+            "case09-022",
+            "case09-023"
+          ]
+        },
+        {
+          "id": "measurement_issue",
+          "statement": "Sensor, microphone or recording issue",
+          "status": "possible",
+          "evidence_ids": [
+            "case09-022",
+            "case09-023"
+          ]
+        }
+      ],
+      "recommended_checks": [
+        {
+          "id": "review_source_records",
+          "instruction": "Review the cited original source records and adapter settings.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case09-022",
+            "case09-023"
+          ]
+        },
+        {
+          "id": "review_operating_state",
+          "instruction": "Compare the observation with machine load, operating state and recent maintenance.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case09-022",
+            "case09-023"
+          ]
+        },
+        {
+          "id": "review_sensor",
+          "instruction": "Check raw sensor values, calibration and the normal baseline.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case09-022"
+          ]
+        },
+        {
+          "id": "review_audio",
+          "instruction": "Listen to the cited segment and check gain, background sound and microphone placement.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case09-023"
+          ]
+        }
+      ],
+      "cause_status": "unconfirmed",
+      "automatic_action_executed": false,
+      "uncertainty": [
+        "Adapter reports are not independently verified physical facts.",
+        "Compatible citation checks do not prove a hypothesis or validate source/model accuracy.",
+        "No cause probability or calibrated hypothesis ranking is estimated.",
+        "First scope freezes event records; original batch episode files may include later context."
+      ],
+      "validation": {
+        "valid_citations": true,
+        "compatible_catalogue_ids": true,
+        "unconfirmed_causes_only": true,
+        "recommendations_only": true
+      }
+    },
+    {
+      "incident_id": "episode-v1:asset-09:mechanical:case09-022:acoustic_anomaly",
+      "asset_id": "asset-09",
+      "type": "acoustic_anomaly",
+      "scope": "first",
+      "emitted_at": "2026-01-01T12:27:44+00:00",
+      "risk": "MEDIUM",
+      "risk_semantics": "Configured review priority, not calibrated safety rating",
+      "synthetic": true,
+      "method": "deterministic_catalogue",
+      "fallback_reason": null,
+      "observed_source_reports": [
+        {
+          "event_id": "case09-022",
+          "timestamp": "2026-01-01T12:27:40+00:00",
+          "modality": "sensor",
+          "kind": "sensor_anomaly",
+          "source_report": "Authored synthetic sensor_anomaly observation",
+          "source_id": "asset-09-sensor",
+          "evidence_ref": "synthetic://incident-demo/case09-022",
+          "synthetic": true
+        },
+        {
+          "event_id": "case09-023",
+          "timestamp": "2026-01-01T12:27:44+00:00",
+          "modality": "audio",
+          "kind": "abnormal_noise",
+          "source_report": "Authored synthetic abnormal_noise observation",
+          "source_id": "asset-09-audio",
+          "evidence_ref": "synthetic://incident-demo/case09-023",
+          "synthetic": true
+        }
+      ],
+      "possible_explanations": [
+        {
+          "id": "background_noise",
+          "statement": "Background sound unrelated to machine health",
+          "status": "possible",
+          "evidence_ids": [
+            "case09-023"
+          ]
+        },
+        {
+          "id": "measurement_issue",
+          "statement": "Sensor, microphone or recording issue",
+          "status": "possible",
+          "evidence_ids": [
+            "case09-022",
+            "case09-023"
+          ]
+        },
+        {
+          "id": "mechanical_condition",
+          "statement": "Mechanical condition requiring inspection",
+          "status": "possible",
+          "evidence_ids": [
+            "case09-022",
+            "case09-023"
+          ]
+        }
+      ],
+      "recommended_checks": [
+        {
+          "id": "review_source_records",
+          "instruction": "Review the cited original source records and adapter settings.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case09-022",
+            "case09-023"
+          ]
+        },
+        {
+          "id": "review_operating_state",
+          "instruction": "Compare the observation with machine load, operating state and recent maintenance.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case09-022",
+            "case09-023"
+          ]
+        },
+        {
+          "id": "review_sensor",
+          "instruction": "Check raw sensor values, calibration and the normal baseline.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case09-022"
+          ]
+        },
+        {
+          "id": "review_audio",
+          "instruction": "Listen to the cited segment and check gain, background sound and microphone placement.",
+          "status": "recommendation_only",
+          "evidence_ids": [
+            "case09-023"
+          ]
+        }
+      ],
+      "cause_status": "unconfirmed",
+      "automatic_action_executed": false,
+      "uncertainty": [
+        "Adapter reports are not independently verified physical facts.",
+        "Compatible citation checks do not prove a hypothesis or validate source/model accuracy.",
+        "No cause probability or calibrated hypothesis ranking is estimated.",
+        "First scope freezes event records; original batch episode files may include later context."
+      ],
+      "validation": {
+        "valid_citations": true,
+        "compatible_catalogue_ids": true,
+        "unconfirmed_causes_only": true,
+        "recommendations_only": true
+      }
+    }
+  ]
+}

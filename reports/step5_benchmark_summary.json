@@ -1,0 +1,598 @@
+{
+  "events_sha256": "84696b732e0c80adff7c2fa9fc7758c1605dd6904b3ef3408f44d6a957355619",
+  "labels_sha256": "502d099b9156e965b5d0d4faa59e8212351cb40ff375e9d8cb8964e786efb7b9",
+  "scope": "Ten authored synthetic adapter-event scenarios; downstream fusion benchmark only",
+  "synthetic": true,
+  "results": {
+    "all": {
+      "replay_run_id": "replay-985b4d522b127fe5e99c",
+      "observations": 24,
+      "first_alerts_all_categories": 23,
+      "metrics": {
+        "scope": "Ten authored synthetic adapter-event scenarios; downstream fusion benchmark only",
+        "synthetic": true,
+        "evaluation_types": [
+          "machine_degradation",
+          "restricted_zone",
+          "abnormal_shutdown"
+        ],
+        "tp": 7,
+        "fp": 0,
+        "fn": 1,
+        "precision": 1.0,
+        "recall": 0.875,
+        "f1": 0.9333333333333333,
+        "matched_detection_delay_median_seconds": 5.0,
+        "normal_asset_hours": 0.20972222222222223,
+        "false_first_alerts_during_normal_coverage": 0,
+        "false_alerts_per_normal_asset_hour": 0.0,
+        "matches": [
+          {
+            "label_id": "label-00-0",
+            "alert_id": "asset-00:machine_degradation:case00-000",
+            "asset_id": "asset-00",
+            "type": "machine_degradation",
+            "delay_seconds": 4.0
+          },
+          {
+            "label_id": "label-01-0",
+            "alert_id": "asset-01:restricted_zone:case01-003",
+            "asset_id": "asset-01",
+            "type": "restricted_zone",
+            "delay_seconds": 0.0
+          },
+          {
+            "label_id": "label-02-0",
+            "alert_id": "asset-02:abnormal_shutdown:case02-004",
+            "asset_id": "asset-02",
+            "type": "abnormal_shutdown",
+            "delay_seconds": 12.0
+          },
+          {
+            "label_id": "label-03-0",
+            "alert_id": "asset-03:machine_degradation:case03-006",
+            "asset_id": "asset-03",
+            "type": "machine_degradation",
+            "delay_seconds": 5.0
+          },
+          {
+            "label_id": "label-03-1",
+            "alert_id": "asset-03:abnormal_shutdown:case03-006",
+            "asset_id": "asset-03",
+            "type": "abnormal_shutdown",
+            "delay_seconds": 15.0
+          },
+          {
+            "label_id": "label-04-0",
+            "alert_id": "asset-04:machine_degradation:case04-009",
+            "asset_id": "asset-04",
+            "type": "machine_degradation",
+            "delay_seconds": 6.0
+          },
+          {
+            "label_id": "label-09-0",
+            "alert_id": "asset-09:machine_degradation:case09-020",
+            "asset_id": "asset-09",
+            "type": "machine_degradation",
+            "delay_seconds": 4.0
+          }
+        ],
+        "unmatched_predictions": [],
+        "missed_labels": [
+          "label-09-1"
+        ],
+        "ignored_report_categories": [
+          "acoustic_anomaly",
+          "operational_warning",
+          "sensor_anomaly"
+        ],
+        "matching": "maximum-cardinality one-to-one; identical asset and type; first alert in [label start, label end + 0s]; no early matching",
+        "limitations": [
+          "Scores measure incident fusion on supplied adapter observations, not raw perception accuracy.",
+          "Temporal cooccurrence is not causal diagnosis.",
+          "False alarms during fault coverage remain FP but are not counted in the normal-exposure rate."
+        ]
+      }
+    },
+    "sensor_only": {
+      "replay_run_id": "replay-2b2a50bd0e7c94dc9e5e",
+      "observations": 11,
+      "first_alerts_all_categories": 8,
+      "metrics": {
+        "scope": "Ten authored synthetic adapter-event scenarios; downstream fusion benchmark only",
+        "synthetic": true,
+        "evaluation_types": [
+          "machine_degradation",
+          "restricted_zone",
+          "abnormal_shutdown"
+        ],
+        "tp": 0,
+        "fp": 0,
+        "fn": 8,
+        "precision": null,
+        "recall": 0.0,
+        "f1": null,
+        "matched_detection_delay_median_seconds": null,
+        "normal_asset_hours": 0.20972222222222223,
+        "false_first_alerts_during_normal_coverage": 0,
+        "false_alerts_per_normal_asset_hour": 0.0,
+        "matches": [],
+        "unmatched_predictions": [],
+        "missed_labels": [
+          "label-00-0",
+          "label-01-0",
+          "label-02-0",
+          "label-03-0",
+          "label-03-1",
+          "label-04-0",
+          "label-09-0",
+          "label-09-1"
+        ],
+        "ignored_report_categories": [
+          "sensor_anomaly"
+        ],
+        "matching": "maximum-cardinality one-to-one; identical asset and type; first alert in [label start, label end + 0s]; no early matching",
+        "limitations": [
+          "Scores measure incident fusion on supplied adapter observations, not raw perception accuracy.",
+          "Temporal cooccurrence is not causal diagnosis.",
+          "False alarms during fault coverage remain FP but are not counted in the normal-exposure rate."
+        ]
+      }
+    },
+    "video_only": {
+      "replay_run_id": "replay-c0177f721607336c9da7",
+      "observations": 1,
+      "first_alerts_all_categories": 1,
+      "metrics": {
+        "scope": "Ten authored synthetic adapter-event scenarios; downstream fusion benchmark only",
+        "synthetic": true,
+        "evaluation_types": [
+          "machine_degradation",
+          "restricted_zone",
+          "abnormal_shutdown"
+        ],
+        "tp": 1,
+        "fp": 0,
+        "fn": 7,
+        "precision": 1.0,
+        "recall": 0.125,
+        "f1": 0.2222222222222222,
+        "matched_detection_delay_median_seconds": 0.0,
+        "normal_asset_hours": 0.20972222222222223,
+        "false_first_alerts_during_normal_coverage": 0,
+        "false_alerts_per_normal_asset_hour": 0.0,
+        "matches": [
+          {
+            "label_id": "label-01-0",
+            "alert_id": "asset-01:restricted_zone:case01-003",
+            "asset_id": "asset-01",
+            "type": "restricted_zone",
+            "delay_seconds": 0.0
+          }
+        ],
+        "unmatched_predictions": [],
+        "missed_labels": [
+          "label-00-0",
+          "label-02-0",
+          "label-03-0",
+          "label-03-1",
+          "label-04-0",
+          "label-09-0",
+          "label-09-1"
+        ],
+        "ignored_report_categories": [],
+        "matching": "maximum-cardinality one-to-one; identical asset and type; first alert in [label start, label end + 0s]; no early matching",
+        "limitations": [
+          "Scores measure incident fusion on supplied adapter observations, not raw perception accuracy.",
+          "Temporal cooccurrence is not causal diagnosis.",
+          "False alarms during fault coverage remain FP but are not counted in the normal-exposure rate."
+        ]
+      }
+    },
+    "audio_only": {
+      "replay_run_id": "replay-42ddfe9bbf30170d3a9d",
+      "observations": 7,
+      "first_alerts_all_categories": 5,
+      "metrics": {
+        "scope": "Ten authored synthetic adapter-event scenarios; downstream fusion benchmark only",
+        "synthetic": true,
+        "evaluation_types": [
+          "machine_degradation",
+          "restricted_zone",
+          "abnormal_shutdown"
+        ],
+        "tp": 0,
+        "fp": 0,
+        "fn": 8,
+        "precision": null,
+        "recall": 0.0,
+        "f1": null,
+        "matched_detection_delay_median_seconds": null,
+        "normal_asset_hours": 0.20972222222222223,
+        "false_first_alerts_during_normal_coverage": 0,
+        "false_alerts_per_normal_asset_hour": 0.0,
+        "matches": [],
+        "unmatched_predictions": [],
+        "missed_labels": [
+          "label-00-0",
+          "label-01-0",
+          "label-02-0",
+          "label-03-0",
+          "label-03-1",
+          "label-04-0",
+          "label-09-0",
+          "label-09-1"
+        ],
+        "ignored_report_categories": [
+          "acoustic_anomaly"
+        ],
+        "matching": "maximum-cardinality one-to-one; identical asset and type; first alert in [label start, label end + 0s]; no early matching",
+        "limitations": [
+          "Scores measure incident fusion on supplied adapter observations, not raw perception accuracy.",
+          "Temporal cooccurrence is not causal diagnosis.",
+          "False alarms during fault coverage remain FP but are not counted in the normal-exposure rate."
+        ]
+      }
+    },
+    "log_only": {
+      "replay_run_id": "replay-0353227f077195c473e6",
+      "observations": 5,
+      "first_alerts_all_categories": 4,
+      "metrics": {
+        "scope": "Ten authored synthetic adapter-event scenarios; downstream fusion benchmark only",
+        "synthetic": true,
+        "evaluation_types": [
+          "machine_degradation",
+          "restricted_zone",
+          "abnormal_shutdown"
+        ],
+        "tp": 1,
+        "fp": 0,
+        "fn": 7,
+        "precision": 1.0,
+        "recall": 0.125,
+        "f1": 0.2222222222222222,
+        "matched_detection_delay_median_seconds": 15.0,
+        "normal_asset_hours": 0.20972222222222223,
+        "false_first_alerts_during_normal_coverage": 0,
+        "false_alerts_per_normal_asset_hour": 0.0,
+        "matches": [
+          {
+            "label_id": "label-03-1",
+            "alert_id": "asset-03:abnormal_shutdown:case03-007",
+            "asset_id": "asset-03",
+            "type": "abnormal_shutdown",
+            "delay_seconds": 15.0
+          }
+        ],
+        "unmatched_predictions": [],
+        "missed_labels": [
+          "label-00-0",
+          "label-01-0",
+          "label-02-0",
+          "label-03-0",
+          "label-04-0",
+          "label-09-0",
+          "label-09-1"
+        ],
+        "ignored_report_categories": [
+          "operational_warning"
+        ],
+        "matching": "maximum-cardinality one-to-one; identical asset and type; first alert in [label start, label end + 0s]; no early matching",
+        "limitations": [
+          "Scores measure incident fusion on supplied adapter observations, not raw perception accuracy.",
+          "Temporal cooccurrence is not causal diagnosis.",
+          "False alarms during fault coverage remain FP but are not counted in the normal-exposure rate."
+        ]
+      }
+    },
+    "without_audio": {
+      "replay_run_id": "replay-7b17426fb8f1622d8f46",
+      "observations": 17,
+      "first_alerts_all_categories": 16,
+      "metrics": {
+        "scope": "Ten authored synthetic adapter-event scenarios; downstream fusion benchmark only",
+        "synthetic": true,
+        "evaluation_types": [
+          "machine_degradation",
+          "restricted_zone",
+          "abnormal_shutdown"
+        ],
+        "tp": 5,
+        "fp": 0,
+        "fn": 3,
+        "precision": 1.0,
+        "recall": 0.625,
+        "f1": 0.7692307692307693,
+        "matched_detection_delay_median_seconds": 7.0,
+        "normal_asset_hours": 0.20972222222222223,
+        "false_first_alerts_during_normal_coverage": 0,
+        "false_alerts_per_normal_asset_hour": 0.0,
+        "matches": [
+          {
+            "label_id": "label-00-0",
+            "alert_id": "asset-00:machine_degradation:case00-000",
+            "asset_id": "asset-00",
+            "type": "machine_degradation",
+            "delay_seconds": 7.0
+          },
+          {
+            "label_id": "label-01-0",
+            "alert_id": "asset-01:restricted_zone:case01-003",
+            "asset_id": "asset-01",
+            "type": "restricted_zone",
+            "delay_seconds": 0.0
+          },
+          {
+            "label_id": "label-02-0",
+            "alert_id": "asset-02:abnormal_shutdown:case02-004",
+            "asset_id": "asset-02",
+            "type": "abnormal_shutdown",
+            "delay_seconds": 12.0
+          },
+          {
+            "label_id": "label-03-0",
+            "alert_id": "asset-03:machine_degradation:case03-006",
+            "asset_id": "asset-03",
+            "type": "machine_degradation",
+            "delay_seconds": 5.0
+          },
+          {
+            "label_id": "label-03-1",
+            "alert_id": "asset-03:abnormal_shutdown:case03-006",
+            "asset_id": "asset-03",
+            "type": "abnormal_shutdown",
+            "delay_seconds": 15.0
+          }
+        ],
+        "unmatched_predictions": [],
+        "missed_labels": [
+          "label-04-0",
+          "label-09-0",
+          "label-09-1"
+        ],
+        "ignored_report_categories": [
+          "operational_warning",
+          "sensor_anomaly"
+        ],
+        "matching": "maximum-cardinality one-to-one; identical asset and type; first alert in [label start, label end + 0s]; no early matching",
+        "limitations": [
+          "Scores measure incident fusion on supplied adapter observations, not raw perception accuracy.",
+          "Temporal cooccurrence is not causal diagnosis.",
+          "False alarms during fault coverage remain FP but are not counted in the normal-exposure rate."
+        ]
+      }
+    },
+    "without_video": {
+      "replay_run_id": "replay-de3687e2b0968c308ef8",
+      "observations": 23,
+      "first_alerts_all_categories": 22,
+      "metrics": {
+        "scope": "Ten authored synthetic adapter-event scenarios; downstream fusion benchmark only",
+        "synthetic": true,
+        "evaluation_types": [
+          "machine_degradation",
+          "restricted_zone",
+          "abnormal_shutdown"
+        ],
+        "tp": 6,
+        "fp": 0,
+        "fn": 2,
+        "precision": 1.0,
+        "recall": 0.75,
+        "f1": 0.8571428571428571,
+        "matched_detection_delay_median_seconds": 5.5,
+        "normal_asset_hours": 0.20972222222222223,
+        "false_first_alerts_during_normal_coverage": 0,
+        "false_alerts_per_normal_asset_hour": 0.0,
+        "matches": [
+          {
+            "label_id": "label-00-0",
+            "alert_id": "asset-00:machine_degradation:case00-000",
+            "asset_id": "asset-00",
+            "type": "machine_degradation",
+            "delay_seconds": 4.0
+          },
+          {
+            "label_id": "label-02-0",
+            "alert_id": "asset-02:abnormal_shutdown:case02-004",
+            "asset_id": "asset-02",
+            "type": "abnormal_shutdown",
+            "delay_seconds": 12.0
+          },
+          {
+            "label_id": "label-03-0",
+            "alert_id": "asset-03:machine_degradation:case03-006",
+            "asset_id": "asset-03",
+            "type": "machine_degradation",
+            "delay_seconds": 5.0
+          },
+          {
+            "label_id": "label-03-1",
+            "alert_id": "asset-03:abnormal_shutdown:case03-006",
+            "asset_id": "asset-03",
+            "type": "abnormal_shutdown",
+            "delay_seconds": 15.0
+          },
+          {
+            "label_id": "label-04-0",
+            "alert_id": "asset-04:machine_degradation:case04-009",
+            "asset_id": "asset-04",
+            "type": "machine_degradation",
+            "delay_seconds": 6.0
+          },
+          {
+            "label_id": "label-09-0",
+            "alert_id": "asset-09:machine_degradation:case09-020",
+            "asset_id": "asset-09",
+            "type": "machine_degradation",
+            "delay_seconds": 4.0
+          }
+        ],
+        "unmatched_predictions": [],
+        "missed_labels": [
+          "label-01-0",
+          "label-09-1"
+        ],
+        "ignored_report_categories": [
+          "acoustic_anomaly",
+          "operational_warning",
+          "sensor_anomaly"
+        ],
+        "matching": "maximum-cardinality one-to-one; identical asset and type; first alert in [label start, label end + 0s]; no early matching",
+        "limitations": [
+          "Scores measure incident fusion on supplied adapter observations, not raw perception accuracy.",
+          "Temporal cooccurrence is not causal diagnosis.",
+          "False alarms during fault coverage remain FP but are not counted in the normal-exposure rate."
+        ]
+      }
+    },
+    "without_log": {
+      "replay_run_id": "replay-15b155cae919b82b77ac",
+      "observations": 19,
+      "first_alerts_all_categories": 16,
+      "metrics": {
+        "scope": "Ten authored synthetic adapter-event scenarios; downstream fusion benchmark only",
+        "synthetic": true,
+        "evaluation_types": [
+          "machine_degradation",
+          "restricted_zone",
+          "abnormal_shutdown"
+        ],
+        "tp": 3,
+        "fp": 0,
+        "fn": 5,
+        "precision": 1.0,
+        "recall": 0.375,
+        "f1": 0.5454545454545454,
+        "matched_detection_delay_median_seconds": 4.0,
+        "normal_asset_hours": 0.20972222222222223,
+        "false_first_alerts_during_normal_coverage": 0,
+        "false_alerts_per_normal_asset_hour": 0.0,
+        "matches": [
+          {
+            "label_id": "label-00-0",
+            "alert_id": "asset-00:machine_degradation:case00-000",
+            "asset_id": "asset-00",
+            "type": "machine_degradation",
+            "delay_seconds": 4.0
+          },
+          {
+            "label_id": "label-01-0",
+            "alert_id": "asset-01:restricted_zone:case01-003",
+            "asset_id": "asset-01",
+            "type": "restricted_zone",
+            "delay_seconds": 0.0
+          },
+          {
+            "label_id": "label-09-0",
+            "alert_id": "asset-09:machine_degradation:case09-020",
+            "asset_id": "asset-09",
+            "type": "machine_degradation",
+            "delay_seconds": 4.0
+          }
+        ],
+        "unmatched_predictions": [],
+        "missed_labels": [
+          "label-02-0",
+          "label-03-0",
+          "label-03-1",
+          "label-04-0",
+          "label-09-1"
+        ],
+        "ignored_report_categories": [
+          "acoustic_anomaly",
+          "sensor_anomaly"
+        ],
+        "matching": "maximum-cardinality one-to-one; identical asset and type; first alert in [label start, label end + 0s]; no early matching",
+        "limitations": [
+          "Scores measure incident fusion on supplied adapter observations, not raw perception accuracy.",
+          "Temporal cooccurrence is not causal diagnosis.",
+          "False alarms during fault coverage remain FP but are not counted in the normal-exposure rate."
+        ]
+      }
+    },
+    "audio_clock_plus30s": {
+      "replay_run_id": "replay-59163c825f0cdef4a45b",
+      "observations": 24,
+      "first_alerts_all_categories": 23,
+      "metrics": {
+        "scope": "Ten authored synthetic adapter-event scenarios; downstream fusion benchmark only",
+        "synthetic": true,
+        "evaluation_types": [
+          "machine_degradation",
+          "restricted_zone",
+          "abnormal_shutdown"
+        ],
+        "tp": 5,
+        "fp": 2,
+        "fn": 3,
+        "precision": 0.7142857142857143,
+        "recall": 0.625,
+        "f1": 0.6666666666666666,
+        "matched_detection_delay_median_seconds": 7.0,
+        "normal_asset_hours": 0.20972222222222223,
+        "false_first_alerts_during_normal_coverage": 0,
+        "false_alerts_per_normal_asset_hour": 0.0,
+        "matches": [
+          {
+            "label_id": "label-00-0",
+            "alert_id": "asset-00:machine_degradation:case00-000",
+            "asset_id": "asset-00",
+            "type": "machine_degradation",
+            "delay_seconds": 7.0
+          },
+          {
+            "label_id": "label-01-0",
+            "alert_id": "asset-01:restricted_zone:case01-003",
+            "asset_id": "asset-01",
+            "type": "restricted_zone",
+            "delay_seconds": 0.0
+          },
+          {
+            "label_id": "label-02-0",
+            "alert_id": "asset-02:abnormal_shutdown:case02-004",
+            "asset_id": "asset-02",
+            "type": "abnormal_shutdown",
+            "delay_seconds": 12.0
+          },
+          {
+            "label_id": "label-03-0",
+            "alert_id": "asset-03:machine_degradation:case03-006",
+            "asset_id": "asset-03",
+            "type": "machine_degradation",
+            "delay_seconds": 5.0
+          },
+          {
+            "label_id": "label-03-1",
+            "alert_id": "asset-03:abnormal_shutdown:case03-006",
+            "asset_id": "asset-03",
+            "type": "abnormal_shutdown",
+            "delay_seconds": 15.0
+          }
+        ],
+        "unmatched_predictions": [
+          "asset-04:machine_degradation:case04-010",
+          "asset-09:machine_degradation:case09-020"
+        ],
+        "missed_labels": [
+          "label-04-0",
+          "label-09-0",
+          "label-09-1"
+        ],
+        "ignored_report_categories": [
+          "acoustic_anomaly",
+          "operational_warning",
+          "sensor_anomaly"
+        ],
+        "matching": "maximum-cardinality one-to-one; identical asset and type; first alert in [label start, label end + 0s]; no early matching",
+        "limitations": [
+          "Scores measure incident fusion on supplied adapter observations, not raw perception accuracy.",
+          "Temporal cooccurrence is not causal diagnosis.",
+          "False alarms during fault coverage remain FP but are not counted in the normal-exposure rate."
+        ]
+      }
+    }
+  },
+  "note": "Fixed fusion-rule modality ablations on adapter events; not an independent perception-model benchmark."
+}

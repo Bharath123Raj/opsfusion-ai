@@ -1,0 +1,7 @@
+timestamp,asset_id,source_id,level,code,message,synthetic
+2026-01-01T10:00:00+00:00,warehouse-zone-01,controller-01,INFO,HEARTBEAT,Controller connected,true
+2026-01-01T10:00:07+00:00,warehouse-zone-01,controller-01,WARN,TEMP_WARNING,Temperature warning reported,true
+2026-01-01T10:00:12+00:00,warehouse-zone-01,controller-01,INFO,HEARTBEAT,Controller running,true
+2026-01-01T10:00:20+00:00,warehouse-zone-01,controller-01,ERROR,VIBRATION_WARNING,Vibration warning reported,true
+2026-01-01T10:00:22+00:00,warehouse-zone-01,controller-01,CRITICAL,UNMAPPED_CODE,Unknown code retained for review,true
+2026-01-01T10:00:26+00:00,warehouse-zone-01,controller-01,ERROR,PROTECTIVE_SHUTDOWN,Protective stop reported,true

@@ -1,0 +1,543 @@
+{
+  "schema_version": "1.0",
+  "engine": "deterministic_fusion_baseline_v1",
+  "incidents": [
+    {
+      "incident_id": "machine-a:machine_degradation:evt-0001",
+      "asset_id": "machine-a",
+      "type": "machine_degradation",
+      "risk": "HIGH",
+      "risk_basis": "Configured rule priority; not a validated safety rating.",
+      "start": "2026-01-01T10:00:00+00:00",
+      "end": "2026-01-01T10:00:30+00:00",
+      "detected_at": "2026-01-01T10:00:25+00:00",
+      "observed_facts": [
+        {
+          "event_id": "evt-0001",
+          "summary": "Synthetic vibration high observation on machine-a",
+          "evidence_ref": "synthetic://machine-a/evt-0001"
+        },
+        {
+          "event_id": "evt-0002",
+          "summary": "Synthetic motor warning observation on machine-a",
+          "evidence_ref": "synthetic://machine-a/evt-0002"
+        },
+        {
+          "event_id": "evt-0003",
+          "summary": "Synthetic abnormal noise observation on machine-a",
+          "evidence_ref": "synthetic://machine-a/evt-0003"
+        },
+        {
+          "event_id": "evt-0004",
+          "summary": "Synthetic recent repair observation on machine-a",
+          "evidence_ref": "synthetic://machine-a/evt-0004"
+        }
+      ],
+      "trigger_event_ids": [
+        "evt-0001",
+        "evt-0002",
+        "evt-0003"
+      ],
+      "hypothesis": {
+        "statement": "Possible mechanical degradation",
+        "status": "unconfirmed",
+        "alternatives": [
+          "Bearing wear",
+          "Loose mounting",
+          "Sensor or audio measurement error"
+        ]
+      },
+      "recommended_action": "Review vibration trend and inspect the machine with a qualified technician.",
+      "automatic_action_executed": false,
+      "synthetic": true,
+      "timeline": [
+        {
+          "event_id": "evt-0001",
+          "timestamp": "2026-01-01T10:00:00+00:00",
+          "asset_id": "machine-a",
+          "modality": "sensor",
+          "kind": "vibration_high",
+          "source_id": "machine-a-sensor",
+          "evidence_ref": "synthetic://machine-a/evt-0001",
+          "summary": "Synthetic vibration high observation on machine-a",
+          "confidence": 0.933,
+          "synthetic": true
+        },
+        {
+          "event_id": "evt-0002",
+          "timestamp": "2026-01-01T10:00:14+00:00",
+          "asset_id": "machine-a",
+          "modality": "log",
+          "kind": "motor_warning",
+          "source_id": "machine-a-log",
+          "evidence_ref": "synthetic://machine-a/evt-0002",
+          "summary": "Synthetic motor warning observation on machine-a",
+          "confidence": 0.853,
+          "synthetic": true
+        },
+        {
+          "event_id": "evt-0003",
+          "timestamp": "2026-01-01T10:00:25+00:00",
+          "asset_id": "machine-a",
+          "modality": "audio",
+          "kind": "abnormal_noise",
+          "source_id": "machine-a-audio",
+          "evidence_ref": "synthetic://machine-a/evt-0003",
+          "summary": "Synthetic abnormal noise observation on machine-a",
+          "confidence": 0.886,
+          "synthetic": true
+        },
+        {
+          "event_id": "evt-0004",
+          "timestamp": "2026-01-01T10:00:30+00:00",
+          "asset_id": "machine-a",
+          "modality": "maintenance",
+          "kind": "recent_repair",
+          "source_id": "machine-a-maintenance",
+          "evidence_ref": "synthetic://machine-a/evt-0004",
+          "summary": "Synthetic recent repair observation on machine-a",
+          "confidence": 0.879,
+          "synthetic": true
+        }
+      ]
+    },
+    {
+      "incident_id": "machine-b:restricted_zone:evt-0005",
+      "asset_id": "machine-b",
+      "type": "restricted_zone",
+      "risk": "HIGH",
+      "risk_basis": "Configured rule priority; not a validated safety rating.",
+      "start": "2026-01-01T10:10:00+00:00",
+      "end": "2026-01-01T10:10:00+00:00",
+      "detected_at": "2026-01-01T10:10:00+00:00",
+      "observed_facts": [
+        {
+          "event_id": "evt-0005",
+          "summary": "Synthetic zone entry observation on machine-b",
+          "evidence_ref": "synthetic://machine-b/evt-0005"
+        }
+      ],
+      "trigger_event_ids": [
+        "evt-0005"
+      ],
+      "hypothesis": {
+        "statement": "Possible restricted-zone safety violation",
+        "status": "unconfirmed",
+        "alternatives": [
+          "Unauthorized entry",
+          "Authorized maintenance entry",
+          "Vision detection error"
+        ]
+      },
+      "recommended_action": "Ask the safety operator to verify the camera evidence and access authorization.",
+      "automatic_action_executed": false,
+      "synthetic": true,
+      "timeline": [
+        {
+          "event_id": "evt-0005",
+          "timestamp": "2026-01-01T10:10:00+00:00",
+          "asset_id": "machine-b",
+          "modality": "video",
+          "kind": "zone_entry",
+          "source_id": "machine-b-video",
+          "evidence_ref": "synthetic://machine-b/evt-0005",
+          "summary": "Synthetic zone entry observation on machine-b",
+          "confidence": 0.946,
+          "synthetic": true
+        }
+      ]
+    },
+    {
+      "incident_id": "machine-c:machine_degradation:evt-0006",
+      "asset_id": "machine-c",
+      "type": "machine_degradation",
+      "risk": "MEDIUM",
+      "risk_basis": "Configured rule priority; not a validated safety rating.",
+      "start": "2026-01-01T10:20:00+00:00",
+      "end": "2026-01-01T10:20:35+00:00",
+      "detected_at": "2026-01-01T10:20:12+00:00",
+      "observed_facts": [
+        {
+          "event_id": "evt-0006",
+          "summary": "Synthetic temperature high observation on machine-c",
+          "evidence_ref": "synthetic://machine-c/evt-0006"
+        },
+        {
+          "event_id": "evt-0007",
+          "summary": "Synthetic motor warning observation on machine-c",
+          "evidence_ref": "synthetic://machine-c/evt-0007"
+        },
+        {
+          "event_id": "evt-0008",
+          "summary": "Synthetic shutdown observation on machine-c",
+          "evidence_ref": "synthetic://machine-c/evt-0008"
+        }
+      ],
+      "trigger_event_ids": [
+        "evt-0006",
+        "evt-0007"
+      ],
+      "hypothesis": {
+        "statement": "Possible mechanical degradation",
+        "status": "unconfirmed",
+        "alternatives": [
+          "Bearing wear",
+          "Loose mounting",
+          "Sensor or audio measurement error"
+        ]
+      },
+      "recommended_action": "Review vibration trend and inspect the machine with a qualified technician.",
+      "automatic_action_executed": false,
+      "synthetic": true,
+      "timeline": [
+        {
+          "event_id": "evt-0006",
+          "timestamp": "2026-01-01T10:20:00+00:00",
+          "asset_id": "machine-c",
+          "modality": "sensor",
+          "kind": "temperature_high",
+          "source_id": "machine-c-sensor",
+          "evidence_ref": "synthetic://machine-c/evt-0006",
+          "summary": "Synthetic temperature high observation on machine-c",
+          "confidence": 0.938,
+          "synthetic": true
+        },
+        {
+          "event_id": "evt-0007",
+          "timestamp": "2026-01-01T10:20:12+00:00",
+          "asset_id": "machine-c",
+          "modality": "log",
+          "kind": "motor_warning",
+          "source_id": "machine-c-log",
+          "evidence_ref": "synthetic://machine-c/evt-0007",
+          "summary": "Synthetic motor warning observation on machine-c",
+          "confidence": 0.966,
+          "synthetic": true
+        },
+        {
+          "event_id": "evt-0008",
+          "timestamp": "2026-01-01T10:20:35+00:00",
+          "asset_id": "machine-c",
+          "modality": "log",
+          "kind": "shutdown",
+          "source_id": "machine-c-log",
+          "evidence_ref": "synthetic://machine-c/evt-0008",
+          "summary": "Synthetic shutdown observation on machine-c",
+          "confidence": 0.861,
+          "synthetic": true
+        }
+      ]
+    },
+    {
+      "incident_id": "machine-c:abnormal_shutdown:evt-0006",
+      "asset_id": "machine-c",
+      "type": "abnormal_shutdown",
+      "risk": "HIGH",
+      "risk_basis": "Configured rule priority; not a validated safety rating.",
+      "start": "2026-01-01T10:20:00+00:00",
+      "end": "2026-01-01T10:20:35+00:00",
+      "detected_at": "2026-01-01T10:20:35+00:00",
+      "observed_facts": [
+        {
+          "event_id": "evt-0006",
+          "summary": "Synthetic temperature high observation on machine-c",
+          "evidence_ref": "synthetic://machine-c/evt-0006"
+        },
+        {
+          "event_id": "evt-0007",
+          "summary": "Synthetic motor warning observation on machine-c",
+          "evidence_ref": "synthetic://machine-c/evt-0007"
+        },
+        {
+          "event_id": "evt-0008",
+          "summary": "Synthetic shutdown observation on machine-c",
+          "evidence_ref": "synthetic://machine-c/evt-0008"
+        }
+      ],
+      "trigger_event_ids": [
+        "evt-0006",
+        "evt-0007",
+        "evt-0008"
+      ],
+      "hypothesis": {
+        "statement": "Shutdown following operational warnings",
+        "status": "unconfirmed",
+        "alternatives": [
+          "Protective shutdown",
+          "Manual stop",
+          "Power interruption"
+        ]
+      },
+      "recommended_action": "Review controller fault codes and operator records before restarting.",
+      "automatic_action_executed": false,
+      "synthetic": true,
+      "timeline": [
+        {
+          "event_id": "evt-0006",
+          "timestamp": "2026-01-01T10:20:00+00:00",
+          "asset_id": "machine-c",
+          "modality": "sensor",
+          "kind": "temperature_high",
+          "source_id": "machine-c-sensor",
+          "evidence_ref": "synthetic://machine-c/evt-0006",
+          "summary": "Synthetic temperature high observation on machine-c",
+          "confidence": 0.938,
+          "synthetic": true
+        },
+        {
+          "event_id": "evt-0007",
+          "timestamp": "2026-01-01T10:20:12+00:00",
+          "asset_id": "machine-c",
+          "modality": "log",
+          "kind": "motor_warning",
+          "source_id": "machine-c-log",
+          "evidence_ref": "synthetic://machine-c/evt-0007",
+          "summary": "Synthetic motor warning observation on machine-c",
+          "confidence": 0.966,
+          "synthetic": true
+        },
+        {
+          "event_id": "evt-0008",
+          "timestamp": "2026-01-01T10:20:35+00:00",
+          "asset_id": "machine-c",
+          "modality": "log",
+          "kind": "shutdown",
+          "source_id": "machine-c-log",
+          "evidence_ref": "synthetic://machine-c/evt-0008",
+          "summary": "Synthetic shutdown observation on machine-c",
+          "confidence": 0.861,
+          "synthetic": true
+        }
+      ]
+    }
+  ],
+  "event_graph": {
+    "nodes": [
+      {
+        "event_id": "evt-0001",
+        "timestamp": "2026-01-01T10:00:00+00:00",
+        "asset_id": "machine-a",
+        "modality": "sensor",
+        "kind": "vibration_high",
+        "source_id": "machine-a-sensor",
+        "evidence_ref": "synthetic://machine-a/evt-0001",
+        "summary": "Synthetic vibration high observation on machine-a",
+        "confidence": 0.933,
+        "synthetic": true
+      },
+      {
+        "event_id": "evt-0002",
+        "timestamp": "2026-01-01T10:00:14+00:00",
+        "asset_id": "machine-a",
+        "modality": "log",
+        "kind": "motor_warning",
+        "source_id": "machine-a-log",
+        "evidence_ref": "synthetic://machine-a/evt-0002",
+        "summary": "Synthetic motor warning observation on machine-a",
+        "confidence": 0.853,
+        "synthetic": true
+      },
+      {
+        "event_id": "evt-0003",
+        "timestamp": "2026-01-01T10:00:25+00:00",
+        "asset_id": "machine-a",
+        "modality": "audio",
+        "kind": "abnormal_noise",
+        "source_id": "machine-a-audio",
+        "evidence_ref": "synthetic://machine-a/evt-0003",
+        "summary": "Synthetic abnormal noise observation on machine-a",
+        "confidence": 0.886,
+        "synthetic": true
+      },
+      {
+        "event_id": "evt-0004",
+        "timestamp": "2026-01-01T10:00:30+00:00",
+        "asset_id": "machine-a",
+        "modality": "maintenance",
+        "kind": "recent_repair",
+        "source_id": "machine-a-maintenance",
+        "evidence_ref": "synthetic://machine-a/evt-0004",
+        "summary": "Synthetic recent repair observation on machine-a",
+        "confidence": 0.879,
+        "synthetic": true
+      },
+      {
+        "event_id": "evt-0005",
+        "timestamp": "2026-01-01T10:10:00+00:00",
+        "asset_id": "machine-b",
+        "modality": "video",
+        "kind": "zone_entry",
+        "source_id": "machine-b-video",
+        "evidence_ref": "synthetic://machine-b/evt-0005",
+        "summary": "Synthetic zone entry observation on machine-b",
+        "confidence": 0.946,
+        "synthetic": true
+      },
+      {
+        "event_id": "evt-0006",
+        "timestamp": "2026-01-01T10:20:00+00:00",
+        "asset_id": "machine-c",
+        "modality": "sensor",
+        "kind": "temperature_high",
+        "source_id": "machine-c-sensor",
+        "evidence_ref": "synthetic://machine-c/evt-0006",
+        "summary": "Synthetic temperature high observation on machine-c",
+        "confidence": 0.938,
+        "synthetic": true
+      },
+      {
+        "event_id": "evt-0007",
+        "timestamp": "2026-01-01T10:20:12+00:00",
+        "asset_id": "machine-c",
+        "modality": "log",
+        "kind": "motor_warning",
+        "source_id": "machine-c-log",
+        "evidence_ref": "synthetic://machine-c/evt-0007",
+        "summary": "Synthetic motor warning observation on machine-c",
+        "confidence": 0.966,
+        "synthetic": true
+      },
+      {
+        "event_id": "evt-0008",
+        "timestamp": "2026-01-01T10:20:35+00:00",
+        "asset_id": "machine-c",
+        "modality": "log",
+        "kind": "shutdown",
+        "source_id": "machine-c-log",
+        "evidence_ref": "synthetic://machine-c/evt-0008",
+        "summary": "Synthetic shutdown observation on machine-c",
+        "confidence": 0.861,
+        "synthetic": true
+      },
+      {
+        "event_id": "evt-0009",
+        "timestamp": "2026-01-01T10:30:00+00:00",
+        "asset_id": "machine-d",
+        "modality": "sensor",
+        "kind": "vibration_high",
+        "source_id": "machine-d-sensor",
+        "evidence_ref": "synthetic://machine-d/evt-0009",
+        "summary": "Synthetic vibration high observation on machine-d",
+        "confidence": 0.905,
+        "synthetic": true
+      },
+      {
+        "event_id": "evt-0010",
+        "timestamp": "2026-01-01T10:30:10+00:00",
+        "asset_id": "machine-d",
+        "modality": "sensor",
+        "kind": "vibration_high",
+        "source_id": "machine-d-sensor",
+        "evidence_ref": "synthetic://machine-d/evt-0010",
+        "summary": "Synthetic vibration high observation on machine-d",
+        "confidence": 0.854,
+        "synthetic": true
+      },
+      {
+        "event_id": "evt-0011",
+        "timestamp": "2026-01-01T10:40:00+00:00",
+        "asset_id": "machine-e",
+        "modality": "log",
+        "kind": "operator_note",
+        "source_id": "machine-e-log",
+        "evidence_ref": "synthetic://machine-e/evt-0011",
+        "summary": "Synthetic operator note observation on machine-e",
+        "confidence": 0.878,
+        "synthetic": true
+      },
+      {
+        "event_id": "evt-0012",
+        "timestamp": "2026-01-01T10:50:00+00:00",
+        "asset_id": "machine-f",
+        "modality": "sensor",
+        "kind": "vibration_high",
+        "source_id": "machine-f-sensor",
+        "evidence_ref": "synthetic://machine-f/evt-0012",
+        "summary": "Synthetic vibration high observation on machine-f",
+        "confidence": 0.916,
+        "synthetic": true
+      },
+      {
+        "event_id": "evt-0013",
+        "timestamp": "2026-01-01T10:53:00+00:00",
+        "asset_id": "machine-f",
+        "modality": "audio",
+        "kind": "abnormal_noise",
+        "source_id": "machine-f-audio",
+        "evidence_ref": "synthetic://machine-f/evt-0013",
+        "summary": "Synthetic abnormal noise observation on machine-f",
+        "confidence": 0.853,
+        "synthetic": true
+      }
+    ],
+    "edges": [
+      {
+        "source": "evt-0001",
+        "target": "evt-0002",
+        "relationship": "same_asset_temporal_cooccurrence",
+        "delta_seconds": 14.0
+      },
+      {
+        "source": "evt-0001",
+        "target": "evt-0003",
+        "relationship": "same_asset_temporal_cooccurrence",
+        "delta_seconds": 25.0
+      },
+      {
+        "source": "evt-0001",
+        "target": "evt-0004",
+        "relationship": "same_asset_temporal_cooccurrence",
+        "delta_seconds": 30.0
+      },
+      {
+        "source": "evt-0002",
+        "target": "evt-0003",
+        "relationship": "same_asset_temporal_cooccurrence",
+        "delta_seconds": 11.0
+      },
+      {
+        "source": "evt-0002",
+        "target": "evt-0004",
+        "relationship": "same_asset_temporal_cooccurrence",
+        "delta_seconds": 16.0
+      },
+      {
+        "source": "evt-0003",
+        "target": "evt-0004",
+        "relationship": "same_asset_temporal_cooccurrence",
+        "delta_seconds": 5.0
+      },
+      {
+        "source": "evt-0006",
+        "target": "evt-0007",
+        "relationship": "same_asset_temporal_cooccurrence",
+        "delta_seconds": 12.0
+      },
+      {
+        "source": "evt-0006",
+        "target": "evt-0008",
+        "relationship": "same_asset_temporal_cooccurrence",
+        "delta_seconds": 35.0
+      },
+      {
+        "source": "evt-0007",
+        "target": "evt-0008",
+        "relationship": "same_asset_temporal_cooccurrence",
+        "delta_seconds": 23.0
+      },
+      {
+        "source": "evt-0009",
+        "target": "evt-0010",
+        "relationship": "same_asset_temporal_cooccurrence",
+        "delta_seconds": 10.0
+      }
+    ]
+  },
+  "input_events": 13,
+  "accepted_events": 13,
+  "limitations": [
+    "Temporal cooccurrence does not establish causality.",
+    "Confidence belongs to source events; no calibrated incident probability.",
+    "Synthetic fixtures do not measure real-world model performance."
+  ]
+}

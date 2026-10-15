@@ -1,0 +1,21 @@
+{
+  "application_version": "0.11.0",
+  "passed": true,
+  "tests": 307,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "seconds": 31.197,
+  "python": "3.12.14",
+  "platform": "Linux",
+  "dependencies": {
+    "torch": "2.5.1+cpu",
+    "opencv-python": "4.10.0.84",
+    "streamlit": "1.45.1",
+    "numpy": "1.26.4",
+    "scikit-learn": "1.5.2"
+  },
+  "new_email_tests": 28,
+  "external_messages_sent": 0,
+  "scope": "Disposable accounts/history, authored events, scripted SMTP failures; actual local STARTTLS/implicit TLS SMTP and rejected untrusted certificate. No remote provider or accuracy test."
+}

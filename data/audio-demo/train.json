@@ -1,0 +1,29 @@
+{
+  "schema": "opsfusion_audio_manifest_v1",
+  "clips": [
+    {
+      "path": "train-0.wav",
+      "asset_id": "warehouse-zone-01",
+      "start_time": "2026-01-01T09:56:40+00:00",
+      "synthetic": true
+    },
+    {
+      "path": "train-1.wav",
+      "asset_id": "warehouse-zone-01",
+      "start_time": "2026-01-01T09:56:55+00:00",
+      "synthetic": true
+    },
+    {
+      "path": "train-2.wav",
+      "asset_id": "warehouse-zone-01",
+      "start_time": "2026-01-01T09:57:10+00:00",
+      "synthetic": true
+    },
+    {
+      "path": "train-3.wav",
+      "asset_id": "warehouse-zone-01",
+      "start_time": "2026-01-01T09:57:25+00:00",
+      "synthetic": true
+    }
+  ]
+}

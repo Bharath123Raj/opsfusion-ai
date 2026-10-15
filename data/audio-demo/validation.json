@@ -1,0 +1,17 @@
+{
+  "schema": "opsfusion_audio_manifest_v1",
+  "clips": [
+    {
+      "path": "validation-0.wav",
+      "asset_id": "warehouse-zone-01",
+      "start_time": "2026-01-01T09:58:20+00:00",
+      "synthetic": true
+    },
+    {
+      "path": "validation-1.wav",
+      "asset_id": "warehouse-zone-01",
+      "start_time": "2026-01-01T09:58:35+00:00",
+      "synthetic": true
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "scope": "Public OpenCV vtest.avi decoded through raw upload orchestration with actual YOLOv8n CPU inference; downstream integration, not detection accuracy.",
+  "source_synthetic": false,
+  "source_sha256": "45cddc9490be69345cbdab64ca583be65987e864ca408038e648db99e10516cf",
+  "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+  "sampled_frames": 100,
+  "video_observations": 16,
+  "entries": 6,
+  "initial_presence": 10,
+  "first_alerts": 2,
+  "synthetic_observations": 0,
+  "detector_injected": false,
+  "generated_evidence_records": 16,
+  "recording_start_note": "Assigned test clock anchor; the public recording capture date was not independently verified."
+}

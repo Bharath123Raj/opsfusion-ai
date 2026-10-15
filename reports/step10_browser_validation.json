@@ -1,0 +1,17 @@
+{
+  "application_version": "0.10.0",
+  "passed": true,
+  "saved_reports": 26,
+  "operator_review_and_audit": true,
+  "downloaded_history_json": true,
+  "browser_reload_retains_history": true,
+  "javascript_errors": 0,
+  "actual_signin_signout": true,
+  "authenticated_audit_actor": true,
+  "viewer_actions_disabled": true,
+  "notification_previews": 26,
+  "external_notifications_sent": 0,
+  "loopback_rtsp_camera_start_stop": true,
+  "camera_sampled_frames_at_stop_request": 8,
+  "scope": "Authored history fixture; optional actual RTSP/YOLO composed-loopback camera. No hardware or accuracy test."
+}

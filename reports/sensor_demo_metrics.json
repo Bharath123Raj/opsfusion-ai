@@ -1,0 +1,57 @@
+{
+  "scope": "Seeded synthetic injected-fault measurements; demonstration only, not real machinery accuracy",
+  "synthetic": true,
+  "tp": 144,
+  "fp": 0,
+  "tn": 637,
+  "fn": 19,
+  "precision": 1.0,
+  "recall": 0.8834355828220859,
+  "f1": 0.9381107491856677,
+  "normal_asset_hours_estimated": 0.17694444444444443,
+  "false_alert_samples_per_normal_asset_hour": 0.0,
+  "event_metrics": {
+    "matching": "one-to-one greedy maximum temporal overlap on same asset; any positive overlap qualifies",
+    "expected_fault_intervals": 6,
+    "predicted_alert_episodes": 5,
+    "matched": 5,
+    "precision": 1.0,
+    "recall": 0.8333333333333334,
+    "false_alert_episodes_per_normal_asset_hour": 0.0,
+    "matches": [
+      {
+        "asset_id": "warehouse-zone-01",
+        "fault_type": "multivariate_shift",
+        "delay_seconds": 2.0
+      },
+      {
+        "asset_id": "machine-b",
+        "fault_type": "temperature_drift",
+        "delay_seconds": 10.0
+      },
+      {
+        "asset_id": "warehouse-zone-01",
+        "fault_type": "temperature_bias",
+        "delay_seconds": 2.0
+      },
+      {
+        "asset_id": "machine-b",
+        "fault_type": "vibration_bias",
+        "delay_seconds": 2.0
+      },
+      {
+        "asset_id": "warehouse-zone-01",
+        "fault_type": "vibration_bias",
+        "delay_seconds": 2.0
+      }
+    ],
+    "missed_faults": [
+      {
+        "asset_id": "warehouse-zone-01",
+        "fault_type": "single_sample_spike"
+      }
+    ],
+    "note": "Permissive temporal event matching; synthetic fault recall is not causal diagnosis accuracy."
+  },
+  "note": "Point metrics on causal persisted flags, not incident accuracy. Normal exposure assumes median cadence; no live latency or real-world accuracy claim."
+}

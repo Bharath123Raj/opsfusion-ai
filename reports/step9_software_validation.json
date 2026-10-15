@@ -1,0 +1,11 @@
+{
+  "application_version": "0.9.0",
+  "python": "3.12.14",
+  "tests_run": 237,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "passed": true,
+  "wall_seconds": 10.322,
+  "scope": "Software contracts and authored fixtures; not real detection accuracy."
+}

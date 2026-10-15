@@ -1,0 +1,17 @@
+{
+  "application_version": "0.15.0",
+  "passed": true,
+  "compose_yaml_parsed": true,
+  "backend_host_ports_unpublished": true,
+  "persistent_data_volume_declared": true,
+  "caddy_preview_validated": true,
+  "caddy_https_adapted": true,
+  "caddy_version": "2.11.7",
+  "verified_release_asset_sha256": "727b91701a392de6ebc5027509f548bf39979e5216340d0faed8fa5e69c84f8b",
+  "docker_image_built": false,
+  "docker_compose_started": false,
+  "public_certificate_issued": false,
+  "limitations": [
+    "Docker engine not available; configuration checks are not a container build or hosted acceptance test."
+  ]
+}

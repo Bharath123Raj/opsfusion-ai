@@ -1,0 +1,7 @@
+# Python 3.10-3.12 recommended. Keep desktop OpenCV for the zone picker.
+ultralytics==8.3.40
+opencv-python==4.10.0.84
+numpy==1.26.4
+torch==2.5.1
+torchvision==0.20.1
+ultralytics-thop==2.0.12

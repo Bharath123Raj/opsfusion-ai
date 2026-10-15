@@ -1,0 +1,41 @@
+{
+  "application_version": "0.15.0",
+  "passed": true,
+  "full_regression": {
+    "tests": 407,
+    "seconds": 176.894,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "new_deployment_tests": 25,
+  "final_targeted_followup": {
+    "tests": 25,
+    "seconds": 16.634,
+    "passed": true,
+    "suite": "test_deployment.py",
+    "covers": [
+      "final access form/cookie behavior",
+      "upgrade service-lock guard",
+      "Windows-style restored reference",
+      "re-login revokes previous cookie session"
+    ]
+  },
+  "python": "3.12.14",
+  "platform": "Linux",
+  "dependencies": {
+    "torch": "2.5.1+cpu",
+    "torchvision": "0.20.1+cpu",
+    "opencv-python": "4.10.0.84",
+    "streamlit": "1.45.1",
+    "numpy": "1.26.4",
+    "scikit-learn": "1.5.2",
+    "fastapi": "0.115.5",
+    "httpx": "0.28.1",
+    "pydantic": "2.10.6"
+  },
+  "external_messages_sent": 0,
+  "public_deployment_performed": false,
+  "step14_real_recording_validation": "deferred_pending",
+  "scope": "Disposable accounts, authored inputs and synthetic evidence. Software regression, auth/roles, safe offline backups/restore and deployment preparation. No user Windows verification, physical hardware accuracy or independent security audit."
+}

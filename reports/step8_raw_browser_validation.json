@@ -1,0 +1,17 @@
+{
+  "default_is_raw_uploads_without_demo_results": true,
+  "uploaded_video_zone_preview": true,
+  "browser_actual_yolo_and_log_adapter": true,
+  "review_metrics": [
+    8,
+    8,
+    3,
+    3
+  ],
+  "generated_evidence_is_linked_without_reupload": true,
+  "export_contains_actual_detector_evidence_and_scores": true,
+  "sampled_frames": 25,
+  "browser_javascript_errors": 0,
+  "scope": "Actual public-video inference + a visibly synthetic controller fixture with an assigned test clock anchor; no real synchronized industrial-data accuracy claim.",
+  "tested_version": "0.8.1"
+}

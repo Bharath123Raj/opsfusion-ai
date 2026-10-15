@@ -1,0 +1,51 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile
+    environment:
+      OPSFUSION_ACCESS_MODE: local
+      OPSFUSION_PUBLIC_ORIGIN: http://localhost:8080
+    volumes:
+      - opsfusion_data:/data
+    expose:
+      - "8000"
+      - "8504"
+    restart: unless-stopped
+    stop_grace_period: 30s
+    read_only: true
+    tmpfs:
+      - /tmp:size=512m
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    mem_limit: 4g
+    cpus: 2
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+  gateway:
+    image: caddy:2.11.7
+    depends_on:
+      app:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /data
+      - /config
+      - /tmp
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+volumes:
+  opsfusion_data:

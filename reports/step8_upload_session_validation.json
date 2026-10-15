@@ -1,0 +1,12 @@
+{
+  "application_version": "0.8.2",
+  "streamlit": "1.45.1",
+  "completed_uploads": 2,
+  "new_session_and_reload_uploads": true,
+  "upload_http_statuses": [
+    204,
+    204
+  ],
+  "browser_javascript_errors": 0,
+  "scope": "Healthy fresh-session and reload upload smoke checks. User Windows disconnect/pre-initialization failure was not reproduced; no guarantee for every connection failure."
+}

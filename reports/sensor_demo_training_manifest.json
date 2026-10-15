@@ -1,0 +1,54 @@
+{
+  "schema": "opsfusion_sensor_training_v1",
+  "sklearn_version": "1.5.2",
+  "features": [
+    "vibration_rms_mm_s",
+    "temperature_c"
+  ],
+  "train_sha256": "3b7e0441b462ed32a149b1beaa440c78511e40caeb3d726dafc936d5617d0dd8",
+  "validation_sha256": "ed0ffdeae225f206f94f7d798a2f927c65ffbc54e09aa8afe8c3b73e1e5ff572",
+  "seed": 42,
+  "calibration_quantile": 0.995,
+  "assets": {
+    "machine-b": {
+      "train_rows": 800,
+      "validation_rows": 200,
+      "train_start": "2026-01-01T09:43:20+00:00",
+      "train_end": "2026-01-01T09:56:39+00:00",
+      "validation_start": "2026-01-01T09:56:40+00:00",
+      "validation_end": "2026-01-01T09:59:59+00:00",
+      "center": [
+        3.49852,
+        62.003585
+      ],
+      "robust_scale": [
+        0.11438259000000008,
+        0.5358931829999991
+      ],
+      "if_threshold": 0.6382241346279162,
+      "cadence_seconds": 1.0,
+      "trained_synthetic": true
+    },
+    "warehouse-zone-01": {
+      "train_rows": 800,
+      "validation_rows": 200,
+      "train_start": "2026-01-01T09:43:20+00:00",
+      "train_end": "2026-01-01T09:56:39+00:00",
+      "validation_start": "2026-01-01T09:56:40+00:00",
+      "validation_end": "2026-01-01T09:59:59+00:00",
+      "center": [
+        1.999595,
+        54.99099
+      ],
+      "robust_scale": [
+        0.12158802600000003,
+        0.511548890999999
+      ],
+      "if_threshold": 0.6503454641932851,
+      "cadence_seconds": 1.0,
+      "trained_synthetic": true
+    }
+  },
+  "rule": "abs robust z >= hard_z OR (negative IF score_samples > validation threshold AND abs robust z >= soft_z)",
+  "data_assumption": "Caller supplies known-normal training and calibration periods; this is not automatically verified."
+}

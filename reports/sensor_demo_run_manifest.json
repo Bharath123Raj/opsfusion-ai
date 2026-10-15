@@ -1,0 +1,24 @@
+{
+  "status": "completed",
+  "input_sha256": "f5b81d23ad3d50e04d523fa750cb2f8e83e9ebe835450d0dea83ce82f8120eb2",
+  "model_sha256": "b5c70aed4ace5a2b027e8f286d4824f7c829297085e450747577329991d4cb81",
+  "measurements": 800,
+  "candidate_samples": 160,
+  "alert_samples": 144,
+  "sensor_episodes": 5,
+  "incidents": 4,
+  "merged_events": 0,
+  "persistence_samples": 3,
+  "hard_z": 6,
+  "soft_z": 3,
+  "max_gap_factor": 2,
+  "wall_seconds": 0.03522247499995501,
+  "synthetic": true,
+  "confidence_semantics": "1.0 is an adapter acceptance marker for a verified computed observation, NOT fault probability.",
+  "limitations": [
+    "Clean-data assumption must be checked by operator.",
+    "Raw-feature baseline misses faults that remain near normal range.",
+    "Batch replay, not real sensor streaming.",
+    "Observation timestamps are causal confirmation; episode evidence contains later context."
+  ]
+}

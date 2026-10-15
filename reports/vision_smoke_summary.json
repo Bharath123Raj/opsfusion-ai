@@ -1,0 +1,65 @@
+{
+  "status": "completed",
+  "source_sha256": "45cddc9490be69345cbdab64ca583be65987e864ca408038e648db99e10516cf",
+  "start_time": "2026-01-01T10:00:00+00:00",
+  "timestamp_method": "constant-FPS frame_index / source_fps; user-provided start time",
+  "source_fps": 10.0,
+  "effective_sample_fps": 5.0,
+  "stride": 2,
+  "decoded_frames": 200,
+  "sampled_frames": 100,
+  "processed_duration_seconds": 20.0,
+  "zone": {
+    "asset_id": "warehouse-zone-01",
+    "camera_id": "camera-01",
+    "polygon": [
+      [
+        0.45,
+        0.35
+      ],
+      [
+        0.9,
+        0.35
+      ],
+      [
+        0.9,
+        0.95
+      ],
+      [
+        0.45,
+        0.95
+      ]
+    ],
+    "confirm_samples": 2,
+    "max_age_seconds": 1.0,
+    "min_iou": 0.15
+  },
+  "detector": {
+    "name": "yolov8n.pt",
+    "ultralytics_version": "8.3.40",
+    "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+    "device": "cpu",
+    "confidence_threshold": 0.6,
+    "person_class_id": 0
+  },
+  "synthetic_video": false,
+  "video_observations": 16,
+  "entry_observations": 6,
+  "initial_presence_observations": 10,
+  "merged_events": 0,
+  "incidents": 2,
+  "max_simultaneous_detections": 8,
+  "wall_seconds": 6.799540403000037,
+  "mean_detector_ms": 62.70898029999444,
+  "p95_detector_ms": 62.353604000009,
+  "limitations": [
+    "Offline replay, not live CCTV monitoring.",
+    "Greedy IoU tracks may split or swap under occlusion.",
+    "Variable-frame-rate video must be converted to constant FPS before use.",
+    "Person confidence does not measure entry accuracy.",
+    "No authorization verification; zone observations are candidates for review.",
+    "Annotated preview has no audio."
+  ],
+  "source_url": "https://raw.githubusercontent.com/opencv/opencv/master/samples/data/vtest.avi",
+  "validation_scope": "Unlabelled real-video smoke run; not an accuracy benchmark"
+}

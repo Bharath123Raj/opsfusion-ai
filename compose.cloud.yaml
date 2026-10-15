@@ -1,0 +1,45 @@
+name: opsfusion-cloud
+services:
+  app:
+    build:
+      context: .
+      dockerfile: deploy/Dockerfile
+    environment:
+      OPSFUSION_ACCESS_MODE: https
+      OPSFUSION_PUBLIC_ORIGIN: https://${OPSFUSION_DOMAIN:?Run deploy/cloud.py configure first}
+      OPSFUSION_DATA_ROOT: /data/site
+    volumes:
+      - opsfusion_data:/data
+    expose: ["8000", "8504"]
+    restart: unless-stopped
+    stop_grace_period: 30s
+    read_only: true
+    tmpfs: ["/tmp:size=512m"]
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: ["ALL"]
+    mem_limit: 4g
+    cpus: 2
+    logging:
+      driver: json-file
+      options: {max-size: "10m", max-file: "3"}
+  gateway:
+    image: caddy:2.11.7
+    environment:
+      OPSFUSION_DOMAIN: ${OPSFUSION_DOMAIN:?Run deploy/cloud.py configure first}
+    depends_on:
+      app: {condition: service_healthy}
+    ports: ["80:80", "443:443"]
+    volumes:
+      - ./deploy/Caddyfile.https:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    restart: unless-stopped
+    read_only: true
+    tmpfs: ["/tmp"]
+    logging:
+      driver: json-file
+      options: {max-size: "10m", max-file: "3"}
+volumes:
+  opsfusion_data:
+  caddy_data:
+  caddy_config:

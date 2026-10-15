@@ -1,0 +1,21 @@
+{
+  "synthetic": true,
+  "incidents": [
+    {
+      "asset_id": "machine-a",
+      "type": "machine_degradation"
+    },
+    {
+      "asset_id": "machine-b",
+      "type": "restricted_zone"
+    },
+    {
+      "asset_id": "machine-c",
+      "type": "machine_degradation"
+    },
+    {
+      "asset_id": "machine-c",
+      "type": "abnormal_shutdown"
+    }
+  ]
+}

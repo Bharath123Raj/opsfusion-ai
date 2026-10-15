@@ -1,0 +1,48 @@
+{
+  "synthetic": true,
+  "cases": [
+    {
+      "case": "continuous_over_90s",
+      "asset_id": "regression-00",
+      "annotation_assumption": "Scenario author states whether the fault continues or recovers; sparse observations alone cannot establish this."
+    },
+    {
+      "case": "short_gap_same_episode",
+      "asset_id": "regression-01",
+      "annotation_assumption": "Scenario author states whether the fault continues or recovers; sparse observations alone cannot establish this."
+    },
+    {
+      "case": "two_faults_with_quiet_interval",
+      "asset_id": "regression-02",
+      "annotation_assumption": "Scenario author states whether the fault continues or recovers; sparse observations alone cannot establish this."
+    },
+    {
+      "case": "notes_do_not_bridge_recovered_warning",
+      "asset_id": "regression-03",
+      "annotation_assumption": "Scenario author states whether the fault continues or recovers; sparse observations alone cannot establish this."
+    },
+    {
+      "case": "safety_activity_does_not_bridge_machine_fault",
+      "asset_id": "regression-04",
+      "annotation_assumption": "Scenario author states whether the fault continues or recovers; sparse observations alone cannot establish this."
+    },
+    {
+      "case": "old_warning_unrelated_to_stop",
+      "asset_id": "regression-05",
+      "annotation_assumption": "Scenario author states whether the fault continues or recovers; sparse observations alone cannot establish this."
+    },
+    {
+      "case": "sparse_continuing_fault_ambiguous",
+      "asset_id": "regression-06",
+      "annotation_assumption": "Scenario author states whether the fault continues or recovers; sparse observations alone cannot establish this."
+    },
+    {
+      "case": "slow_cross_source_confirmation",
+      "asset_id": "regression-07",
+      "annotation_assumption": "Scenario author states whether the fault continues or recovers; sparse observations alone cannot establish this."
+    }
+  ],
+  "events": 49,
+  "labels": 7,
+  "note": "Constructed to probe the new heuristic, including its sparse-warning and slow-corroboration failure modes. Not independent blinded validation."
+}

@@ -1,0 +1,136 @@
+{
+  "schema": "opsfusion_incident_labels_v1",
+  "scope": "Ten authored synthetic adapter-event scenarios; downstream fusion benchmark only",
+  "synthetic": true,
+  "evaluation_types": [
+    "machine_degradation",
+    "restricted_zone",
+    "abnormal_shutdown"
+  ],
+  "incidents": [
+    {
+      "label_id": "label-00-0",
+      "asset_id": "asset-00",
+      "type": "machine_degradation",
+      "start": "2026-01-01T12:00:00+00:00",
+      "end": "2026-01-01T12:00:20+00:00"
+    },
+    {
+      "label_id": "label-01-0",
+      "asset_id": "asset-01",
+      "type": "restricted_zone",
+      "start": "2026-01-01T12:03:00+00:00",
+      "end": "2026-01-01T12:03:10+00:00"
+    },
+    {
+      "label_id": "label-02-0",
+      "asset_id": "asset-02",
+      "type": "abnormal_shutdown",
+      "start": "2026-01-01T12:06:00+00:00",
+      "end": "2026-01-01T12:06:20+00:00"
+    },
+    {
+      "label_id": "label-03-0",
+      "asset_id": "asset-03",
+      "type": "machine_degradation",
+      "start": "2026-01-01T12:09:00+00:00",
+      "end": "2026-01-01T12:09:20+00:00"
+    },
+    {
+      "label_id": "label-03-1",
+      "asset_id": "asset-03",
+      "type": "abnormal_shutdown",
+      "start": "2026-01-01T12:09:00+00:00",
+      "end": "2026-01-01T12:09:20+00:00"
+    },
+    {
+      "label_id": "label-04-0",
+      "asset_id": "asset-04",
+      "type": "machine_degradation",
+      "start": "2026-01-01T12:12:00+00:00",
+      "end": "2026-01-01T12:12:20+00:00"
+    },
+    {
+      "label_id": "label-09-0",
+      "asset_id": "asset-09",
+      "type": "machine_degradation",
+      "start": "2026-01-01T12:27:00+00:00",
+      "end": "2026-01-01T12:27:20+00:00"
+    },
+    {
+      "label_id": "label-09-1",
+      "asset_id": "asset-09",
+      "type": "machine_degradation",
+      "start": "2026-01-01T12:27:40+00:00",
+      "end": "2026-01-01T12:28:00+00:00"
+    }
+  ],
+  "coverage": [
+    {
+      "asset_id": "asset-00",
+      "start": "2026-01-01T12:00:00+00:00",
+      "end": "2026-01-01T12:02:31+00:00",
+      "normal": false
+    },
+    {
+      "asset_id": "asset-01",
+      "start": "2026-01-01T12:03:00+00:00",
+      "end": "2026-01-01T12:05:31+00:00",
+      "normal": false
+    },
+    {
+      "asset_id": "asset-02",
+      "start": "2026-01-01T12:06:00+00:00",
+      "end": "2026-01-01T12:08:31+00:00",
+      "normal": false
+    },
+    {
+      "asset_id": "asset-03",
+      "start": "2026-01-01T12:09:00+00:00",
+      "end": "2026-01-01T12:11:31+00:00",
+      "normal": false
+    },
+    {
+      "asset_id": "asset-04",
+      "start": "2026-01-01T12:12:00+00:00",
+      "end": "2026-01-01T12:14:31+00:00",
+      "normal": false
+    },
+    {
+      "asset_id": "asset-05",
+      "start": "2026-01-01T12:15:00+00:00",
+      "end": "2026-01-01T12:17:31+00:00",
+      "normal": true
+    },
+    {
+      "asset_id": "asset-06",
+      "start": "2026-01-01T12:18:00+00:00",
+      "end": "2026-01-01T12:20:31+00:00",
+      "normal": true
+    },
+    {
+      "asset_id": "asset-07",
+      "start": "2026-01-01T12:21:00+00:00",
+      "end": "2026-01-01T12:23:31+00:00",
+      "normal": true
+    },
+    {
+      "asset_id": "asset-08",
+      "start": "2026-01-01T12:24:00+00:00",
+      "end": "2026-01-01T12:26:31+00:00",
+      "normal": true
+    },
+    {
+      "asset_id": "asset-08-peer",
+      "start": "2026-01-01T12:24:00+00:00",
+      "end": "2026-01-01T12:26:31+00:00",
+      "normal": true
+    },
+    {
+      "asset_id": "asset-09",
+      "start": "2026-01-01T12:27:00+00:00",
+      "end": "2026-01-01T12:29:31+00:00",
+      "normal": false
+    }
+  ]
+}

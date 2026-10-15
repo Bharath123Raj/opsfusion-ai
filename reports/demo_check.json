@@ -1,0 +1,9 @@
+{
+  "scope": "six scripted synthetic fixture scenarios; not an ML benchmark",
+  "passed": true,
+  "expected_incidents": 4,
+  "found_incidents": 4,
+  "missing": [],
+  "unexpected": [],
+  "seed": 42
+}

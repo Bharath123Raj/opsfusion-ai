@@ -1,0 +1,28 @@
+{
+  "application_version": "0.12.0",
+  "passed": true,
+  "tests": 345,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "seconds": 41.93,
+  "python": "3.12.14",
+  "platform": "Linux",
+  "dependencies": {
+    "torch": "2.5.1+cpu",
+    "opencv-python": "4.10.0.84",
+    "streamlit": "1.45.1",
+    "numpy": "1.26.4",
+    "scikit-learn": "1.5.2",
+    "fastapi": "0.115.5"
+  },
+  "new_stream_tests": 38,
+  "external_messages_sent": 0,
+  "scope": "Disposable profiles, generated sensor baselines and authored chronological inputs; persistence, deduplication/atomic transactions, timestamps, auth/roles, restart/evidence and earlier regressions. No hardware/real accuracy measurement.",
+  "final_export_provenance_followup": {
+    "suite": "test_stream.py",
+    "tests": 38,
+    "passed": true,
+    "seconds": 9.972
+  }
+}

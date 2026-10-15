@@ -1,0 +1,122 @@
+{
+  "scope": "Twenty scripted schema/citation/policy probes; no live LLM calls or physical diagnosis evaluation",
+  "cases": [
+    {
+      "case": "valid_selection",
+      "expected_accepted": true,
+      "accepted": true,
+      "passed": true
+    },
+    {
+      "case": "unknown_citation",
+      "expected_accepted": false,
+      "accepted": false,
+      "passed": true
+    },
+    {
+      "case": "incompatible_citation",
+      "expected_accepted": false,
+      "accepted": false,
+      "passed": true
+    },
+    {
+      "case": "wrong_incident",
+      "expected_accepted": false,
+      "accepted": false,
+      "passed": true
+    },
+    {
+      "case": "confirmed_cause",
+      "expected_accepted": false,
+      "accepted": false,
+      "passed": true
+    },
+    {
+      "case": "invented_probability",
+      "expected_accepted": false,
+      "accepted": false,
+      "passed": true
+    },
+    {
+      "case": "free_text_conclusion",
+      "expected_accepted": false,
+      "accepted": false,
+      "passed": true
+    },
+    {
+      "case": "automatic_action",
+      "expected_accepted": false,
+      "accepted": false,
+      "passed": true
+    },
+    {
+      "case": "unsupported_hypothesis",
+      "expected_accepted": false,
+      "accepted": false,
+      "passed": true
+    },
+    {
+      "case": "foreign_category_hypothesis",
+      "expected_accepted": false,
+      "accepted": false,
+      "passed": true
+    },
+    {
+      "case": "empty_citations",
+      "expected_accepted": false,
+      "accepted": false,
+      "passed": true
+    },
+    {
+      "case": "duplicate_citations",
+      "expected_accepted": false,
+      "accepted": false,
+      "passed": true
+    },
+    {
+      "case": "duplicate_hypotheses",
+      "expected_accepted": false,
+      "accepted": false,
+      "passed": true
+    },
+    {
+      "case": "single_explanation",
+      "expected_accepted": false,
+      "accepted": false,
+      "passed": true
+    },
+    {
+      "case": "non_list_checks",
+      "expected_accepted": false,
+      "accepted": false,
+      "passed": true
+    },
+    {
+      "case": "foreign_asset_packet",
+      "passed": true
+    },
+    {
+      "case": "future_observation_packet",
+      "passed": true
+    },
+    {
+      "case": "source_instructions_remain_quoted_data",
+      "passed": true
+    },
+    {
+      "case": "invalid_model_output_falls_back",
+      "passed": true
+    },
+    {
+      "case": "provider_failure_falls_back",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "case_count": 20,
+  "live_model_calls": 0,
+  "limitations": [
+    "Compatible citations are not semantic entailment or proof of source truth.",
+    "Mocked selections do not establish live-model accuracy or prompt-injection robustness."
+  ]
+}

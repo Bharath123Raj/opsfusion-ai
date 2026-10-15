@@ -1,0 +1,34 @@
+{
+  "release": "0.16.0",
+  "date": "2026-10-14",
+  "full_suite": {
+    "command": "python -m unittest discover -s tests -v",
+    "tests": 417,
+    "seconds": 140.478,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": true
+  },
+  "cloud_targeted": {
+    "tests": 10,
+    "seconds": 4.877,
+    "passed": true
+  },
+  "upgrade_targeted": {
+    "tests": 4,
+    "seconds": 0.097,
+    "passed": true
+  },
+  "backup_regression": {
+    "previous_step15_failure_reproduced": true,
+    "fixed_implementation_passed": true,
+    "checksums_and_restore_target_guards_preserved": true
+  },
+  "platform": "Linux AMD64 / Python 3.12",
+  "docker_image_built": false,
+  "oracle_vm_provisioned": false,
+  "public_deployment": false,
+  "actual_user_data_migrated": false,
+  "real_recording_accuracy_validation": "deferred"
+}

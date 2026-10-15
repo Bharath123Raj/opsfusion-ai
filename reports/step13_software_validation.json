@@ -1,0 +1,35 @@
+{
+  "application_version": "0.13.0",
+  "passed": true,
+  "full_regression": {
+    "tests": 381,
+    "seconds": 189.577,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "python": "3.12.14",
+  "platform": "Linux",
+  "dependencies": {
+    "torch": "2.5.1+cpu",
+    "torchvision": "0.20.1+cpu",
+    "opencv-python": "4.10.0.84",
+    "streamlit": "1.45.1",
+    "numpy": "1.26.4",
+    "scikit-learn": "1.5.2",
+    "fastapi": "0.115.5",
+    "httpx": "0.28.1",
+    "pydantic": "2.10.6"
+  },
+  "new_correlation_tests_in_full_run": 36,
+  "external_messages_sent": 0,
+  "scope": "Generated baselines and authored inputs; source linking, timing/late arrivals, fixed windows, first/current evidence, gaps, source lifecycle, concurrency/idempotency, atomic rollback, auth/roles, export provenance and upgrade. Browser proof is separate; no hardware or real accuracy claim.",
+  "final_targeted_followup": {
+    "suite": "test_correlation.py",
+    "tests": 37,
+    "seconds": 66.181,
+    "passed": true,
+    "new_check": "Demo rejects wrong local/API installation before creating sources"
+  },
+  "distinct_tests_in_delivered_tree": 382
+}

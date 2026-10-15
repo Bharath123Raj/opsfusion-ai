@@ -1,0 +1,20 @@
+{
+  "application_version": "0.12.0",
+  "passed": true,
+  "actual_http_sender_and_api": true,
+  "paced_readings": 35,
+  "controller_records": 3,
+  "adapter_observations": 5,
+  "saved_incidents": 4,
+  "local_first_alert_notices": 4,
+  "causes_unconfirmed": true,
+  "synthetic_propagated": true,
+  "evidence_download_inputs": 38,
+  "browser_live_counts_and_evidence": true,
+  "reload_persists": true,
+  "viewer_read_only": true,
+  "browser_local_alerts_visible_without_camera": true,
+  "javascript_errors": 0,
+  "external_notifications_sent": 0,
+  "scope": "Generated readings and authored controller messages over actual loopback HTTP, baseline inference and browser. No physical hardware or real accuracy measurement."
+}

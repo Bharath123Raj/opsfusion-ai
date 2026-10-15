@@ -1,0 +1,18 @@
+{
+  "schema": "opsfusion_audio_labels_v1",
+  "synthetic": true,
+  "scope": "Generated harmonics and injected spectral changes; not real machinery accuracy",
+  "asset_id": "warehouse-zone-01",
+  "start_time": "2026-01-01T10:00:00+00:00",
+  "fault_intervals_seconds": [
+    [
+      4,
+      10
+    ],
+    [
+      18,
+      24
+    ]
+  ],
+  "windows": 30
+}

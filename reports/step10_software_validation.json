@@ -1,0 +1,11 @@
+{
+  "application_version": "0.10.0",
+  "python": "3.12.14",
+  "tests_run": 279,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "passed": true,
+  "wall_seconds": 25.469,
+  "scope": "Software contracts, authenticated UI/API and simulated/loopback delivery. Not real perception accuracy or external-provider acceptance."
+}

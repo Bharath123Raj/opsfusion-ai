@@ -1,0 +1,28 @@
+{
+  "version": "0.8.2",
+  "environment": {
+    "python": "3.12.14",
+    "platform": "linux",
+    "device": "CPU",
+    "streamlit": "1.45.1"
+  },
+  "unittest": {
+    "tests": 205,
+    "inherited_step7_tests": 155,
+    "step8_review_tests": 33,
+    "raw_integration_tests": 17,
+    "passed": true,
+    "skipped": 0
+  },
+  "explanation_mode": "offline_deterministic_catalogue",
+  "live_model_calls": 0,
+  "validation_scope": "Software contracts and development-fixture integration, not real-world perception or physical diagnosis",
+  "raw_input_modalities": [
+    "video",
+    "sensor",
+    "audio",
+    "log"
+  ],
+  "default_screen": "Real recordings",
+  "upload_session_note": "Upgrade to Streamlit 1.45.1 for documented session-initialization fixes; exact user Windows failure not reproduced."
+}

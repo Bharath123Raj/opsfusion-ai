@@ -1,0 +1,47 @@
+{
+  "release": "0.16.0",
+  "checked_at": "2026-10-14",
+  "passed": true,
+  "checks": {
+    "cloud_yaml_parsed": true,
+    "project_name": "opsfusion-cloud",
+    "app_host_ports": [],
+    "gateway_host_ports": [
+      80,
+      443
+    ],
+    "data_root": "/data/site",
+    "persistent_volumes": [
+      "opsfusion_data",
+      "caddy_data",
+      "caddy_config"
+    ],
+    "restart_policy": "unless-stopped",
+    "caddy_configuration_identical_to_tested_step15": true
+  },
+  "official_cpu_wheel_index": {
+    "torch": {
+      "version": "2.5.1",
+      "python": "cp312",
+      "architecture": "aarch64",
+      "wheel": "torch-2.5.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+      "sha256_from_index": "36d1be99281b6f602d9639bd0af3ee0006e7aab16f6718d86f709d395b6f262c"
+    },
+    "torchvision": {
+      "version": "0.20.1",
+      "python": "cp312",
+      "architecture": "aarch64",
+      "wheel": "torchvision-0.20.1-cp312-cp312-linux_aarch64.whl",
+      "sha256_from_index": "9f853ba4497ac4691815ad41b523ee23cf5ba4f87b1ce869d704052e233ca8b7"
+    }
+  },
+  "limits": {
+    "docker_image_built": false,
+    "arm_runtime_tested": false,
+    "oracle_account_created": false,
+    "vm_provisioned": false,
+    "public_https_deployed": false,
+    "private_user_data_transferred": false,
+    "real_camera_accuracy_measured": false
+  }
+}

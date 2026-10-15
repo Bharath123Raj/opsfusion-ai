@@ -1,0 +1,229 @@
+{
+  "scope": "Eight separate authored segmentation regression scenarios; not blind holdout or real-data accuracy",
+  "synthetic": true,
+  "events_sha256": "11e5edca7fa73cf83008486b3245c24cd588df7f1d251bac61078fcfab46f038",
+  "labels_sha256": "5e8a97433548b5f1d12e1ae74600c1d154c459dbfab7cce162bbf7e1d6f3d45a",
+  "quiet_gap_seconds": 20,
+  "results": {
+    "fixed": {
+      "run_id": "replay-3602b6fd6a678a53a599",
+      "metrics": {
+        "scope": "Eight separate authored segmentation regression scenarios; not blind holdout or real-data accuracy",
+        "synthetic": true,
+        "evaluation_types": [
+          "machine_degradation",
+          "restricted_zone",
+          "abnormal_shutdown"
+        ],
+        "tp": 6,
+        "fp": 4,
+        "fn": 1,
+        "precision": 0.6,
+        "recall": 0.8571428571428571,
+        "f1": 0.7058823529411764,
+        "matched_detection_delay_median_seconds": 4.0,
+        "normal_asset_hours": 0.11666666666666667,
+        "false_first_alerts_during_normal_coverage": 2,
+        "false_alerts_per_normal_asset_hour": 17.142857142857142,
+        "matches": [
+          {
+            "label_id": "regression-label-00-0",
+            "alert_id": "regression-00:machine_degradation:regression-00-00",
+            "asset_id": "regression-00",
+            "type": "machine_degradation",
+            "delay_seconds": 4.0
+          },
+          {
+            "label_id": "regression-label-01-0",
+            "alert_id": "regression-01:machine_degradation:regression-01-00",
+            "asset_id": "regression-01",
+            "type": "machine_degradation",
+            "delay_seconds": 4.0
+          },
+          {
+            "label_id": "regression-label-02-0",
+            "alert_id": "regression-02:machine_degradation:regression-02-00",
+            "asset_id": "regression-02",
+            "type": "machine_degradation",
+            "delay_seconds": 4.0
+          },
+          {
+            "label_id": "regression-label-04-0",
+            "alert_id": "regression-04:restricted_zone:regression-04-00",
+            "asset_id": "regression-04",
+            "type": "restricted_zone",
+            "delay_seconds": 0.0
+          },
+          {
+            "label_id": "regression-label-06-0",
+            "alert_id": "regression-06:machine_degradation:regression-06-00",
+            "asset_id": "regression-06",
+            "type": "machine_degradation",
+            "delay_seconds": 4.0
+          },
+          {
+            "label_id": "regression-label-07-0",
+            "alert_id": "regression-07:machine_degradation:regression-07-00",
+            "asset_id": "regression-07",
+            "type": "machine_degradation",
+            "delay_seconds": 25.0
+          }
+        ],
+        "unmatched_predictions": [
+          "regression-00:machine_degradation:regression-00-11",
+          "regression-03:machine_degradation:regression-03-00",
+          "regression-04:machine_degradation:regression-04-00",
+          "regression-05:abnormal_shutdown:regression-05-00"
+        ],
+        "missed_labels": [
+          "regression-label-02-1"
+        ],
+        "ignored_report_categories": [
+          "acoustic_anomaly",
+          "sensor_anomaly"
+        ],
+        "matching": "maximum-cardinality one-to-one; identical asset and type; first alert in [label start, label end + 0s]; no early matching",
+        "limitations": [
+          "Scores measure incident fusion on supplied adapter observations, not raw perception accuracy.",
+          "Temporal cooccurrence is not causal diagnosis.",
+          "False alarms during fault coverage remain FP but are not counted in the normal-exposure rate."
+        ]
+      }
+    },
+    "episode": {
+      "run_id": "replay-b5512fb684a146681493",
+      "metrics": {
+        "scope": "Eight separate authored segmentation regression scenarios; not blind holdout or real-data accuracy",
+        "synthetic": true,
+        "evaluation_types": [
+          "machine_degradation",
+          "restricted_zone",
+          "abnormal_shutdown"
+        ],
+        "tp": 6,
+        "fp": 1,
+        "fn": 1,
+        "precision": 0.8571428571428571,
+        "recall": 0.8571428571428571,
+        "f1": 0.8571428571428571,
+        "matched_detection_delay_median_seconds": 4.0,
+        "normal_asset_hours": 0.11666666666666667,
+        "false_first_alerts_during_normal_coverage": 0,
+        "false_alerts_per_normal_asset_hour": 0.0,
+        "matches": [
+          {
+            "label_id": "regression-label-00-0",
+            "alert_id": "episode-v1:regression-00:mechanical:regression-00-00:machine_degradation",
+            "asset_id": "regression-00",
+            "type": "machine_degradation",
+            "delay_seconds": 4.0
+          },
+          {
+            "label_id": "regression-label-01-0",
+            "alert_id": "episode-v1:regression-01:mechanical:regression-01-00:machine_degradation",
+            "asset_id": "regression-01",
+            "type": "machine_degradation",
+            "delay_seconds": 4.0
+          },
+          {
+            "label_id": "regression-label-02-0",
+            "alert_id": "episode-v1:regression-02:mechanical:regression-02-00:machine_degradation",
+            "asset_id": "regression-02",
+            "type": "machine_degradation",
+            "delay_seconds": 4.0
+          },
+          {
+            "label_id": "regression-label-02-1",
+            "alert_id": "episode-v1:regression-02:mechanical:regression-02-02:machine_degradation",
+            "asset_id": "regression-02",
+            "type": "machine_degradation",
+            "delay_seconds": 5.0
+          },
+          {
+            "label_id": "regression-label-04-0",
+            "alert_id": "episode-v1:regression-04:safety:regression-04-01:restricted_zone",
+            "asset_id": "regression-04",
+            "type": "restricted_zone",
+            "delay_seconds": 0.0
+          },
+          {
+            "label_id": "regression-label-06-0",
+            "alert_id": "episode-v1:regression-06:mechanical:regression-06-00:machine_degradation",
+            "asset_id": "regression-06",
+            "type": "machine_degradation",
+            "delay_seconds": 4.0
+          }
+        ],
+        "unmatched_predictions": [
+          "episode-v1:regression-06:mechanical:regression-06-02:machine_degradation"
+        ],
+        "missed_labels": [
+          "regression-label-07-0"
+        ],
+        "ignored_report_categories": [
+          "acoustic_anomaly",
+          "sensor_anomaly"
+        ],
+        "matching": "maximum-cardinality one-to-one; identical asset and type; first alert in [label start, label end + 0s]; no early matching",
+        "limitations": [
+          "Scores measure incident fusion on supplied adapter observations, not raw perception accuracy.",
+          "Temporal cooccurrence is not causal diagnosis.",
+          "False alarms during fault coverage remain FP but are not counted in the normal-exposure rate."
+        ]
+      }
+    }
+  },
+  "sensitivity_sweep": [
+    {
+      "quiet_gap_seconds": 5.0,
+      "run_id": "replay-08109ea543dd2265fcb7",
+      "tp": 6,
+      "fp": 5,
+      "fn": 1,
+      "precision": 0.5454545454545454,
+      "recall": 0.8571428571428571,
+      "f1": 0.6666666666666665
+    },
+    {
+      "quiet_gap_seconds": 10.0,
+      "run_id": "replay-c33f7c7a56e88992a0d9",
+      "tp": 6,
+      "fp": 2,
+      "fn": 1,
+      "precision": 0.75,
+      "recall": 0.8571428571428571,
+      "f1": 0.7999999999999999
+    },
+    {
+      "quiet_gap_seconds": 20.0,
+      "run_id": "replay-b5512fb684a146681493",
+      "tp": 6,
+      "fp": 1,
+      "fn": 1,
+      "precision": 0.8571428571428571,
+      "recall": 0.8571428571428571,
+      "f1": 0.8571428571428571
+    },
+    {
+      "quiet_gap_seconds": 30.0,
+      "run_id": "replay-75c6d42111e68b02684b",
+      "tp": 7,
+      "fp": 1,
+      "fn": 0,
+      "precision": 0.875,
+      "recall": 1.0,
+      "f1": 0.9333333333333333
+    },
+    {
+      "quiet_gap_seconds": 45.0,
+      "run_id": "replay-c2633116208873b4efc6",
+      "tp": 7,
+      "fp": 2,
+      "fn": 0,
+      "precision": 0.7777777777777778,
+      "recall": 1.0,
+      "f1": 0.8750000000000001
+    }
+  ],
+  "note": "Same input and labels for both engines. A quiet gap is absence of adapter observations, not verified physical recovery. Sweep is descriptive, not automatic parameter selection."
+}

@@ -1,0 +1,10 @@
+{
+  "synthetic": true,
+  "seed": 42,
+  "generator": "OpsFusion harmonics + injected spectral deviations",
+  "sample_rate": 16000,
+  "train_seconds": 48,
+  "calibration_seconds": 24,
+  "test_seconds": 30,
+  "note": "Generated hums are not recordings of bearing faults. Logs are synthetic controller fixtures."
+}

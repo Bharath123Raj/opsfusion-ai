@@ -1,0 +1,62 @@
+{
+  "scope": "Generated audio and synthetic log demonstration; not industrial fault accuracy",
+  "audio": {
+    "status": "completed",
+    "audio_windows": 30,
+    "audio_episodes": 2,
+    "candidate_windows": 12,
+    "alert_windows": 10,
+    "persistence_windows": 2,
+    "discarded_tail_samples": 0,
+    "synthetic": true,
+    "confidence_semantics": "1.0 is an adapter acceptance marker, not fault probability",
+    "limitations": [
+      "Generated demo tones are not real machine recordings.",
+      "Mic placement, gain, background noise and operating load affect scores.",
+      "Fixed nonoverlapping windows; independent recordings reset persistence.",
+      "Acoustic deviation is not a diagnosis."
+    ]
+  },
+  "metrics": {
+    "scope": "Generated harmonics and injected spectral changes; not real machinery accuracy",
+    "synthetic": true,
+    "tp": 10,
+    "fp": 0,
+    "tn": 18,
+    "fn": 2,
+    "precision": 1.0,
+    "recall": 0.8333333333333334,
+    "matching": "Whole one-second window inside labelled deviation interval",
+    "note": "Synthetic point-window evaluation; not cause classification or factory accuracy."
+  },
+  "logs": {
+    "status": "completed",
+    "input_rows": 6,
+    "mapped_events": 3,
+    "unmapped_records": [
+      {
+        "csv_line": 2,
+        "code": "HEARTBEAT",
+        "level": "INFO"
+      },
+      {
+        "csv_line": 4,
+        "code": "HEARTBEAT",
+        "level": "INFO"
+      },
+      {
+        "csv_line": 6,
+        "code": "UNMAPPED_CODE",
+        "level": "CRITICAL"
+      }
+    ]
+  },
+  "fusion": {
+    "status": "completed",
+    "input_files": 2,
+    "unique_observations": 5,
+    "incidents": 4,
+    "synthetic_observations": 5,
+    "note": "Cooccurrence is not causality; mixed real and synthetic sources are composed replay."
+  }
+}

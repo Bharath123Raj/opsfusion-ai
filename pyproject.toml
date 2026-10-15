@@ -1,0 +1,13 @@
+[project]
+name = "opsfusion-ai"
+version = "0.15.0"
+description = "Evidence-grounded operational incident fusion baseline"
+requires-python = ">=3.10,<3.13"
+dependencies = []
+
+[project.optional-dependencies]
+vision = ["ultralytics==8.3.40", "opencv-python==4.10.0.84", "numpy==1.26.4", "torch==2.5.1", "torchvision==0.20.1", "ultralytics-thop==2.0.12"]
+
+sensor = ["numpy==1.26.4", "scikit-learn==1.5.2", "joblib==1.4.2"]
+audio = ["numpy==1.26.4", "scipy==1.14.1", "torch==2.5.1"]
+app = ["streamlit==1.45.1", "fastapi==0.115.5", "uvicorn==0.32.1", "httpx==0.28.1", "pydantic==2.10.6", "numpy==1.26.4", "pyarrow==17.0.0", "altair==5.5.0", "pandas==2.2.3"]

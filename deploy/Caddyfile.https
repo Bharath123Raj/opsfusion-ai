@@ -1,0 +1,28 @@
+{
+	admin off
+}
+
+{$OPSFUSION_DOMAIN} {
+	header {
+		-Server
+		Cache-Control "no-store"
+		X-Content-Type-Options "nosniff"
+		Referrer-Policy "same-origin"
+		Strict-Transport-Security "max-age=31536000"
+	}
+	request_body {
+		max_size 128MB
+	}
+	@api path /access/* /auth/* /v1/* /health /docs /docs/* /openapi.json
+	handle @api {
+		reverse_proxy app:8000
+	}
+	handle {
+		forward_auth app:8000 {
+			uri /access/verify
+			header_up -Connection
+			header_up -Upgrade
+		}
+		reverse_proxy app:8504
+	}
+}

@@ -1,0 +1,10 @@
+variant,observations,tp,fp,fn,precision,recall,f1,matched_detection_delay_median_seconds,false_alerts_per_normal_asset_hour
+all,24,7,0,1,1.0,0.875,0.9333333333333333,5.0,0.0
+sensor_only,11,0,0,8,,0.0,,,0.0
+video_only,1,1,0,7,1.0,0.125,0.2222222222222222,0.0,0.0
+audio_only,7,0,0,8,,0.0,,,0.0
+log_only,5,1,0,7,1.0,0.125,0.2222222222222222,15.0,0.0
+without_audio,17,5,0,3,1.0,0.625,0.7692307692307693,7.0,0.0
+without_video,23,6,0,2,1.0,0.75,0.8571428571428571,5.5,0.0
+without_log,19,3,0,5,1.0,0.375,0.5454545454545454,4.0,0.0
+audio_clock_plus30s,24,5,2,3,0.7142857142857143,0.625,0.6666666666666666,7.0,0.0

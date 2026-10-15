@@ -1,0 +1,57 @@
+{
+  "application_version": "0.9.0",
+  "passed": true,
+  "transport": "actual loopback RTSP/TCP + RTP/JPEG",
+  "detector": "actual CPU YOLOv8n; no injected detections",
+  "composed_source": true,
+  "connections": 2,
+  "forced_disconnect": true,
+  "connection_epoch": 1,
+  "sampled_frames": 49,
+  "observations": 12,
+  "saved_reports": 3,
+  "state": "completed",
+  "credential_absent_from_history_and_logs": true,
+  "scope": "Transport/reconnect/persistence integration. Hardware webcam and deployment CCTV untested; no accuracy score.",
+  "source_sha256": "45cddc9490be69345cbdab64ca583be65987e864ca408038e648db99e10516cf",
+  "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+  "capture_settings": {
+    "confidence": 0.6,
+    "confirm_samples": 2,
+    "max_age_seconds": 1,
+    "max_episode_events": 200,
+    "max_events": 5000,
+    "max_seconds": 18.0,
+    "min_iou": 0.15,
+    "polygon": [
+      [
+        0.45,
+        0.35
+      ],
+      [
+        0.9,
+        0.35
+      ],
+      [
+        0.9,
+        0.95
+      ],
+      [
+        0.45,
+        0.95
+      ]
+    ],
+    "quiet_gap_seconds": 20,
+    "sample_fps": 5,
+    "synthetic": true,
+    "window_seconds": 90,
+    "detector": {
+      "ultralytics_version": "8.3.40",
+      "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+      "device": "cpu",
+      "confidence_threshold": 0.6,
+      "person_class_id": 0
+    }
+  },
+  "timestamp_method": "host UTC frame receipt time before inference; not source acquisition time"
+}
