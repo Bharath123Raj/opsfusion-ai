@@ -20,8 +20,10 @@ SQLite accounts, old runs, camera watches or live sensor streams into the cloud.
   retaining existing entries, before testing the Google login round trip.
   This setting is not exposed by the connected Supabase tools.
 - **No paid resources:** independent Python processing is not provisioned.
-  The worker can run on the owner's existing machine for free; that option
-  stops when the machine is off. A suitable independent free host is pending.
+  An **Oracle Always Free ARM VM** is selected for the processor; account
+  verification, VM creation and live acceptance remain pending. Follow
+  [the processor-only VM guide](ORACLE_WORKER.md). The owner's existing machine
+  can also run the worker, but that option stops when the machine is off.
 
 ## Components and authorization
 
@@ -85,12 +87,11 @@ export OPSFUSION_SUPABASE_URL=https://YOUR_PROJECT_REF.supabase.co
 docker compose -f compose.cloud-worker.yaml up -d --build
 ```
 
-For Render, choose a **Background Worker** from this repository and Dockerfile
-`deploy/Dockerfile.worker`. Configure the two variables above in Render's private
-environment settings. Do not choose the existing web/API Dockerfile for this
-worker. Confirm the compute price before creating a paid instance. Render's free
-web service is not an always-on background-worker plan. No paid resource is
-created by the code or setup instructions.
+The selected no-cost route is an [Oracle Always Free VM](ORACLE_WORKER.md)
+running `deploy/Dockerfile.worker`. Its setup helper accepts the backend key
+with hidden typing and creates an owner-only configuration file. Render's free
+web service does not provide a free background-worker plan, so no Render worker
+is being provisioned under this deployment's free-only constraint.
 
 To exercise the cloud adapter locally instead, install the existing CPU PyTorch,
 vision, sensor and audio requirements, plus `requirements-cloud.txt`; set the

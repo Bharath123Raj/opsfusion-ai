@@ -15,4 +15,7 @@ RUN python -m pip install torch==2.5.1 torchvision==0.20.1 --index-url https://d
 RUN python -c "import urllib.request,hashlib; p='/app/weights/yolov8n.pt'; urllib.request.urlretrieve('https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt',p); assert hashlib.sha256(open(p,'rb').read()).hexdigest()=='f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36'"
 COPY opsfusion /app/opsfusion
 USER 10001:10001
+# Fail the actual host build if its Python wheels or CPU vision operators cannot
+# load. This also verifies the pinned local detector without another download.
+RUN python -c "import torch,torchvision,cv2,sklearn,httpx; from opsfusion.cloud_worker import CloudClient; from ultralytics import YOLO; torchvision.ops.nms(torch.tensor([[0.,0.,1.,1.]]),torch.tensor([0.9]),0.5); YOLO('/app/weights/yolov8n.pt'); print('Worker imports, CPU vision operator and detector weights verified')"
 CMD ["python", "-m", "opsfusion.cloud_worker"]

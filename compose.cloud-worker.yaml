@@ -8,6 +8,10 @@ services:
       OPSFUSION_SUPABASE_SECRET_KEY: ${OPSFUSION_SUPABASE_SECRET_KEY:?Set a private backend secret key}
       OPSFUSION_WORKER_LABEL: ${OPSFUSION_WORKER_LABEL:-processing-worker}
     restart: unless-stopped
+    stop_grace_period: 120s
+    mem_limit: 4g
+    cpus: 2.0
+    pids_limit: 256
     volumes:
       - cloud-worker:/data
     read_only: true
@@ -15,5 +19,12 @@ services:
       - /tmp:size=512m,mode=1777
     security_opt:
       - no-new-privileges:true
+    cap_drop:
+      - ALL
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
 volumes:
   cloud-worker:

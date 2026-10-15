@@ -49,12 +49,13 @@ monitoring features remain local; this change does not migrate their live feeds.
 Local SQLite accounts/history are separate from Supabase accounts and data.
 This is one shared site with admin/operator/viewer roles, not tenant isolation.
 
-The selected architecture replaces the earlier Oracle route. Existing VM/Caddy
-files remain an alternative. This deployment is restricted to **free resources only**. No paid processing
-service has been created. A suitable free, continuously running Python host
-has not been established. Netlify and Supabase keep the portal/data online;
-processing continues with the PC off only when its worker has an independent
-host. Fresh device input also requires an online acquisition device.
+The portal remains on Netlify and Supabase. An [Oracle Always Free VM](docs/ORACLE_WORKER.md)
+is now selected for the Python worker; it has not been created or live-tested.
+This deployment is restricted to **free resources only**. No paid processing
+service has been created. The earlier all-in-one VM/Caddy setup remains an
+alternative, separate from this processor-only route. Processing continues with
+the PC off only after its independent worker is running and verified. Fresh
+device input also requires an online acquisition device.
 
 For the web interface, use Node 24:
 
