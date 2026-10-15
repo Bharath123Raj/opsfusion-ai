@@ -8,13 +8,17 @@ SQLite accounts, old runs, camera watches or live sensor streams into the cloud.
 
 - Frontend: https://opsfusion-ai-bharath.netlify.app/
 - Hosting: a claimed site on the owner's Netlify **Free** account, linked to
-  `Bharath123Raj/opsfusion-ai`, branch `main`.
+  `Bharath123Raj/opsfusion-ai`, branch `main`. The Git-based build completed
+  successfully; documentation-only pushes outside `web/` can be skipped when
+  there is no web content change.
 - HTTPS, the single-page fallback and response security headers passed live
   HTTP checks after a regular account deployment. Anonymous previews did not
   apply these rules; they are not the production deployment.
 - Supabase schema/access checks passed; the selected existing Google identity
-  has admin membership. Add the frontend origin to the project's Auth redirect
-  allowlist before testing the Google login round trip.
+  has admin membership. In Supabase **Authentication → URL Configuration**,
+  append `https://opsfusion-ai-bharath.netlify.app` to **Redirect URLs**,
+  retaining existing entries, before testing the Google login round trip.
+  This setting is not exposed by the connected Supabase tools.
 - **No paid resources:** independent Python processing is not provisioned.
   The worker can run on the owner's existing machine for free; that option
   stops when the machine is off. A suitable independent free host is pending.
@@ -43,7 +47,9 @@ never put its key in GitHub source, browser variables, Netlify, or chat.
 
 ## Netlify
 
-1. Sign in to Netlify and import `Bharath123Raj/opsfusion-ai`, branch `main`.
+1. Sign in to Netlify and import `Bharath123Raj/opsfusion-ai`, branch `main`. The Git-based build completed
+  successfully; documentation-only pushes outside `web/` can be skipped when
+  there is no web content change.
 2. Use the repository's `netlify.toml`: base directory `web`, build command
    `npm ci && npm run build`, publish directory `dist` relative to that base.
 3. The configuration includes this installation's public Supabase URL and

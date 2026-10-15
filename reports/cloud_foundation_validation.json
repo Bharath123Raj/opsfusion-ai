@@ -60,7 +60,7 @@
     "physical sensor/controller accuracy"
   ],
   "netlify": {
-    "checked_at_utc": "2026-10-15T11:45:27.647641+00:00",
+    "checked_at_utc": "2026-10-15T11:54:48.909588+00:00",
     "url": "https://opsfusion-ai-bharath.netlify.app/",
     "site_id": "9d412c97-c651-4c00-9c0b-c29c0c8fb3a8",
     "claimed": true,
@@ -76,6 +76,12 @@
     ],
     "github_repository": "Bharath123Raj/opsfusion-ai",
     "github_branch": "main",
-    "git_triggered_build": "pending verification"
+    "git_triggered_build": "verified: Git-based deployment ready; documentation-only push received and skipped because web content did not change",
+    "published_git_deploy_id": "6ad0bc6e1852e83c81ae87a1",
+    "published_git_commit": "ae68b09e726fed80c94afbe41e9de58c906cfbc5",
+    "documentation_push_commit": "2a264d1088fce45cf90c339aca773f0178ac267c",
+    "browser_render_check": "unavailable in this session; HTTPS/API checks passed",
+    "account_plan_verified": "Free",
+    "premium_verified": false
   }
 }
