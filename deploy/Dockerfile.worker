@@ -1,0 +1,18 @@
+FROM python:3.12-slim-bookworm
+ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1 PIP_NO_CACHE_DIR=1 \
+    OPSFUSION_WORKER_DATA=/data XDG_CACHE_HOME=/data/cache \
+    YOLO_CONFIG_DIR=/data/cache/ultralytics \
+    OPSFUSION_YOLO_WEIGHTS=/app/weights/yolov8n.pt \
+    OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+WORKDIR /app
+RUN apt-get update && apt-get install -y --no-install-recommends libgl1 libglib2.0-0 ca-certificates \
+    && rm -rf /var/lib/apt/lists/* \
+    && useradd --uid 10001 --create-home opsfusion \
+    && mkdir -p /data /app/weights && chown -R 10001:10001 /data
+COPY requirements-cloud.txt requirements-sensor.txt requirements-audio.txt requirements-vision.txt ./
+RUN python -m pip install torch==2.5.1 torchvision==0.20.1 --index-url https://download.pytorch.org/whl/cpu \
+    && python -m pip install -r requirements-cloud.txt -r requirements-sensor.txt -r requirements-audio.txt -r requirements-vision.txt
+RUN python -c "import urllib.request,hashlib; p='/app/weights/yolov8n.pt'; urllib.request.urlretrieve('https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt',p); assert hashlib.sha256(open(p,'rb').read()).hexdigest()=='f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36'"
+COPY opsfusion /app/opsfusion
+USER 10001:10001
+CMD ["python", "-m", "opsfusion.cloud_worker"]

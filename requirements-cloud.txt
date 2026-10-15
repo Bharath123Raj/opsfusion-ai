@@ -1,0 +1,3 @@
+# Transport for the trusted cloud worker. Perception versions stay in their
+# existing requirements files; install the CPU PyTorch wheels first.
+httpx==0.28.1

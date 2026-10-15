@@ -11,3 +11,14 @@ models/
 backups/
 .env.*
 *.sqlite*
+
+node_modules/
+web/dist/
+.netlify/
+uploads/
+recordings/
+.venv*/
+*.log
+!.env.example
+web/test-results/
+web/playwright-report/

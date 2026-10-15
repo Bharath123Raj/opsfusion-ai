@@ -1,0 +1,63 @@
+{
+  "checked_at_utc": "2026-10-15T10:44:47.506112+00:00",
+  "scope": "Cloud foundation and local integration checks; actual hosting acceptance pending",
+  "python": {
+    "command": "python -m unittest discover -s tests -v",
+    "tests": 423,
+    "passed": 423,
+    "seconds": 52.656,
+    "skipped": 0
+  },
+  "web_contract": {
+    "tests": 6,
+    "passed": 6
+  },
+  "browser": {
+    "tests": 6,
+    "passed": 6,
+    "responses": "mocked cloud APIs; no real user login or email sent",
+    "browser": "Chromium 153 / Playwright 1.64.1",
+    "checks": [
+      "file upload and SHA-256 manifest",
+      "private evidence download",
+      "review saved and shown after reload",
+      "viewer permissions",
+      "nonmember isolation",
+      "mobile layout",
+      "OAuth redirect origin"
+    ]
+  },
+  "build": {
+    "command": "npm run build",
+    "passed": true,
+    "public_project_configuration": true
+  },
+  "supabase": {
+    "project_ref": "blvorawnwbcnujnapmgg",
+    "migration": "20261015093226_opsfusion_cloud_foundation",
+    "access_sql_passed": true,
+    "fixtures_rolled_back": true,
+    "checks": [
+      "roles and column privileges",
+      "private storage",
+      "immutable inputs",
+      "append-only review history",
+      "expired and reclaimed worker fencing"
+    ],
+    "advisor_warnings": [
+      "pre-existing leaked-password protection disabled"
+    ],
+    "advisor_info": [
+      "unused indexes on an empty installation"
+    ]
+  },
+  "not_verified": [
+    "Netlify publication",
+    "independent worker host",
+    "real user Google OAuth round trip",
+    "actual private Storage HTTP upload/download with user tokens",
+    "worker restart recovery on actual host",
+    "controlled own-recording detection accuracy",
+    "physical sensor/controller accuracy"
+  ]
+}
