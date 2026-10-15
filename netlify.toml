@@ -9,17 +9,4 @@
   VITE_SUPABASE_URL = "https://blvorawnwbcnujnapmgg.supabase.co"
   VITE_SUPABASE_PUBLISHABLE_KEY = "sb_publishable_6laMcNqezfhsBFFUUANPIw_q_ZANFup"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "same-origin"
-    X-Frame-Options = "DENY"
-    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
-    Cache-Control = "no-store"
-    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://blvorawnwbcnujnapmgg.supabase.co wss://blvorawnwbcnujnapmgg.supabase.co; img-src 'self' blob: data: https://blvorawnwbcnujnapmgg.supabase.co; media-src 'self' blob: https://blvorawnwbcnujnapmgg.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+# Redirects and response headers are in web/public/ and copied into dist.

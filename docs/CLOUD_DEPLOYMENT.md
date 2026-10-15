@@ -32,7 +32,8 @@ never put its key in GitHub source, browser variables, Netlify, or chat.
 2. Use the repository's `netlify.toml`: base directory `web`, build command
    `npm ci && npm run build`, publish directory `dist` relative to that base.
 3. The configuration includes this installation's public Supabase URL and
-   publishable key. For another project, replace both and update the CSP host.
+   publishable key. For another project, replace both and update the CSP host
+   in `web/public/_headers`.
    Never substitute a secret/service-role key.
 4. In Supabase **Authentication → URL Configuration**, add the published HTTPS
    origin to the allowed Redirect URLs. Configure the Site URL for this app,
