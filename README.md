@@ -13,8 +13,9 @@ The Supabase schema is installed and access-tested. The web interface is
 [published on Netlify](https://opsfusion-ai-bharath.netlify.app/) using a Free
 account. The Streamlit processing console has checked in with Supabase, but its
 public URL has not been supplied for independent hosted acceptance testing.
-An authenticated upload-to-report run and a real Google login round trip remain
-unverified. See the [latest validation record](reports/deployment_validation_20261016.json).
+A real Google login round trip and the nonmember access screen were verified on
+the deployed app. An authenticated upload-to-report run remains unverified.
+See the [latest validation record](reports/deployment_validation_20261016.json).
 See [cloud deployment](docs/CLOUD_DEPLOYMENT.md) for setup and limits.
 
 ## What works today
@@ -152,6 +153,12 @@ The latest check on **16 October 2026** passed **439 Python tests** with no skip
 responses**, and the production web build. Browser checks cover admin navigation,
 CSV upload/queueing, evidence downloads, saved reviews after reload, denied access,
 mobile sign-in and Google's account-selection callback.
+
+Live browser checks also verified Google sign-in, denied workspace access for an
+account without membership, and switching back to sign-in. The updated frontend
+was verified in Netlify's published JavaScript assets. Public HTTP checks passed
+for the homepage, review route, assets and security headers; anonymous requests
+to protected Supabase tables and the worker claim RPC returned HTTP 401.
 
 The actual Supabase role, storage-policy, job-lease and saved-review SQL checks
 also passed and rolled back their fixtures. These are database authorization

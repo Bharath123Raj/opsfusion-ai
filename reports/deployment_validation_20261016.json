@@ -86,11 +86,23 @@
     "billing_settings_changed": false
   },
   "not_verified": [
-    "Real Google sign-in round trip in this testing browser",
     "Authenticated live upload, processor claim, private evidence download and saved review across reload",
     "Streamlit public URL and host resource fit",
     "Host interruption, job reclaim and idle wake-up",
     "Controlled person-zone recording accuracy",
     "Physical sensor/controller integration and accuracy"
-  ]
+  ],
+  "public_http_after_update": {
+    "asset": "/assets/index-Ehn6Q-cv.js",
+    "account_switch_deployed": true,
+    "permission_message_deployed": true,
+    "google_account_selection_deployed": true
+  },
+  "live_browser": {
+    "google_oauth_round_trip": "Passed: returned to Netlify with a signed-in identity",
+    "nonmember_access": "Passed: no workspace data displayed; New analysis disabled with explicit membership explanation",
+    "account_switch": "Passed: Use another account returned to sign-in; subsequent Google request displayed the account chooser",
+    "admin_upload_to_report": "Not verified: selected browser identity has no membership",
+    "roles_changed": false
+  }
 }
