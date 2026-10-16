@@ -16,7 +16,9 @@ The Supabase schema is installed and access-tested. The web interface is
 account. The published Streamlit processing console loads its protected access
 screen, and an earlier worker check-in was observed in Supabase.
 A real Google login round trip and the nonmember access screen were verified on
-the deployed app. An authenticated upload-to-report run remains unverified.
+the deployed app. An authorized operator uploaded and queued a staged CSV, and
+the saved job remained visible after reload. Processing and report acceptance
+remain unverified because the hosted processor has not been unlocked for testing.
 See the [latest validation record](reports/deployment_validation_20261016.json).
 See [cloud deployment](docs/CLOUD_DEPLOYMENT.md) for setup and limits.
 
@@ -162,6 +164,12 @@ account without membership, and switching back to sign-in. The updated frontend
 was verified in Netlify's published JavaScript assets. Public HTTP checks passed
 for the homepage, review route, assets and security headers; anonymous requests
 to protected Supabase tables and the worker claim RPC returned HTTP 401.
+
+After an explicitly approved operator membership was assigned, the live **New
+analysis** form opened, a 192-byte synthetic controller CSV uploaded into private
+storage, and its job was queued. The stored SHA-256 matched the source fixture,
+and the job remained visible after reloading the portal. It remains queued;
+hosted processing, evidence downloads and saved-review acceptance are pending.
 
 The actual Supabase role, storage-policy, job-lease and saved-review SQL checks
 also passed and rolled back their fixtures. These are database authorization
