@@ -2,8 +2,11 @@
 
 This route replaces the selected Oracle VM because the owner has no payment
 card. Netlify remains the upload/review interface and Supabase remains the
-account, queue, report and private file store. **This Streamlit app is prepared,
-not published or verified on Community Cloud yet.**
+account, queue, report and private file store. The
+[published processor](https://opsfusion-ai-jjcxwxdf4yhykmcnqnw7rf.streamlit.app/)
+passed controller-only and bounded multimodal synthetic job checks on Community
+Cloud. Private downloads and a saved review after reload were verified; see the
+[validation scope](../reports/deployment_validation_20261016.json).
 
 Community Cloud provides free app hosting with a GitHub account. It hibernates
 after 12 hours without traffic and has shared CPU/memory limits. This console
@@ -103,10 +106,13 @@ Start with logs, then a small video, and add baseline training only after the
 actual host's resource use is checked. Community Cloud resources may be lower
 than the documented maximum, so larger inference/training runs may fail.
 
-Model initialization and a real job on the published host remain acceptance
-checks. Automated tests use a scripted video detector for evidence plumbing;
-they do not establish real detector accuracy. The controlled own-recording
-test and any physical hardware validation remain separate.
+The hosted smoke test initialized real YOLOv8n weights on CPU and decoded six
+blank synthetic video frames, alongside sensor/audio baseline training and
+inference and controller mapping. All four adapters completed. The scripted
+detector in local evidence-plumbing tests remains separate from this hosted
+model smoke. Neither establishes person-entry accuracy. Larger workloads, host
+interruption/reclaim, idle wake-up, the controlled own-recording test and
+physical hardware validation remain separate checks.
 
 The root Streamlit configuration now allows a hosting platform to choose its
 listener. The supervised local `python -m opsfusion.service` still binds to

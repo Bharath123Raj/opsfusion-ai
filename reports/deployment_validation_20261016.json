@@ -1,6 +1,6 @@
 {
   "checked_on": "2026-10-16",
-  "scope": "Fresh local regression and browser checks, production Supabase transactional policy checks, and public Netlify HTTP checks. Hosted authenticated processing remains unverified.",
+  "scope": "Local regression, mocked browser workflows, production database policy checks, public HTTP checks, and two authenticated synthetic hosted jobs with private artifact downloads and saved review persistence. Physical accuracy and operational resilience remain unverified.",
   "live_app": "https://opsfusion-ai-bharath.netlify.app/",
   "python_suite": {
     "command": "python -m unittest discover -s tests -v",
@@ -76,23 +76,25 @@
     "authorization": "Enabled admin/operator membership required for New analysis; one operator membership added only after explicit user approval"
   },
   "hosted_processor": {
-    "observed": "Existing on-demand-streamlit worker check-in in Supabase",
+    "observed": "Authenticated Streamlit processing completed two jobs against the deployed Supabase queue and storage",
     "public_url": "https://opsfusion-ai-jjcxwxdf4yhykmcnqnw7rf.streamlit.app/",
-    "hosted_job_acceptance": "Not verified",
+    "hosted_job_acceptance": "Passed for controller-only and bounded four-adapter synthetic workloads",
     "mode": "One queued job per trusted administrator click; no continuous monitoring",
     "public_page": "Passed: hosted OpsFusion processor title and protected access-code form rendered in browser",
-    "unlock": "Not completed: second secure submission also rejected; no credential values read or recorded"
+    "unlock": "Passed through secure browser authentication; no access code or backend key recorded in repository artifacts",
+    "locked_after_tests": true
   },
   "cost": {
     "new_paid_resources_created": false,
     "billing_settings_changed": false
   },
   "not_verified": [
-    "Hosted processor claim, result generation, private evidence download and saved review across reload",
-    "Streamlit host resource fit during processing",
+    "Person-entry accuracy on the controlled own recording",
+    "Physical sensor/controller integration and fault accuracy",
     "Host interruption, job reclaim and idle wake-up",
-    "Controlled person-zone recording accuracy",
-    "Physical sensor/controller integration and accuracy"
+    "Larger workloads at configured free-processor limits and sustained capacity",
+    "Processing from another device with the owner PC explicitly switched off",
+    "Unattended cloud monitoring, which this on-demand console does not provide"
   ],
   "public_http_after_update": {
     "asset": "/assets/index-Ehn6Q-cv.js",
@@ -104,7 +106,7 @@
     "google_oauth_round_trip": "Passed: returned to Netlify with a signed-in identity",
     "nonmember_access": "Passed: no workspace data displayed; New analysis disabled with explicit membership explanation",
     "account_switch": "Passed: Use another account returned to sign-in; subsequent Google request displayed the account chooser",
-    "admin_upload_to_report": "Not verified: admin identity not used; operator upload and queue verified separately",
+    "admin_upload_to_report": "Admin identity not used; operator upload, hosted processing, private downloads and saved review were verified",
     "roles_changed": true,
     "membership_change": "Explicitly approved operator membership added; existing administrator membership preserved",
     "new_analysis_operator": "Passed: authorized operator opened the live New analysis form",
@@ -115,8 +117,9 @@
       "bytes": 192,
       "sha256": "11139d8e14dbe16dc0598e469d64bfd55b799419bd74aaa3f1b73196071f656c",
       "verification": "Production job manifest checksum and private storage metadata matched source fixture; job visible after browser reload",
-      "job_state": "queued; attempts=0; not processed"
-    }
+      "job_state": "succeeded; attempts=1; one observation and one incident"
+    },
+    "frozen_first_alert": "Passed: report scope switched to Frozen first alert after saved-review reload"
   },
   "existing_private_input_http": {
     "anonymous_existing_input_http_status": 400,
@@ -127,5 +130,136 @@
       "code": "NoSuchKey"
     },
     "scope": "Anonymous request returned no file content. HTTP 400 with a not-found body alone does not prove authenticated object readability; DB storage policy tests and upload metadata were checked separately."
+  },
+  "hosted_controller_acceptance": {
+    "incident_json": {
+      "incidents": 1,
+      "observations": 1,
+      "synthetic": true,
+      "cause_status": "unconfirmed",
+      "automatic_action_executed": false
+    },
+    "review_bundle": {
+      "zip_integrity": "passed",
+      "incidents_match_download": true,
+      "members": [
+        "events.jsonl",
+        "replay.json",
+        "incidents.json",
+        "explanations.json",
+        "replay_report.html",
+        "explanations_report.html",
+        "run_manifest.json"
+      ]
+    },
+    "source_evidence_bundle": {
+      "zip_integrity": "passed",
+      "original_csv_bytes": 192,
+      "sha256": "11139d8e14dbe16dc0598e469d64bfd55b799419bd74aaa3f1b73196071f656c",
+      "original_source_hash_matches": true,
+      "members": [
+        "combined_events.jsonl",
+        "inputs/controller_logs.csv",
+        "logs/log_events.jsonl",
+        "logs/run_manifest.json",
+        "raw_run_manifest.json",
+        "review.zip"
+      ]
+    },
+    "individual_evidence_download": {
+      "bytes": 192,
+      "original_source_hash_matches": true,
+      "sha256": "11139d8e14dbe16dc0598e469d64bfd55b799419bd74aaa3f1b73196071f656c",
+      "note": "Verified on retry after the first returned download path was missing"
+    },
+    "saved_review": {
+      "status": "acknowledged",
+      "persisted_after_full_reload": true,
+      "audit_actor_matches_operator": true,
+      "note_marks_synthetic_test": true
+    },
+    "hosted_job": {
+      "status": "succeeded",
+      "attempts": 1,
+      "observations": 1,
+      "incidents": 1
+    }
+  },
+  "hosted_multimodal_acceptance": {
+    "hosted_job": {
+      "status": "succeeded",
+      "attempts": 1,
+      "observations": 8,
+      "incidents": 7
+    },
+    "all_observations_synthetic": true,
+    "all_incidents_synthetic": true,
+    "causes_unconfirmed": true,
+    "automatic_actions_executed": false,
+    "asset_ids": [
+      "warehouse-zone-01"
+    ],
+    "observations_by_modality": {
+      "audio": 2,
+      "sensor": 3,
+      "log": 3
+    },
+    "sensor": {
+      "completed": true,
+      "training": "uploaded reviewed synthetic normal periods",
+      "measurements": 400,
+      "episodes": 3
+    },
+    "audio": {
+      "completed": true,
+      "training": "uploaded reviewed synthetic normal periods",
+      "windows": 30,
+      "episodes": 2
+    },
+    "logs": {
+      "completed": true,
+      "rows": 6,
+      "mapped_events": 3,
+      "unmapped_retained": 3
+    },
+    "video": {
+      "completed": true,
+      "sampled_frames": 6,
+      "video_observations": 0,
+      "detector": {
+        "name": "yolov8n.pt",
+        "ultralytics_version": "8.3.40",
+        "weights_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+        "device": "cpu",
+        "confidence_threshold": 0.6,
+        "person_class_id": 0
+      },
+      "input": "1.2-second blank synthetic AVI; no person detection accuracy claim",
+      "annotated_video_decoded_frames": 6,
+      "separate_download_matches_source_bundle": true
+    },
+    "source_bundle": {
+      "zip_integrity": "passed",
+      "members": 40
+    },
+    "scope": "Bounded synthetic software integration and CPU model smoke; not real hardware or controlled-person accuracy validation",
+    "input_preparation": {
+      "sensor": "Filter existing data/sensor-demo CSVs to warehouse-zone-01; preserve synthetic flags and timestamps",
+      "audio_training": "Concatenate data/audio-demo/train-0.wav and train-1.wav at 16 kHz",
+      "audio_validation": "data/audio-demo/validation-0.wav",
+      "audio_capture": "data/audio-demo/test-0.wav",
+      "logs": "data/audio-demo/logs.csv",
+      "video": "Six all-black 100x100 MJPG AVI frames at 5 FPS",
+      "starts": {
+        "video": "2026-01-01T10:00:00Z",
+        "audio": "2026-01-01T10:00:00Z",
+        "audio_train": "2026-01-01T09:56:40Z",
+        "audio_validation": "2026-01-01T09:58:20Z"
+      },
+      "video_seconds": 1.2,
+      "sample_fps": 5,
+      "normal_periods_reviewed": true,
+      "all_input_modalities_marked_synthetic": true
+    }
   }
 }

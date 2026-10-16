@@ -14,11 +14,11 @@ Auth, Postgres and private file storage, plus a separate Python worker.
 The Supabase schema is installed and access-tested. The web interface is
 [published on Netlify](https://opsfusion-ai-bharath.netlify.app/) using a Free
 account. The published Streamlit processing console loads its protected access
-screen, and an earlier worker check-in was observed in Supabase.
-A real Google login round trip and the nonmember access screen were verified on
-the deployed app. An authorized operator uploaded and queued a staged CSV, and
-the saved job remained visible after reload. Processing and report acceptance
-remain unverified because the hosted processor has not been unlocked for testing.
+screen. Two synthetic jobs passed through the deployed upload, queue, worker and
+report workflow: a controller-only job and a job exercising all four adapters.
+Google sign-in, access controls, private downloads and a saved review after
+reload were also verified. Real-recording and physical hardware accuracy remain
+separate acceptance checks.
 See the [latest validation record](reports/deployment_validation_20261016.json).
 See [cloud deployment](docs/CLOUD_DEPLOYMENT.md) for setup and limits.
 
@@ -51,7 +51,7 @@ application does not issue machine-control commands.
 | --- | --- | --- |
 | Netlify | React login, uploads, progress, private downloads and incident review | Published on a Free Netlify account; GitHub `main` linked |
 | Supabase | Hosted Auth, jobs, reports, reviews, worker leases and private media | Schema installed; role, storage and stale-worker checks passed |
-| Python processor | Validate recordings, run adapters/fusion, save results | Published Streamlit access screen verified; hosted job acceptance pending |
+| Python processor | Validate recordings, run adapters/fusion, save results | Published; controller and bounded multimodal hosted smoke tests passed |
 
 Cloud jobs process **uploaded recordings**. Existing local webcam/RTSP and HTTP
 monitoring features remain local; this change does not migrate their live feeds.
@@ -61,13 +61,14 @@ This is one shared site with admin/operator/viewer roles, not tenant isolation.
 The portal remains on Netlify and Supabase. The selected card-free route is a
 [Streamlit on-demand processor](docs/STREAMLIT_PROCESSOR.md). Its
 [published console](https://opsfusion-ai-jjcxwxdf4yhykmcnqnw7rf.streamlit.app/)
-was verified up to its access-code gate; live job processing remains unverified.
-It processes one queued recording per administrator
-click and sleeps when unused; it does not provide unattended monitoring.
+processed the uploaded test jobs, including sensor/audio baseline training and
+real YOLOv8n CPU inference on a blank synthetic video. It processes one queued
+recording per administrator click and sleeps when unused; it does not provide
+unattended monitoring.
 This deployment is restricted to **free resources only**. No paid processing
 service has been created. Oracle setup is deferred because account verification
-requires a card. Processing can run with the PC off once the cloud console is
-available and verified. Fresh device input still needs an online acquisition device.
+requires a card. The hosted console processes uploaded recordings independently
+of the local application. Fresh device input still needs an online acquisition device.
 
 ### Workspace access
 
@@ -168,12 +169,24 @@ to protected Supabase tables and the worker claim RPC returned HTTP 401.
 After an explicitly approved operator membership was assigned, the live **New
 analysis** form opened, a 192-byte synthetic controller CSV uploaded into private
 storage, and its job was queued. The stored SHA-256 matched the source fixture,
-and the job remained visible after reloading the portal. It remains queued;
-hosted processing, evidence downloads and saved-review acceptance are pending.
+and the job remained visible after reloading the portal. The hosted worker
+then completed it with **1 observation and 1 incident**.
+The downloaded report and review ZIP agreed, and both the individual evidence
+CSV and the CSV in the source-evidence ZIP matched the original SHA-256. An
+acknowledged review and its operator audit record survived a full browser reload.
+
+A second hosted test passed all four adapters: **400 sensor measurements**
+produced 3 episodes, **30 audio windows** produced 2 episodes, and 6 controller
+rows produced 3 mapped events. YOLOv8n ran on **6 blank synthetic video frames**
+and produced no person observations; the downloaded annotated recording decoded
+to 6 frames. Fusion saved **8 observations and 7 incidents**, all synthetic,
+with causes unconfirmed and no automatic machine actions. This checks the
+uploaded-file workflow and small host workload, not person-entry accuracy,
+physical fault accuracy or capacity at the maximum upload limits.
 
 The actual Supabase role, storage-policy, job-lease and saved-review SQL checks
 also passed and rolled back their fixtures. These are database authorization
-checks, not an authenticated Storage HTTP or hosted processing test. See the
+checks, separate from the authenticated live download and processing tests above. See the
 [latest validation scope and remaining checks](reports/deployment_validation_20261016.json).
 Earlier results are retained in [cloud foundation validation](reports/cloud_foundation_validation.json)
 and [on-demand processor validation](reports/on_demand_validation.json).
@@ -192,10 +205,10 @@ See [Step16 validation](docs/STEP16_VALIDATION.md) and
   hardware has been integrated or calibrated.
 - Live audio correlation and direct MQTT/OPC UA device bridges are not implemented.
 - Local role permissions do not provide isolation between independent customers.
-- The Netlify frontend is public. Cloud authentication, private storage policies
-  and worker execution are implemented; authenticated hosted processing,
-  restart/recovery and end-to-end acceptance still need actual-host validation.
-  Software tests do not establish physical detection accuracy.
+- The deployed uploaded-file workflow passed synthetic acceptance checks.
+  Host interruption/reclaim, idle wake-up, larger workloads and sustained use
+  still need actual-host validation. Software tests do not establish physical
+  detection accuracy.
 - Optional email delivery is deferred in the current walkthrough.
 
 ## Data and credentials

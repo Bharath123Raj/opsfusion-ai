@@ -14,16 +14,20 @@ SQLite accounts, old runs, camera watches or live sensor streams into the cloud.
 - HTTPS, the single-page fallback and response security headers passed live
   HTTP checks after a regular account deployment. Anonymous previews did not
   apply these rules; they are not the production deployment.
-- Supabase schema/access checks passed; the selected existing Google identity
-  has admin membership. In Supabase **Authentication → URL Configuration**,
-  append `https://opsfusion-ai-bharath.netlify.app` to **Redirect URLs**,
-  retaining existing entries, before testing the Google login round trip.
-  This setting is not exposed by the connected Supabase tools.
-- **No paid resources:** independent Python processing is not provisioned.
-  Oracle signup was blocked by card verification. The selected card-free route
-  is a [Streamlit on-demand processor](STREAMLIT_PROCESSOR.md), handling one
-  queued recording per administrator click. It is prepared, with publication
-  and live host acceptance pending. It does not provide continuous monitoring.
+- Supabase schema/access checks and a real Google login round trip passed.
+  Existing admin access was preserved and an operator membership was added with
+  explicit approval. For another installation, allow its Netlify origin in
+  **Authentication → URL Configuration → Redirect URLs**, retaining existing
+  entries. This setting is not exposed by the connected Supabase tools.
+- **No paid resources:** the selected card-free route is the published
+  [Streamlit on-demand processor](https://opsfusion-ai-jjcxwxdf4yhykmcnqnw7rf.streamlit.app/),
+  handling one queued recording per administrator click. Controller-only and
+  bounded four-adapter synthetic jobs passed hosted processing. Private result
+  downloads and a saved review after reload were verified. See
+  [processor setup and limits](STREAMLIT_PROCESSOR.md) and the
+  [validation record](../reports/deployment_validation_20261016.json).
+  Oracle signup was blocked by card verification; no Oracle VM was created.
+  This deployment does not provide continuous monitoring.
 
 ## Components and authorization
 
