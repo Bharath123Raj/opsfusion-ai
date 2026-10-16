@@ -9,17 +9,25 @@ for name in ('OMP_NUM_THREADS', 'OPENBLAS_NUM_THREADS', 'MKL_NUM_THREADS'):
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import streamlit as st
-from opsfusion.on_demand import Runtime, authorized, run_next, settings_for
+from opsfusion.on_demand import Runtime, SetupError, authorized, run_next, settings_for
 
 PORTAL = 'https://opsfusion-ai-bharath.netlify.app/'
 st.set_page_config(page_title='OpsFusion processor', page_icon='⚙️', layout='centered')
 st.title('OpsFusion processor')
 st.caption('Run one queued recording job on demand. Reports and evidence return to the cloud portal.')
 
+setup_message = None
 try:
     settings = settings_for(st.secrets)
+except SetupError as exc:
+    setup_message = str(exc)
 except Exception:
-    st.info('The owner must configure the processor secrets in Streamlit app settings before this console can connect.')
+    setup_message = 'Streamlit could not read the processor secrets. Add the three settings as valid TOML in this app’s Secrets settings.'
+
+if setup_message:
+    st.warning('Processor setup incomplete')
+    st.info(setup_message)
+    st.caption('Open Manage app → Settings → Secrets. Keep each value inside double quotes and the three settings at the top level, without a [section] header. Save, then reload this page. No setting values are displayed here.')
     st.link_button('Open OpsFusion', PORTAL)
     st.stop()
 

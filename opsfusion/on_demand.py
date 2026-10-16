@@ -8,7 +8,7 @@ import tempfile
 import threading
 import uuid
 
-from .cloud_worker import CloudClient, LeaseLost, MIB, configuration, identifier, process_job
+from .cloud_worker import CloudClient, ConfigurationError, LeaseLost, MIB, configuration, identifier, process_job
 
 
 @dataclass(frozen=True)
@@ -19,16 +19,25 @@ class Settings:
     session_stamp: str = field(repr=False)
 
 
+class SetupError(ValueError):
+    """A safe field-specific message for the processor setup page."""
+    pass
+
+
 def settings_for(secrets):
     names = ('OPSFUSION_SUPABASE_URL', 'OPSFUSION_SUPABASE_SECRET_KEY', 'OPSFUSION_PROCESSOR_ACCESS_CODE')
-    if any(not isinstance(secrets.get(name), str) for name in names):
-        raise ValueError('Configure the three processor secrets in the hosting settings')
-    url, key = configuration(url=secrets[names[0]], key=secrets[names[1]])
+    missing = [name for name in names if not isinstance(secrets.get(name), str) or not secrets[name].strip()]
+    if missing:
+        raise SetupError('Add a non-empty quoted value for: ' + ', '.join(missing))
+    try:
+        url, key = configuration(url=secrets[names[0]], key=secrets[names[1]])
+    except ConfigurationError as exc:
+        raise SetupError(str(exc)) from None
     code = secrets[names[2]]
     if not re.fullmatch(r'[A-Za-z0-9_-]{32,128}', code):
-        raise ValueError('Use a randomly generated processor access code of 32–128 URL-safe characters')
+        raise SetupError('OPSFUSION_PROCESSOR_ACCESS_CODE must be a randomly generated code of 32–128 letters, digits, hyphens or underscores')
     if hmac.compare_digest(code, key):
-        raise ValueError('The processor access code must be separate from the backend API key')
+        raise SetupError('OPSFUSION_PROCESSOR_ACCESS_CODE must be separate from OPSFUSION_SUPABASE_SECRET_KEY')
     digest = hashlib.sha256(code.encode()).digest()
     stamp = hmac.new(key.encode(), url.encode() + b'\0' + digest, hashlib.sha256).hexdigest()
     return Settings(url, key, digest, stamp)

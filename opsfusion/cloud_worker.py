@@ -43,6 +43,11 @@ class LeaseLost(CloudError):
     pass
 
 
+class ConfigurationError(ValueError):
+    """A configuration diagnostic whose message never includes a setting value."""
+    pass
+
+
 def identifier(value):
     if not isinstance(value, str) or str(uuid.UUID(value)) != value:
         raise ValueError('Expected a canonical UUID')
@@ -52,10 +57,14 @@ def identifier(value):
 def configuration(*, url=None, key=None):
     url = (os.environ.get('OPSFUSION_SUPABASE_URL', '') if url is None else url).rstrip('/')
     key = os.environ.get('OPSFUSION_SUPABASE_SECRET_KEY', '') if key is None else key
-    parsed = urlsplit(url)
-    if (parsed.scheme != 'https' or not parsed.hostname or not parsed.hostname.endswith('.supabase.co')
-            or parsed.path or parsed.query or parsed.fragment or parsed.username or parsed.password or parsed.port):
-        raise ValueError('Set OPSFUSION_SUPABASE_URL to your hosted Supabase project HTTPS URL')
+    try:
+        parsed = urlsplit(url)
+        valid_url = (parsed.scheme == 'https' and parsed.hostname and parsed.hostname.endswith('.supabase.co')
+            and not (parsed.path or parsed.query or parsed.fragment or parsed.username or parsed.password or parsed.port))
+    except ValueError:
+        valid_url = False
+    if not valid_url:
+        raise ConfigurationError('Set OPSFUSION_SUPABASE_URL to your hosted Supabase project HTTPS URL')
     if not (key.startswith('sb_secret_') and len(key) >= 30):
         # Legacy support is explicit and rejects a frontend anon key.
         try:
@@ -63,7 +72,7 @@ def configuration(*, url=None, key=None):
             claims = json.loads(base64.urlsafe_b64decode(payload + '=' * (-len(payload) % 4)))
             if not isinstance(claims, dict) or claims.get('role') != 'service_role': raise ValueError()
         except (ValueError, IndexError, TypeError, KeyError):
-            raise ValueError('Set a backend Supabase secret key; never use the frontend publishable key') from None
+            raise ConfigurationError('Set OPSFUSION_SUPABASE_SECRET_KEY to a backend Supabase secret key; never use the frontend publishable key') from None
     return url, key
 
 

@@ -3,7 +3,7 @@ import unittest
 from unittest.mock import Mock, patch
 
 from opsfusion.cloud_worker import LeaseLost
-from opsfusion.on_demand import Runtime, authorized, run_next, settings_for
+from opsfusion.on_demand import Runtime, SetupError, authorized, run_next, settings_for
 from test_cloud_worker import FakeCloud, job_for
 from test_raw_ingest import controller
 
@@ -69,6 +69,20 @@ class OnDemandTests(unittest.TestCase):
         self.assertIsNotNone(self.client.finished)
         self.assertTrue(self.client.closed)
         self.assertFalse(self.runtime.lock.locked())
+
+    def test_setup_diagnostics_identify_fields_without_exposing_values(self):
+        cases = [('OPSFUSION_SUPABASE_SECRET_KEY', ''),
+                 ('OPSFUSION_SUPABASE_SECRET_KEY', 'sb_publishable_' + 'private_fixture_marker'),
+                 ('OPSFUSION_SUPABASE_URL', 'https://example.supabase.co:private_fixture_marker'),
+                 ('OPSFUSION_PROCESSOR_ACCESS_CODE', 'private_fixture_marker')]
+        for name, value in cases:
+            with self.subTest(field=name):
+                with self.assertRaises(SetupError) as caught:
+                    settings_for({**SECRETS, name: value})
+                message = str(caught.exception)
+                self.assertIn(name, message)
+                self.assertNotIn('private_fixture_marker', message)
+                self.assertNotIn(SECRETS['OPSFUSION_SUPABASE_SECRET_KEY'], message)
 
     def test_idle_or_busy_click_never_starts_a_polling_loop(self):
         self.client.job = None
@@ -140,6 +154,18 @@ class ProcessorPageTests(unittest.TestCase):
             next(b for b in app.button if b.label == 'Lock processor').click().run()
             self.assertFalse(any(b.label == 'Process next queued job' for b in app.button))
             self.assertTrue(app.text_input)
+
+    def test_invalid_setting_names_are_visible_but_values_are_not(self):
+        with patch('opsfusion.on_demand.run_next') as run:
+            app = self.page()
+            app.secrets['OPSFUSION_PROCESSOR_ACCESS_CODE'] = 'private_fixture_marker'
+            app.run()
+            self.assertFalse(app.exception)
+            rendered = ' '.join(item.value for item in app.info)
+            self.assertIn('OPSFUSION_PROCESSOR_ACCESS_CODE', rendered)
+            self.assertNotIn('private_fixture_marker', rendered)
+            self.assertFalse(app.button)
+            run.assert_not_called()
 
 
 if __name__ == '__main__':
