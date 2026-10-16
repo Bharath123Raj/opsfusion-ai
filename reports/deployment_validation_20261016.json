@@ -1,0 +1,96 @@
+{
+  "checked_on": "2026-10-16",
+  "scope": "Fresh local regression and browser checks, production Supabase transactional policy checks, and public Netlify HTTP checks. Hosted authenticated processing remains unverified.",
+  "live_app": "https://opsfusion-ai-bharath.netlify.app/",
+  "python_suite": {
+    "command": "python -m unittest discover -s tests -v",
+    "python": "3.12",
+    "tests": 439,
+    "passed": 439,
+    "skipped": 0,
+    "seconds": 55.78,
+    "dependency_sources": [
+      "cloud_processor/requirements.txt",
+      "requirements-app.txt"
+    ],
+    "pip_check": "No broken requirements found"
+  },
+  "web": {
+    "contract_tests": {
+      "command": "npm test",
+      "passed": 6
+    },
+    "browser_tests": {
+      "command": "npm run test:e2e",
+      "passed": 7,
+      "cloud_responses": "mocked; no real authentication or private storage HTTP upload",
+      "checks": [
+        "Operator CSV upload and checksum manifest queueing",
+        "Admin opens New analysis from sidebar",
+        "Evidence download and saved review visible after reload",
+        "Viewer cannot submit or change reviews",
+        "Nonmember sees no workspace data and can switch accounts",
+        "Mobile sign-in fits viewport",
+        "Google OAuth includes current-origin callback and account selection"
+      ]
+    },
+    "production_build": "npm run build passed"
+  },
+  "production_database": {
+    "result": "Passed; fixtures rolled back",
+    "source": "supabase/tests/cloud_access.sql",
+    "method": "Transaction-local JWT claims and Postgres roles against the deployed schema; no Auth users created",
+    "checks": [
+      "Admin/operator/viewer/nonmember/anonymous permissions",
+      "Job manifests and queue transitions",
+      "Private storage object policy permissions",
+      "Worker claim, heartbeat, expiry, reclaim and stale-lease fencing",
+      "Append-only review actor audit",
+      "Worker RPC unavailable to public roles"
+    ]
+  },
+  "public_http_before_update": {
+    "root_status": 200,
+    "headers": {
+      "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://blvorawnwbcnujnapmgg.supabase.co wss://blvorawnwbcnujnapmgg.supabase.co; img-src 'self' blob: data: https://blvorawnwbcnujnapmgg.supabase.co; media-src 'self' blob: https://blvorawnwbcnujnapmgg.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'",
+      "x-frame-options": "DENY",
+      "x-content-type-options": "nosniff",
+      "cache-control": "no-store"
+    },
+    "assets": {
+      "/assets/index-CPcyeaNk.js": 200,
+      "/assets/index-DGeMHjWL.css": 200
+    },
+    "spa_route_status": 200,
+    "anonymous_access": {
+      "opsfusion_jobs": 401,
+      "opsfusion_incidents": 401,
+      "opsfusion_reviews": 401,
+      "opsfusion_members": 401,
+      "claim_job_rpc": 401
+    },
+    "checked_on": "2026-10-16"
+  },
+  "access_fix": {
+    "behavior": "Explains missing membership or viewer permissions; local sign-out account-switch action; Google account chooser requested",
+    "authorization": "Unchanged: enabled admin/operator membership required for New analysis; no roles granted"
+  },
+  "hosted_processor": {
+    "observed": "Existing on-demand-streamlit worker check-in in Supabase",
+    "public_url": "Not provided or discoverable from repository/deployment records",
+    "hosted_job_acceptance": "Not verified",
+    "mode": "One queued job per trusted administrator click; no continuous monitoring"
+  },
+  "cost": {
+    "new_paid_resources_created": false,
+    "billing_settings_changed": false
+  },
+  "not_verified": [
+    "Real Google sign-in round trip in this testing browser",
+    "Authenticated live upload, processor claim, private evidence download and saved review across reload",
+    "Streamlit public URL and host resource fit",
+    "Host interruption, job reclaim and idle wake-up",
+    "Controlled person-zone recording accuracy",
+    "Physical sensor/controller integration and accuracy"
+  ]
+}

@@ -1,5 +1,7 @@
 # OpsFusion AI
 
+**Live app: [opsfusion-ai-bharath.netlify.app](https://opsfusion-ai-bharath.netlify.app/)**
+
 OpsFusion combines observations from video, sensor measurements, machine audio
 and controller logs into evidence-backed incident reports for human review.
 The local application includes a Streamlit dashboard, FastAPI API and Python
@@ -9,8 +11,10 @@ Auth, Postgres and private file storage, plus a separate Python worker.
 **Status:** local version **0.16.0** plus the implemented cloud portal and worker.
 The Supabase schema is installed and access-tested. The web interface is
 [published on Netlify](https://opsfusion-ai-bharath.netlify.app/) using a Free
-account. A card-free Streamlit processing console is prepared; publication,
-Google sign-in verification and end-to-end acceptance are still required.
+account. The Streamlit processing console has checked in with Supabase, but its
+public URL has not been supplied for independent hosted acceptance testing.
+An authenticated upload-to-report run and a real Google login round trip remain
+unverified. See the [latest validation record](reports/deployment_validation_20261016.json).
 See [cloud deployment](docs/CLOUD_DEPLOYMENT.md) for setup and limits.
 
 ## What works today
@@ -42,7 +46,7 @@ application does not issue machine-control commands.
 | --- | --- | --- |
 | Netlify | React login, uploads, progress, private downloads and incident review | Published on a Free Netlify account; GitHub `main` linked |
 | Supabase | Hosted Auth, jobs, reports, reviews, worker leases and private media | Schema installed; role, storage and stale-worker checks passed |
-| Python processor | Validate recordings, run adapters/fusion, save results | Worker and protected one-job-per-click Streamlit console tested locally; host publication pending |
+| Python processor | Validate recordings, run adapters/fusion, save results | Protected one-job-per-click Streamlit console tested locally; hosted worker check-in observed, hosted job acceptance pending |
 
 Cloud jobs process **uploaded recordings**. Existing local webcam/RTSP and HTTP
 monitoring features remain local; this change does not migrate their live feeds.
@@ -50,13 +54,23 @@ Local SQLite accounts/history are separate from Supabase accounts and data.
 This is one shared site with admin/operator/viewer roles, not tenant isolation.
 
 The portal remains on Netlify and Supabase. The selected card-free route is a
-[Streamlit on-demand processor](docs/STREAMLIT_PROCESSOR.md), prepared but not
-yet published or live-tested. It processes one queued recording per administrator
+[Streamlit on-demand processor](docs/STREAMLIT_PROCESSOR.md). A hosted worker
+check-in has been observed; its public URL and live job processing still need
+independent verification. It processes one queued recording per administrator
 click and sleeps when unused; it does not provide unattended monitoring.
 This deployment is restricted to **free resources only**. No paid processing
 service has been created. Oracle setup is deferred because account verification
 requires a card. Processing can run with the PC off once the cloud console is
-published and verified. Fresh device input still needs an online acquisition device.
+available and verified. Fresh device input still needs an online acquisition device.
+
+### Workspace access
+
+Sign in with the account approved by the site administrator. **New analysis**
+requires an enabled `admin` or `operator` membership; a `viewer` can read reports.
+Signing in with another Google account does not create a workspace membership.
+If access is missing, use **Use another account**, then **Continue with Google**
+and choose the approved identity. The app explains missing access without
+changing permissions.
 
 For the web interface, use Node 24:
 
@@ -133,11 +147,18 @@ The recorded Step16 Linux/Python 3.12 run passed **417 software tests**, includi
 backup/restore and deployment-tooling checks. This is a recorded development
 result, not proof of public-cloud deployment or real-world detection accuracy.
 
-The cloud integration check passed **423 Python tests**, **6 browser-input tests**,
-and **6 browser workflows using mocked cloud responses**. The actual Supabase
-role/storage/lease SQL checks also passed and rolled back their fixtures.
-See [cloud validation scope](reports/cloud_foundation_validation.json).
-These checks do not verify the pending hosts or a real Google login round trip.
+The latest check on **16 October 2026** passed **439 Python tests** with no skips,
+**6 JavaScript contract tests**, **7 browser workflows using mocked cloud
+responses**, and the production web build. Browser checks cover admin navigation,
+CSV upload/queueing, evidence downloads, saved reviews after reload, denied access,
+mobile sign-in and Google's account-selection callback.
+
+The actual Supabase role, storage-policy, job-lease and saved-review SQL checks
+also passed and rolled back their fixtures. These are database authorization
+checks, not an authenticated Storage HTTP or hosted processing test. See the
+[latest validation scope and remaining checks](reports/deployment_validation_20261016.json).
+Earlier results are retained in [cloud foundation validation](reports/cloud_foundation_validation.json)
+and [on-demand processor validation](reports/on_demand_validation.json).
 
 To run the suite in your installed environment:
 
@@ -153,9 +174,10 @@ See [Step16 validation](docs/STEP16_VALIDATION.md) and
   hardware has been integrated or calibrated.
 - Live audio correlation and direct MQTT/OPC UA device bridges are not implemented.
 - Local role permissions do not provide isolation between independent customers.
-- Cloud authentication, storage policies and worker execution are implemented.
-  Hosting, restart/recovery and end-to-end acceptance still need actual-host
-  validation. No public deployment or physical accuracy claim follows from tests.
+- The Netlify frontend is public. Cloud authentication, private storage policies
+  and worker execution are implemented; authenticated hosted processing,
+  restart/recovery and end-to-end acceptance still need actual-host validation.
+  Software tests do not establish physical detection accuracy.
 - Optional email delivery is deferred in the current walkthrough.
 
 ## Data and credentials

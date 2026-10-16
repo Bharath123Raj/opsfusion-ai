@@ -25,7 +25,7 @@ function SignIn() {
   }
   async function google() {
     setBusy(true); setError('')
-    try { fail(await supabase.auth.signInWithOAuth({ provider: 'google', options: { redirectTo: window.location.origin } })) }
+    try { fail(await supabase.auth.signInWithOAuth({ provider: 'google', options: { redirectTo: window.location.origin, queryParams: { prompt: 'select_account' } } })) }
     catch { setError('Google sign-in could not start. Contact your administrator.'); setBusy(false) }
   }
   return <div className="login-shell"><aside className="login-story"><Brand/><div><p className="eyebrow">EVIDENCE BEFORE ASSUMPTIONS</p><h1>One workspace.<br/>A clearer operational picture.</h1><p>Bring recordings, machine measurements and controller events together for incident review.</p></div><small>Human review. Traceable evidence. Unconfirmed causes.</small></aside>
@@ -145,6 +145,10 @@ function Workspace({ session }) {
   const [error, setError] = useState(''), [busy, setBusy] = useState(false)
   const online = workerOnline(workers), canReview = ['admin', 'operator'].includes(role)
   const job = jobs.find(j => j.id === selected)
+  async function signOut() {
+    try { fail(await supabase.auth.signOut({ scope: 'local' })) }
+    catch { setError('Could not sign out of this browser. Please try again.') }
+  }
   async function refresh() {
     setBusy(true)
     try {
@@ -171,11 +175,12 @@ function Workspace({ session }) {
   }
   useEffect(() => { refresh(); const timer = setInterval(refresh, 10000); return () => clearInterval(timer) }, [session.user.id])
   useEffect(() => { setIncidents([]); setReviews([]); refreshDetail().catch(() => setError('Incident details could not refresh.')); const timer = setInterval(() => refreshDetail().catch(() => { setIncidents([]); setReviews([]) }), 10000); return () => clearInterval(timer) }, [selected, role])
-  return <div className="app-shell"><aside className="sidebar"><Brand/><p className="nav-label">WORKSPACE</p><nav>{[['overview', '◫', 'Overview'], ['recordings', '↥', 'New analysis'], ['incidents', '≡', 'Incident review']].map(([id, icon, label]) => <button key={id} className={tab === id ? 'active' : ''} onClick={() => setTab(id)} disabled={id === 'recordings' && !canReview}><span>{icon}</span>{label}</button>)}</nav><div className="sidebar-bottom"><p>Connected account</p><strong>{session.user.email}</strong><span className="role">{role || 'Access pending'}</span><button onClick={() => supabase.auth.signOut()}>Sign out ↗</button></div></aside>
+  return <div className="app-shell"><aside className="sidebar"><Brand/><p className="nav-label">WORKSPACE</p><nav>{[['overview', '◫', 'Overview'], ['recordings', '↥', 'New analysis'], ['incidents', '≡', 'Incident review']].map(([id, icon, label]) => <button key={id} className={tab === id ? 'active' : ''} onClick={() => setTab(id)} disabled={id === 'recordings' && !canReview} title={id === 'recordings' && !canReview ? 'New analysis requires admin or operator access.' : undefined}><span>{icon}</span>{label}</button>)}</nav><div className="sidebar-bottom"><p>Connected account</p><strong>{session.user.email}</strong><span className="role">{role || 'Access pending'}</span><button onClick={signOut}>Sign out ↗</button></div></aside>
     <main className="workspace"><header><div><p className="eyebrow">OPERATIONS / {tab === 'recordings' ? 'NEW ANALYSIS' : tab === 'incidents' ? 'INCIDENT REVIEW' : 'OVERVIEW'}</p><h1>{tab === 'recordings' ? 'Analyse recordings' : tab === 'incidents' ? 'Incident review' : 'Operational overview'}</h1></div><button className="secondary" disabled={busy} onClick={refresh}>{busy ? 'Refreshing…' : '↻ Refresh'}</button></header>
       {error && <Notice error>{error}</Notice>}
-      {role === undefined ? <section className="panel empty-state"><h2>Checking workspace access</h2><p>Loading your account permissions…</p></section> : role === null ? <section className="panel empty-state"><h2>Your account is signed in</h2><p>Your administrator needs to grant membership before you can access this workspace.</p><button className="secondary" onClick={refresh}>Check access again</button></section> : <>
+      {role === undefined ? <section className="panel empty-state"><h2>Checking workspace access</h2><p>Loading your account permissions…</p></section> : role === null ? <section className="panel empty-state"><h2>Your account is signed in</h2><p>No workspace membership is assigned to <strong>{session.user.email}</strong>. New analysis requires an admin or operator role. Use your approved account, or ask your administrator to grant access.</p><div className="download-row"><button className="secondary" onClick={signOut}>Use another account</button><button className="secondary" onClick={refresh}>Check access again</button></div></section> : <>
       <div className="workspace-strip"><span><i className={online ? 'online' : 'offline'}/>{online ? 'Processing worker connected' : 'No recent worker heartbeat'}</span><span>Private site · {role} access</span></div>
+      {!canReview && <Notice>Your viewer role can read reports. New analysis and review changes require admin or operator access.</Notice>}
       {tab === 'recordings' && canReview ? <section className="panel"><NewRecording session={session} online={online} onSubmitted={id => { setSelected(id); setTab('incidents'); refresh() }}/></section> : <>
         {tab === 'overview' && <><div className="stat-grid"><div className="stat"><span>Saved analysis jobs</span><strong>{jobs.length}</strong><small>Most recent 100 jobs</small></div><div className="stat"><span>Queued / processing</span><strong>{jobs.filter(j => ['queued', 'running'].includes(j.status)).length}</strong><small>{online ? 'Worker is available' : 'Waiting for a processing host'}</small></div><div className="stat"><span>Completed analyses</span><strong>{jobs.filter(j => j.status === 'succeeded').length}</strong><small>Open a job to review its evidence</small></div></div><div className="overview-note"><span>01</span><div><strong>Observations become context. People make the call.</strong><p>Correlate aligned recordings and measurements, then check the source evidence before resolving an incident.</p></div></div></>}
         <section className="panel"><div className="section-line"><div><p className="eyebrow">RECENT ACTIVITY</p><h2>Recording analyses</h2></div>{canReview && <button className="primary" onClick={() => setTab('recordings')}>+ New analysis</button>}</div>

@@ -60,6 +60,14 @@ test('operator uploads a real CSV payload and queues its checksum manifest', asy
   expect(state.manifest.settings.video_start).toBeUndefined()
 })
 
+test('admin opens New analysis from the sidebar', async ({ page }) => {
+  await setup(page, { role: 'admin' })
+  await page.getByRole('navigation').getByRole('button', { name: /New analysis/ }).click()
+  await expect(page.getByRole('heading', { name: 'Analyse recordings' })).toBeVisible()
+  await expect(page.getByLabel('Asset ID', { exact: true })).toBeVisible()
+  await expect(page.getByRole('button', { name: 'Upload & queue analysis →' })).toBeEnabled()
+})
+
 test('evidence downloads and saved reviews remain visible after reload', async ({ page }) => {
   await setup(page, { completed: true })
   await page.getByRole('button', { name: 'Open →' }).click()
@@ -81,6 +89,7 @@ test('evidence downloads and saved reviews remain visible after reload', async (
 test('viewer cannot submit or review', async ({ page }) => {
   await setup(page, { role: 'viewer', completed: true })
   await expect(page.getByRole('button', { name: /New analysis/ })).toBeDisabled()
+  await expect(page.getByText('Your viewer role can read reports. New analysis and review changes require admin or operator access.')).toBeVisible()
   await page.getByRole('button', { name: 'Open →' }).click()
   await expect(page.getByRole('button', { name: 'Save review' })).toHaveCount(0)
 })
@@ -89,6 +98,9 @@ test('signed-in nonmember sees no site data', async ({ page }) => {
   await setup(page, { role: null })
   await expect(page.getByRole('heading', { name: 'Your account is signed in' })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Recording analyses' })).toHaveCount(0)
+  await expect(page.getByText('No workspace membership is assigned to', { exact: false })).toBeVisible()
+  await page.getByRole('button', { name: 'Use another account' }).click()
+  await expect(page.getByRole('heading', { name: 'Welcome back' })).toBeVisible()
 })
 
 test('mobile sign-in fits the viewport', async ({ page }) => {
@@ -106,5 +118,6 @@ test('Google sign-in requests the current origin as its callback', async ({ page
   await expect(page).toHaveURL(/auth\/v1\/authorize\?/)
   const url = new URL(page.url())
   expect(url.searchParams.get('provider')).toBe('google')
+  expect(url.searchParams.get('prompt')).toBe('select_account')
   expect(url.searchParams.get('redirect_to')).toBe('http://127.0.0.1:4173')
 })
