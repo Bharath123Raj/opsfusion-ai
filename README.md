@@ -2,6 +2,8 @@
 
 **Live app: [opsfusion-ai-bharath.netlify.app](https://opsfusion-ai-bharath.netlify.app/)**
 
+**On-demand processor: [Open Streamlit console](https://opsfusion-ai-jjcxwxdf4yhykmcnqnw7rf.streamlit.app/)**
+
 OpsFusion combines observations from video, sensor measurements, machine audio
 and controller logs into evidence-backed incident reports for human review.
 The local application includes a Streamlit dashboard, FastAPI API and Python
@@ -11,8 +13,8 @@ Auth, Postgres and private file storage, plus a separate Python worker.
 **Status:** local version **0.16.0** plus the implemented cloud portal and worker.
 The Supabase schema is installed and access-tested. The web interface is
 [published on Netlify](https://opsfusion-ai-bharath.netlify.app/) using a Free
-account. The Streamlit processing console has checked in with Supabase, but its
-public URL has not been supplied for independent hosted acceptance testing.
+account. The published Streamlit processing console loads its protected access
+screen, and an earlier worker check-in was observed in Supabase.
 A real Google login round trip and the nonmember access screen were verified on
 the deployed app. An authenticated upload-to-report run remains unverified.
 See the [latest validation record](reports/deployment_validation_20261016.json).
@@ -47,7 +49,7 @@ application does not issue machine-control commands.
 | --- | --- | --- |
 | Netlify | React login, uploads, progress, private downloads and incident review | Published on a Free Netlify account; GitHub `main` linked |
 | Supabase | Hosted Auth, jobs, reports, reviews, worker leases and private media | Schema installed; role, storage and stale-worker checks passed |
-| Python processor | Validate recordings, run adapters/fusion, save results | Protected one-job-per-click Streamlit console tested locally; hosted worker check-in observed, hosted job acceptance pending |
+| Python processor | Validate recordings, run adapters/fusion, save results | Published Streamlit access screen verified; hosted job acceptance pending |
 
 Cloud jobs process **uploaded recordings**. Existing local webcam/RTSP and HTTP
 monitoring features remain local; this change does not migrate their live feeds.
@@ -55,9 +57,10 @@ Local SQLite accounts/history are separate from Supabase accounts and data.
 This is one shared site with admin/operator/viewer roles, not tenant isolation.
 
 The portal remains on Netlify and Supabase. The selected card-free route is a
-[Streamlit on-demand processor](docs/STREAMLIT_PROCESSOR.md). A hosted worker
-check-in has been observed; its public URL and live job processing still need
-independent verification. It processes one queued recording per administrator
+[Streamlit on-demand processor](docs/STREAMLIT_PROCESSOR.md). Its
+[published console](https://opsfusion-ai-jjcxwxdf4yhykmcnqnw7rf.streamlit.app/)
+was verified up to its access-code gate; live job processing remains unverified.
+It processes one queued recording per administrator
 click and sleeps when unused; it does not provide unattended monitoring.
 This deployment is restricted to **free resources only**. No paid processing
 service has been created. Oracle setup is deferred because account verification

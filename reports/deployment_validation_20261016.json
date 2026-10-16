@@ -77,9 +77,11 @@
   },
   "hosted_processor": {
     "observed": "Existing on-demand-streamlit worker check-in in Supabase",
-    "public_url": "Not provided or discoverable from repository/deployment records",
+    "public_url": "https://opsfusion-ai-jjcxwxdf4yhykmcnqnw7rf.streamlit.app/",
     "hosted_job_acceptance": "Not verified",
-    "mode": "One queued job per trusted administrator click; no continuous monitoring"
+    "mode": "One queued job per trusted administrator click; no continuous monitoring",
+    "public_page": "Passed: hosted OpsFusion processor title and protected access-code form rendered in browser",
+    "unlock": "Not completed: submitted code was rejected; no code or backend secret was read or recorded"
   },
   "cost": {
     "new_paid_resources_created": false,
@@ -87,7 +89,7 @@
   },
   "not_verified": [
     "Authenticated live upload, processor claim, private evidence download and saved review across reload",
-    "Streamlit public URL and host resource fit",
+    "Streamlit host resource fit during processing",
     "Host interruption, job reclaim and idle wake-up",
     "Controlled person-zone recording accuracy",
     "Physical sensor/controller integration and accuracy"
