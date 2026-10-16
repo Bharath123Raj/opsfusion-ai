@@ -1,0 +1,2 @@
+timestamp,asset_id,source_id,level,code,message,synthetic
+2026-10-16T07:30:00Z,machine-01,controller-test-01,WARN,MOTOR_OVERLOAD,Staged cloud integration test - no physical machine fault,true
