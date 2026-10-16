@@ -49,9 +49,9 @@ def identifier(value):
     return value
 
 
-def configuration():
-    url = os.environ.get('OPSFUSION_SUPABASE_URL', '').rstrip('/')
-    key = os.environ.get('OPSFUSION_SUPABASE_SECRET_KEY', '')
+def configuration(*, url=None, key=None):
+    url = (os.environ.get('OPSFUSION_SUPABASE_URL', '') if url is None else url).rstrip('/')
+    key = os.environ.get('OPSFUSION_SUPABASE_SECRET_KEY', '') if key is None else key
     parsed = urlsplit(url)
     if (parsed.scheme != 'https' or not parsed.hostname or not parsed.hostname.endswith('.supabase.co')
             or parsed.path or parsed.query or parsed.fragment or parsed.username or parsed.password or parsed.port):

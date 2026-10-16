@@ -1,0 +1,61 @@
+{
+  "checked_on": "2026-10-16",
+  "scope": "Local software and deployment preparation for a card-free Streamlit processing console",
+  "python_suite": {
+    "command": "python -m unittest discover -s tests -v",
+    "tests": 437,
+    "passed": 437,
+    "skipped": 0,
+    "seconds": 53.246
+  },
+  "on_demand_tests": {
+    "tests": 9,
+    "passed": 9,
+    "checks": [
+      "authorization before privileged client creation",
+      "missing, weak and frontend-key configuration rejected",
+      "controller CSV fixture through real fusion and artifact commit path",
+      "at most one claim per click; no idle polling",
+      "process-wide concurrent-click lock",
+      "free-resource limits before model execution",
+      "lost-lease reports cannot commit or update another attempt",
+      "exception text and secrets not exposed",
+      "Streamlit access gate, explicit processing click and lock"
+    ]
+  },
+  "dependency_install": {
+    "source": "cloud_processor/requirements.txt, Python 3.12, Linux x86_64",
+    "cpu_torch": "2.5.1+cpu",
+    "cpu_torchvision": "0.20.1+cpu",
+    "opencv": "4.10.0",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "streamlit": "1.45.1",
+    "pip_check": "No broken requirements found"
+  },
+  "model_smoke": {
+    "model": "YOLOv8n",
+    "sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+    "cpu_operator_and_inference": "passed",
+    "input": "one blank synthetic image; no person accuracy claim",
+    "local_peak_process_rss_mib": 545.0,
+    "memory_scope": "One local inference process, not the deployed Streamlit app or baseline training; does not guarantee Community Cloud fit"
+  },
+  "hosting": {
+    "provider": "Streamlit Community Cloud",
+    "published": false,
+    "paid_resources_created": false,
+    "mode": "one queued recording per trusted administrator click",
+    "continuous_monitoring": false,
+    "credentials": "Private hosting secrets only; no real credentials fetched or committed"
+  },
+  "not_verified": [
+    "Community Cloud publication and allocated resource limits",
+    "real Supabase backend key configured in the processing host",
+    "real user Google sign-in round trip",
+    "live private input/output processing and saved review",
+    "host interruption, reclaim and idle wake-up",
+    "processing from another device with the original PC off",
+    "controlled recording detection accuracy and physical hardware accuracy"
+  ]
+}

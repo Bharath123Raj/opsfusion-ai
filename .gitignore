@@ -22,3 +22,5 @@ recordings/
 !.env.example
 web/test-results/
 web/playwright-report/
+.streamlit/secrets.toml
+**/.streamlit/secrets.toml

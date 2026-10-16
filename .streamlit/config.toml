@@ -1,5 +1,6 @@
 [server]
-address = "127.0.0.1"
+# The cloud host chooses its listener. The local opsfusion.service command
+# explicitly binds the dashboard to 127.0.0.1 by default.
 maxUploadSize = 100
 headless = true
 

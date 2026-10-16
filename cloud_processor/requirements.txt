@@ -1,0 +1,13 @@
+# Community Cloud: choose Python 3.12. Explicit CPU wheels prevent CUDA installs.
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.5.1+cpu
+torchvision==0.20.1+cpu
+streamlit==1.45.1
+numpy==1.26.4
+pyarrow==17.0.0
+altair==5.5.0
+pandas==2.2.3
+-r ../requirements-cloud.txt
+-r ../requirements-sensor.txt
+-r ../requirements-audio.txt
+-r ../requirements-vision.txt

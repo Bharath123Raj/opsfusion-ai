@@ -1,6 +1,9 @@
 # Oracle Always Free processor for the Netlify portal
 
-Selected on 2026-10-15. **The VM has not been created or tested yet.**
+Deferred on 2026-10-16 because the owner cannot complete card verification.
+Use the [card-free Streamlit processor](STREAMLIT_PROCESSOR.md) for the current
+route. **The VM has not been created or tested.** These instructions remain
+available as an alternative.
 This runs only the Python recording worker. The web interface stays on Netlify;
 Auth, jobs, reviews and private evidence stay in the existing Supabase project.
 It does not use the older all-in-one Oracle/Caddy deployment instructions.

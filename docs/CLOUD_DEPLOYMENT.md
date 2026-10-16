@@ -20,10 +20,10 @@ SQLite accounts, old runs, camera watches or live sensor streams into the cloud.
   retaining existing entries, before testing the Google login round trip.
   This setting is not exposed by the connected Supabase tools.
 - **No paid resources:** independent Python processing is not provisioned.
-  An **Oracle Always Free ARM VM** is selected for the processor; account
-  verification, VM creation and live acceptance remain pending. Follow
-  [the processor-only VM guide](ORACLE_WORKER.md). The owner's existing machine
-  can also run the worker, but that option stops when the machine is off.
+  Oracle signup was blocked by card verification. The selected card-free route
+  is a [Streamlit on-demand processor](STREAMLIT_PROCESSOR.md), handling one
+  queued recording per administrator click. It is prepared, with publication
+  and live host acceptance pending. It does not provide continuous monitoring.
 
 ## Components and authorization
 
@@ -87,11 +87,12 @@ export OPSFUSION_SUPABASE_URL=https://YOUR_PROJECT_REF.supabase.co
 docker compose -f compose.cloud-worker.yaml up -d --build
 ```
 
-The selected no-cost route is an [Oracle Always Free VM](ORACLE_WORKER.md)
-running `deploy/Dockerfile.worker`. Its setup helper accepts the backend key
-with hidden typing and creates an owner-only configuration file. Render's free
-web service does not provide a free background-worker plan, so no Render worker
-is being provisioned under this deployment's free-only constraint.
+For the current card-free route, follow the [Streamlit processor guide](STREAMLIT_PROCESSOR.md)
+instead. Its console runs one queue job only after a trusted administrator
+unlocks it and clicks; it does not host this continuous polling loop.
+The [Oracle VM guide](ORACLE_WORKER.md) remains an alternative for an account
+that can complete verification. Render's free web service does not provide a
+free background-worker plan, so no paid Render worker is being provisioned.
 
 To exercise the cloud adapter locally instead, install the existing CPU PyTorch,
 vision, sensor and audio requirements, plus `requirements-cloud.txt`; set the

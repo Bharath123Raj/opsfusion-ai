@@ -1,4 +1,4 @@
-"""Run from this folder: python -m streamlit run dashboard.py"""
+"""Local dashboard: python -m streamlit run dashboard.py --server.address 127.0.0.1"""
 import hashlib
 import json
 from pathlib import Path

@@ -9,8 +9,8 @@ Auth, Postgres and private file storage, plus a separate Python worker.
 **Status:** local version **0.16.0** plus the implemented cloud portal and worker.
 The Supabase schema is installed and access-tested. The web interface is
 [published on Netlify](https://opsfusion-ai-bharath.netlify.app/) using a Free
-account. Google redirect configuration, an independent processing host and
-end-to-end acceptance are still required.
+account. A card-free Streamlit processing console is prepared; publication,
+Google sign-in verification and end-to-end acceptance are still required.
 See [cloud deployment](docs/CLOUD_DEPLOYMENT.md) for setup and limits.
 
 ## What works today
@@ -42,20 +42,21 @@ application does not issue machine-control commands.
 | --- | --- | --- |
 | Netlify | React login, uploads, progress, private downloads and incident review | Published on a Free Netlify account; GitHub `main` linked |
 | Supabase | Hosted Auth, jobs, reports, reviews, worker leases and private media | Schema installed; role, storage and stale-worker checks passed |
-| Python worker | Validate recordings, run adapters/fusion, save results | Implemented and tested locally; independent host pending |
+| Python processor | Validate recordings, run adapters/fusion, save results | Worker and protected one-job-per-click Streamlit console tested locally; host publication pending |
 
 Cloud jobs process **uploaded recordings**. Existing local webcam/RTSP and HTTP
 monitoring features remain local; this change does not migrate their live feeds.
 Local SQLite accounts/history are separate from Supabase accounts and data.
 This is one shared site with admin/operator/viewer roles, not tenant isolation.
 
-The portal remains on Netlify and Supabase. An [Oracle Always Free VM](docs/ORACLE_WORKER.md)
-is now selected for the Python worker; it has not been created or live-tested.
+The portal remains on Netlify and Supabase. The selected card-free route is a
+[Streamlit on-demand processor](docs/STREAMLIT_PROCESSOR.md), prepared but not
+yet published or live-tested. It processes one queued recording per administrator
+click and sleeps when unused; it does not provide unattended monitoring.
 This deployment is restricted to **free resources only**. No paid processing
-service has been created. The earlier all-in-one VM/Caddy setup remains an
-alternative, separate from this processor-only route. Processing continues with
-the PC off only after its independent worker is running and verified. Fresh
-device input also requires an online acquisition device.
+service has been created. Oracle setup is deferred because account verification
+requires a card. Processing can run with the PC off once the cloud console is
+published and verified. Fresh device input still needs an online acquisition device.
 
 For the web interface, use Node 24:
 
